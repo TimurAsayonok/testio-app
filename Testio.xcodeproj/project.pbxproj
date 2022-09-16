@@ -16,6 +16,7 @@
 		F7C727C128D3905400EF2F59 /* TestioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C727C028D3905400EF2F59 /* TestioTests.swift */; };
 		F7C727CB28D3905400EF2F59 /* TestioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C727CA28D3905400EF2F59 /* TestioUITests.swift */; };
 		F7C727CD28D3905400EF2F59 /* TestioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C727CC28D3905400EF2F59 /* TestioUITestsLaunchTests.swift */; };
+		F7C727EB28D4925000EF2F59 /* Dip in Frameworks */ = {isa = PBXBuildFile; productRef = F7C727EA28D4925000EF2F59 /* Dip */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7C727EB28D4925000EF2F59 /* Dip in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +146,9 @@
 			dependencies = (
 			);
 			name = Testio;
+			packageProductDependencies = (
+				F7C727EA28D4925000EF2F59 /* Dip */,
+			);
 			productName = Testio;
 			productReference = F7C727A628D3905200EF2F59 /* Testio.app */;
 			productType = "com.apple.product-type.application";
@@ -216,6 +221,9 @@
 				Base,
 			);
 			mainGroup = F7C7279D28D3905200EF2F59;
+			packageReferences = (
+				F7C727E928D4925000EF2F59 /* XCRemoteSwiftPackageReference "Dip" */,
+			);
 			productRefGroup = F7C727A728D3905200EF2F59 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -624,6 +632,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F7C727E928D4925000EF2F59 /* XCRemoteSwiftPackageReference "Dip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AliSoftware/Dip";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F7C727EA28D4925000EF2F59 /* Dip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7C727E928D4925000EF2F59 /* XCRemoteSwiftPackageReference "Dip" */;
+			productName = Dip;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F7C7279E28D3905200EF2F59 /* Project object */;
 }
