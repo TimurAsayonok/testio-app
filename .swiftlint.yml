@@ -1,0 +1,62 @@
+disabled_rules:
+    - function_parameter_count
+    - large_tuple
+    - trailing_comma
+    - nesting
+    - multiple_closures_with_trailing_closure
+
+opt_in_rules:
+    - attributes
+    - force_unwrapping
+    - contains_over_filter_is_empty
+    - contains_over_range_nil_comparison
+    - contains_over_filter_count
+    - first_where
+
+included:
+    - Testio
+    # - AppPackages
+
+excluded:
+    # - Pods
+    # - AppPackages/Package.swift
+    # - AppPackages/Tests
+    
+force_cast: warning
+force_try:
+    severity: warning
+
+line_length:
+    warning: 120
+    error: 120
+
+file_length:
+    warning: 800
+    error: 1200
+
+function_body_length:
+    warning: 60
+
+cyclomatic_complexity:
+    ignores_case_statements: true
+
+identifier_name:
+    excluded:
+      - id
+      - ok
+      - or
+      - vc
+      - vm
+      - rx
+      - x
+      - y
+
+type_name:
+    excluded:
+      - Id
+      - TS
+      - VS
+
+attributes:
+  always_on_same_line: ["@IBOutlet", "@IBAction", "@IBSegueAction", "@NSManaged", "@objc"]
+  always_on_line_above: ["@IBDesignable", "@IBInspectable", "@discardableResult"]
