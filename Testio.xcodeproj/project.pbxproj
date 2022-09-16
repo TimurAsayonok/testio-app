@@ -17,6 +17,8 @@
 		F7C727CB28D3905400EF2F59 /* TestioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C727CA28D3905400EF2F59 /* TestioUITests.swift */; };
 		F7C727CD28D3905400EF2F59 /* TestioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C727CC28D3905400EF2F59 /* TestioUITestsLaunchTests.swift */; };
 		F7C727EB28D4925000EF2F59 /* Dip in Frameworks */ = {isa = PBXBuildFile; productRef = F7C727EA28D4925000EF2F59 /* Dip */; };
+		F7C727F028D4976300EF2F59 /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = F7C727EF28D4976300EF2F59 /* netfox */; };
+		F7C727F428D49D8A00EF2F59 /* DipContainerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C727F328D49D8A00EF2F59 /* DipContainerBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,7 @@
 		F7C727C628D3905400EF2F59 /* TestioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C727CA28D3905400EF2F59 /* TestioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestioUITests.swift; sourceTree = "<group>"; };
 		F7C727CC28D3905400EF2F59 /* TestioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestioUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F7C727F328D49D8A00EF2F59 /* DipContainerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DipContainerBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7C727F028D4976300EF2F59 /* netfox in Frameworks */,
 				F7C727EB28D4925000EF2F59 /* Dip in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,6 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				F7C727A928D3905200EF2F59 /* AppDelegate.swift */,
+				F7C727F128D49CA300EF2F59 /* Scenes */,
+				F7C727F228D49CAF00EF2F59 /* Dip */,
 				F7C727AB28D3905200EF2F59 /* SceneDelegate.swift */,
 				F7C727AD28D3905200EF2F59 /* ViewController.swift */,
 				F7C727AF28D3905200EF2F59 /* Main.storyboard */,
@@ -129,6 +135,21 @@
 			path = TestioUITests;
 			sourceTree = "<group>";
 		};
+		F7C727F128D49CA300EF2F59 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F7C727F228D49CAF00EF2F59 /* Dip */ = {
+			isa = PBXGroup;
+			children = (
+				F7C727F328D49D8A00EF2F59 /* DipContainerBuilder.swift */,
+			);
+			path = Dip;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -148,6 +169,7 @@
 			name = Testio;
 			packageProductDependencies = (
 				F7C727EA28D4925000EF2F59 /* Dip */,
+				F7C727EF28D4976300EF2F59 /* netfox */,
 			);
 			productName = Testio;
 			productReference = F7C727A628D3905200EF2F59 /* Testio.app */;
@@ -223,6 +245,7 @@
 			mainGroup = F7C7279D28D3905200EF2F59;
 			packageReferences = (
 				F7C727E928D4925000EF2F59 /* XCRemoteSwiftPackageReference "Dip" */,
+				F7C727EE28D4976300EF2F59 /* XCRemoteSwiftPackageReference "netfox" */,
 			);
 			productRefGroup = F7C727A728D3905200EF2F59 /* Products */;
 			projectDirPath = "";
@@ -291,6 +314,7 @@
 				F7C727AE28D3905200EF2F59 /* ViewController.swift in Sources */,
 				F7C727AA28D3905200EF2F59 /* AppDelegate.swift in Sources */,
 				F7C727AC28D3905200EF2F59 /* SceneDelegate.swift in Sources */,
+				F7C727F428D49D8A00EF2F59 /* DipContainerBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,6 +666,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		F7C727EE28D4976300EF2F59 /* XCRemoteSwiftPackageReference "netfox" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kasketis/netfox";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -649,6 +681,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F7C727E928D4925000EF2F59 /* XCRemoteSwiftPackageReference "Dip" */;
 			productName = Dip;
+		};
+		F7C727EF28D4976300EF2F59 /* netfox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7C727EE28D4976300EF2F59 /* XCRemoteSwiftPackageReference "netfox" */;
+			productName = netfox;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

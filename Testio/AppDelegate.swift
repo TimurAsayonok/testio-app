@@ -4,8 +4,11 @@
 //
 //  Created by Timur Asayonok on 15/09/2022.
 //
-
 import UIKit
+
+#if DEBUG
+    import netfox
+#endif
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         // Override point for customization after application launch.
+        
+        // Netfox
+        #if DEBUG
+            NFX.sharedInstance().start()
+        #endif
+        
         return true
     }
 
