@@ -12,6 +12,8 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    var window: UIWindow?
+    
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
@@ -22,6 +24,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #if DEBUG
             NFX.sharedInstance().start()
         #endif
+        
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        let navigationController = UINavigationController()
+        let coordinator = MainCoordinator()
+        
+        coordinator.navigationController = navigationController
+        window.rootViewController = navigationController
+        
+        window.makeKeyAndVisible()
+        self.window = window
+        
+        coordinator.start()
         
         return true
     }
