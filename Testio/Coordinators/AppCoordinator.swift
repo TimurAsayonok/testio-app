@@ -34,7 +34,11 @@ class AppCoordinator: CoordinatorType {
     }
     
     func boot() {
-        // TODO: 
-        // Trigger AppRoot
+        print("Boot")
+        
+        let fatRoute = FatRoute.home(HomeRoute.initHome)
+        let presentable = fatCoordinatorFactory.createPresentable(fatRoute)
+        
+        trigger(transition: Transition.setRoot(presentable, in: viewController), completion: nil)
     }
 }

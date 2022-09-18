@@ -31,6 +31,9 @@
 		F7C7280E28D77FA600EF2F59 /* FactoryModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7280D28D77FA600EF2F59 /* FactoryModule.swift */; };
 		F7C7281028D7817700EF2F59 /* AppDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7280F28D7817700EF2F59 /* AppDependency.swift */; };
 		F7C7281228D7A17B00EF2F59 /* DependencyModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7281128D7A17B00EF2F59 /* DependencyModule.swift */; };
+		F7C7281428D7AEC700EF2F59 /* Transition+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7281328D7AEC700EF2F59 /* Transition+UIViewController.swift */; };
+		F7C7281728D7B38100EF2F59 /* UIViewController+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7281628D7B38100EF2F59 /* UIViewController+Extentions.swift */; };
+		F7C7281928D7B49500EF2F59 /* UIView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7281828D7B49500EF2F59 /* UIView+Extentions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,9 @@
 		F7C7280D28D77FA600EF2F59 /* FactoryModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryModule.swift; sourceTree = "<group>"; };
 		F7C7280F28D7817700EF2F59 /* AppDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependency.swift; sourceTree = "<group>"; };
 		F7C7281128D7A17B00EF2F59 /* DependencyModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyModule.swift; sourceTree = "<group>"; };
+		F7C7281328D7AEC700EF2F59 /* Transition+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transition+UIViewController.swift"; sourceTree = "<group>"; };
+		F7C7281628D7B38100EF2F59 /* UIViewController+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extentions.swift"; sourceTree = "<group>"; };
+		F7C7281828D7B49500EF2F59 /* UIView+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extentions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +137,9 @@
 			children = (
 				F7C727A928D3905200EF2F59 /* AppDelegate.swift */,
 				F7C727F528D4A6B700EF2F59 /* Coordinators */,
-				F7C727F128D49CA300EF2F59 /* Scenes */,
 				F7C727F228D49CAF00EF2F59 /* Dip */,
+				F7C7281528D7B35B00EF2F59 /* Extentions */,
+				F7C727F128D49CA300EF2F59 /* Scenes */,
 				F7C727AB28D3905200EF2F59 /* SceneDelegate.swift */,
 				F7C727B228D3905400EF2F59 /* Assets.xcassets */,
 				F7C727B428D3905400EF2F59 /* LaunchScreen.storyboard */,
@@ -198,6 +205,7 @@
 			children = (
 				F7C727FE28D6704700EF2F59 /* Transition.swift */,
 				F7C7280128D6745000EF2F59 /* TransitionOptions.swift */,
+				F7C7281328D7AEC700EF2F59 /* Transition+UIViewController.swift */,
 			);
 			path = Transition;
 			sourceTree = "<group>";
@@ -216,6 +224,15 @@
 				F7C7280B28D7589900EF2F59 /* ServerListCoordinator.swift */,
 			);
 			path = ServerList;
+			sourceTree = "<group>";
+		};
+		F7C7281528D7B35B00EF2F59 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				F7C7281628D7B38100EF2F59 /* UIViewController+Extentions.swift */,
+				F7C7281828D7B49500EF2F59 /* UIView+Extentions.swift */,
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,11 +398,14 @@
 				F7C7281228D7A17B00EF2F59 /* DependencyModule.swift in Sources */,
 				F7C727FF28D6704700EF2F59 /* Transition.swift in Sources */,
 				F7C7280E28D77FA600EF2F59 /* FactoryModule.swift in Sources */,
+				F7C7281428D7AEC700EF2F59 /* Transition+UIViewController.swift in Sources */,
 				F7C7280728D7586400EF2F59 /* AlertCoordinator.swift in Sources */,
 				F7C7280228D6745000EF2F59 /* TransitionOptions.swift in Sources */,
 				F7C7280C28D7589900EF2F59 /* ServerListCoordinator.swift in Sources */,
+				F7C7281928D7B49500EF2F59 /* UIView+Extentions.swift in Sources */,
 				F7C7280428D7501100EF2F59 /* FatCoordinatorFactory.swift in Sources */,
 				F7C727AE28D3905200EF2F59 /* ViewController.swift in Sources */,
+				F7C7281728D7B38100EF2F59 /* UIViewController+Extentions.swift in Sources */,
 				F7C727F928D4C51400EF2F59 /* AppCoordinator.swift in Sources */,
 				F7C727AA28D3905200EF2F59 /* AppDelegate.swift in Sources */,
 				F7C727F728D4A6DD00EF2F59 /* Coordinator.swift in Sources */,

@@ -20,7 +20,7 @@ class HomeRouteCoordinator: Coordinator<HomeRoute> {
     override func generateViewController(for route: HomeRoute) -> UIViewController {
         switch route {
         case .initHome:
-            return UIViewController()
+            return ViewController()
         case .login:
             return UIViewController()
         }

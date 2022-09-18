@@ -24,7 +24,7 @@ extension CoordinatorType {
     
     func trigger(
         transition: Transition<RootViewController>,
-        options: TransitionOptions,
+        options: TransitionOptions = TransitionOptions(),
         completion: TransitionCompletion?
     ) {
         transition.perform(on: rootViewController, with: options, completion: completion)
