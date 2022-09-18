@@ -19,8 +19,18 @@
 		F7C727F028D4976300EF2F59 /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = F7C727EF28D4976300EF2F59 /* netfox */; };
 		F7C727F428D49D8A00EF2F59 /* DipContainerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C727F328D49D8A00EF2F59 /* DipContainerBuilder.swift */; };
 		F7C727F728D4A6DD00EF2F59 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C727F628D4A6DD00EF2F59 /* Coordinator.swift */; };
-		F7C727F928D4C51400EF2F59 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C727F828D4C51400EF2F59 /* MainCoordinator.swift */; };
+		F7C727F928D4C51400EF2F59 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C727F828D4C51400EF2F59 /* AppCoordinator.swift */; };
 		F7C727FB28D4CB1300EF2F59 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C727FA28D4CB1300EF2F59 /* SecondViewController.swift */; };
+		F7C727FD28D6171100EF2F59 /* Prasentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C727FC28D6171100EF2F59 /* Prasentable.swift */; };
+		F7C727FF28D6704700EF2F59 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C727FE28D6704700EF2F59 /* Transition.swift */; };
+		F7C7280228D6745000EF2F59 /* TransitionOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7280128D6745000EF2F59 /* TransitionOptions.swift */; };
+		F7C7280428D7501100EF2F59 /* FatCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7280328D7501100EF2F59 /* FatCoordinatorFactory.swift */; };
+		F7C7280728D7586400EF2F59 /* AlertCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7280628D7586400EF2F59 /* AlertCoordinator.swift */; };
+		F7C7280A28D7588D00EF2F59 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7280928D7588D00EF2F59 /* HomeCoordinator.swift */; };
+		F7C7280C28D7589900EF2F59 /* ServerListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7280B28D7589900EF2F59 /* ServerListCoordinator.swift */; };
+		F7C7280E28D77FA600EF2F59 /* FactoryModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7280D28D77FA600EF2F59 /* FactoryModule.swift */; };
+		F7C7281028D7817700EF2F59 /* AppDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7280F28D7817700EF2F59 /* AppDependency.swift */; };
+		F7C7281228D7A17B00EF2F59 /* DependencyModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7281128D7A17B00EF2F59 /* DependencyModule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +65,18 @@
 		F7C727CC28D3905400EF2F59 /* TestioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestioUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F7C727F328D49D8A00EF2F59 /* DipContainerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DipContainerBuilder.swift; sourceTree = "<group>"; };
 		F7C727F628D4A6DD00EF2F59 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		F7C727F828D4C51400EF2F59 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		F7C727F828D4C51400EF2F59 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		F7C727FA28D4CB1300EF2F59 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		F7C727FC28D6171100EF2F59 /* Prasentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prasentable.swift; sourceTree = "<group>"; };
+		F7C727FE28D6704700EF2F59 /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
+		F7C7280128D6745000EF2F59 /* TransitionOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionOptions.swift; sourceTree = "<group>"; };
+		F7C7280328D7501100EF2F59 /* FatCoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FatCoordinatorFactory.swift; sourceTree = "<group>"; };
+		F7C7280628D7586400EF2F59 /* AlertCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCoordinator.swift; sourceTree = "<group>"; };
+		F7C7280928D7588D00EF2F59 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		F7C7280B28D7589900EF2F59 /* ServerListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListCoordinator.swift; sourceTree = "<group>"; };
+		F7C7280D28D77FA600EF2F59 /* FactoryModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryModule.swift; sourceTree = "<group>"; };
+		F7C7280F28D7817700EF2F59 /* AppDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependency.swift; sourceTree = "<group>"; };
+		F7C7281128D7A17B00EF2F59 /* DependencyModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyModule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				F7C727A928D3905200EF2F59 /* AppDelegate.swift */,
-				F7C727F528D4A6B700EF2F59 /* Coordinator */,
+				F7C727F528D4A6B700EF2F59 /* Coordinators */,
 				F7C727F128D49CA300EF2F59 /* Scenes */,
 				F7C727F228D49CAF00EF2F59 /* Dip */,
 				F7C727AB28D3905200EF2F59 /* SceneDelegate.swift */,
@@ -141,6 +161,9 @@
 		F7C727F128D49CA300EF2F59 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				F7C7280628D7586400EF2F59 /* AlertCoordinator.swift */,
+				F7C7280528D7583E00EF2F59 /* Home */,
+				F7C7280828D7586A00EF2F59 /* ServerList */,
 				F7C727AD28D3905200EF2F59 /* ViewController.swift */,
 				F7C727FA28D4CB1300EF2F59 /* SecondViewController.swift */,
 			);
@@ -150,18 +173,49 @@
 		F7C727F228D49CAF00EF2F59 /* Dip */ = {
 			isa = PBXGroup;
 			children = (
+				F7C7280F28D7817700EF2F59 /* AppDependency.swift */,
 				F7C727F328D49D8A00EF2F59 /* DipContainerBuilder.swift */,
+				F7C7281128D7A17B00EF2F59 /* DependencyModule.swift */,
+				F7C7280D28D77FA600EF2F59 /* FactoryModule.swift */,
 			);
 			path = Dip;
 			sourceTree = "<group>";
 		};
-		F7C727F528D4A6B700EF2F59 /* Coordinator */ = {
+		F7C727F528D4A6B700EF2F59 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				F7C7280028D6743E00EF2F59 /* Transition */,
+				F7C727F828D4C51400EF2F59 /* AppCoordinator.swift */,
 				F7C727F628D4A6DD00EF2F59 /* Coordinator.swift */,
-				F7C727F828D4C51400EF2F59 /* MainCoordinator.swift */,
+				F7C7280328D7501100EF2F59 /* FatCoordinatorFactory.swift */,
+				F7C727FC28D6171100EF2F59 /* Prasentable.swift */,
 			);
-			path = Coordinator;
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		F7C7280028D6743E00EF2F59 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				F7C727FE28D6704700EF2F59 /* Transition.swift */,
+				F7C7280128D6745000EF2F59 /* TransitionOptions.swift */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
+		F7C7280528D7583E00EF2F59 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F7C7280928D7588D00EF2F59 /* HomeCoordinator.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F7C7280828D7586A00EF2F59 /* ServerList */ = {
+			isa = PBXGroup;
+			children = (
+				F7C7280B28D7589900EF2F59 /* ServerListCoordinator.swift */,
+			);
+			path = ServerList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,12 +378,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7C7281228D7A17B00EF2F59 /* DependencyModule.swift in Sources */,
+				F7C727FF28D6704700EF2F59 /* Transition.swift in Sources */,
+				F7C7280E28D77FA600EF2F59 /* FactoryModule.swift in Sources */,
+				F7C7280728D7586400EF2F59 /* AlertCoordinator.swift in Sources */,
+				F7C7280228D6745000EF2F59 /* TransitionOptions.swift in Sources */,
+				F7C7280C28D7589900EF2F59 /* ServerListCoordinator.swift in Sources */,
+				F7C7280428D7501100EF2F59 /* FatCoordinatorFactory.swift in Sources */,
 				F7C727AE28D3905200EF2F59 /* ViewController.swift in Sources */,
-				F7C727F928D4C51400EF2F59 /* MainCoordinator.swift in Sources */,
+				F7C727F928D4C51400EF2F59 /* AppCoordinator.swift in Sources */,
 				F7C727AA28D3905200EF2F59 /* AppDelegate.swift in Sources */,
 				F7C727F728D4A6DD00EF2F59 /* Coordinator.swift in Sources */,
+				F7C7280A28D7588D00EF2F59 /* HomeCoordinator.swift in Sources */,
 				F7C727FB28D4CB1300EF2F59 /* SecondViewController.swift in Sources */,
+				F7C727FD28D6171100EF2F59 /* Prasentable.swift in Sources */,
 				F7C727AC28D3905200EF2F59 /* SceneDelegate.swift in Sources */,
+				F7C7281028D7817700EF2F59 /* AppDependency.swift in Sources */,
 				F7C727F428D49D8A00EF2F59 /* DipContainerBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

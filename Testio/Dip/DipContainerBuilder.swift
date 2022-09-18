@@ -12,6 +12,9 @@ class DipContainerBuilder {
     static func build() -> DependencyContainer {
         let container = DependencyContainer()
         
+        DependencyModule.build(container: container)
+        FactoryModule.build(container: container)
+        
         return container
     }
 }

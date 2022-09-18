@@ -4,7 +4,9 @@
 //
 //  Created by Timur Asayonok on 15/09/2022.
 //
+
 import UIKit
+import Dip
 
 #if DEBUG
     import netfox
@@ -13,6 +15,9 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    
+    private var coordinator: AppCoordinator!
+    private var dipContainer: DependencyContainer!
     
     func application(
         _ application: UIApplication,
@@ -25,17 +30,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NFX.sharedInstance().start()
         #endif
         
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        let navigationController = UINavigationController()
-        let coordinator = MainCoordinator()
+        // DIP
+        dipContainer = DipContainerBuilder.build()
         
-        coordinator.navigationController = navigationController
-        window.rootViewController = navigationController
-        
-        window.makeKeyAndVisible()
-        self.window = window
-        
-        coordinator.start()
+        window = UIWindow()
+        let appCoordinatorFactory: AppCoordinatorFactory! = try? dipContainer.resolve()
+        coordinator = appCoordinatorFactory.create()
+        coordinator.setRoot(for: window!) // swiftlint:disable:this force_unwrapping
+        coordinator.boot()
         
         return true
     }
