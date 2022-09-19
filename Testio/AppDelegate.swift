@@ -7,6 +7,7 @@
 
 import UIKit
 import Dip
+import IQKeyboardManagerSwift
 
 #if DEBUG
     import netfox
@@ -17,12 +18,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private var coordinator: AppCoordinator!
     private var dipContainer: DependencyContainer!
+    private var keychainWrapper: KeychainWrapperProtocol!
     
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        // Override point for customization after application launch.
+        // Keyboard Setting for working with Forms
+        let keyBoardManagerShared = IQKeyboardManager.shared
+        keyBoardManagerShared.enable = true
+        keyBoardManagerShared.previousNextDisplayMode = .alwaysHide
+        keyBoardManagerShared.keyboardDistanceFromTextField = 30
+        keyBoardManagerShared.toolbarTintColor = UIColor.black
+        keyBoardManagerShared.toolbarDoneBarButtonItemText = HardcodedStrings.done.rawValue
         
         // Netfox
         #if DEBUG
@@ -31,6 +39,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // DIP
         dipContainer = DipContainerBuilder.build()
+        
+        // Keychain
+        keychainWrapper = try? dipContainer.resolve()
         
         window = UIWindow()
         let appCoordinatorFactory: AppCoordinatorFactory! = try? dipContainer.resolve()

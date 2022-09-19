@@ -34,6 +34,11 @@
 		F7C7281728D7B38100EF2F59 /* UIViewController+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7281628D7B38100EF2F59 /* UIViewController+Extentions.swift */; };
 		F7C7281928D7B49500EF2F59 /* UIView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7281828D7B49500EF2F59 /* UIView+Extentions.swift */; };
 		F7C7281D28D7C14D00EF2F59 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7281C28D7C14D00EF2F59 /* main.swift */; };
+		F7DBB7C028D860AA002CA5CE /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = F7DBB7BF28D860AA002CA5CE /* KeychainAccess */; };
+		F7DBB7C428D86218002CA5CE /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB7C328D86218002CA5CE /* KeychainWrapper.swift */; };
+		F7DBB7C728D86488002CA5CE /* AppConfigurationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB7C628D86488002CA5CE /* AppConfigurationProvider.swift */; };
+		F7DBB7CA28D86922002CA5CE /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F7DBB7C928D86922002CA5CE /* IQKeyboardManagerSwift */; };
+		F7DBB7CC28D86A8F002CA5CE /* HardcodedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB7CB28D86A8F002CA5CE /* HardcodedStrings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +88,9 @@
 		F7C7281628D7B38100EF2F59 /* UIViewController+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extentions.swift"; sourceTree = "<group>"; };
 		F7C7281828D7B49500EF2F59 /* UIView+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extentions.swift"; sourceTree = "<group>"; };
 		F7C7281C28D7C14D00EF2F59 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		F7DBB7C328D86218002CA5CE /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		F7DBB7C628D86488002CA5CE /* AppConfigurationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurationProvider.swift; sourceTree = "<group>"; };
+		F7DBB7CB28D86A8F002CA5CE /* HardcodedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardcodedStrings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +99,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7C727F028D4976300EF2F59 /* netfox in Frameworks */,
+				F7DBB7CA28D86922002CA5CE /* IQKeyboardManagerSwift in Frameworks */,
 				F7C727EB28D4925000EF2F59 /* Dip in Frameworks */,
+				F7DBB7C028D860AA002CA5CE /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,10 +149,12 @@
 				F7C727F528D4A6B700EF2F59 /* Coordinators */,
 				F7C727F228D49CAF00EF2F59 /* Dip */,
 				F7C7281528D7B35B00EF2F59 /* Extentions */,
+				F7DBB7C128D86119002CA5CE /* Services */,
 				F7C727F128D49CA300EF2F59 /* Scenes */,
 				F7C727B228D3905400EF2F59 /* Assets.xcassets */,
 				F7C727B428D3905400EF2F59 /* LaunchScreen.storyboard */,
 				F7C727B728D3905400EF2F59 /* Info.plist */,
+				F7DBB7CB28D86A8F002CA5CE /* HardcodedStrings.swift */,
 				F7C7281C28D7C14D00EF2F59 /* main.swift */,
 			);
 			path = Testio;
@@ -235,6 +247,31 @@
 			path = Extentions;
 			sourceTree = "<group>";
 		};
+		F7DBB7C128D86119002CA5CE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F7DBB7C528D8646D002CA5CE /* AppConfiguration */,
+				F7DBB7C228D861FD002CA5CE /* Wrappers */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F7DBB7C228D861FD002CA5CE /* Wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				F7DBB7C328D86218002CA5CE /* KeychainWrapper.swift */,
+			);
+			path = Wrappers;
+			sourceTree = "<group>";
+		};
+		F7DBB7C528D8646D002CA5CE /* AppConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				F7DBB7C628D86488002CA5CE /* AppConfigurationProvider.swift */,
+			);
+			path = AppConfiguration;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -255,6 +292,8 @@
 			packageProductDependencies = (
 				F7C727EA28D4925000EF2F59 /* Dip */,
 				F7C727EF28D4976300EF2F59 /* netfox */,
+				F7DBB7BF28D860AA002CA5CE /* KeychainAccess */,
+				F7DBB7C928D86922002CA5CE /* IQKeyboardManagerSwift */,
 			);
 			productName = Testio;
 			productReference = F7C727A628D3905200EF2F59 /* Testio.app */;
@@ -331,6 +370,8 @@
 			packageReferences = (
 				F7C727E928D4925000EF2F59 /* XCRemoteSwiftPackageReference "Dip" */,
 				F7C727EE28D4976300EF2F59 /* XCRemoteSwiftPackageReference "netfox" */,
+				F7DBB7BE28D860AA002CA5CE /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				F7DBB7C828D86922002CA5CE /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = F7C727A728D3905200EF2F59 /* Products */;
 			projectDirPath = "";
@@ -398,6 +439,7 @@
 				F7C7281228D7A17B00EF2F59 /* DependencyModule.swift in Sources */,
 				F7C727FF28D6704700EF2F59 /* Transition.swift in Sources */,
 				F7C7280E28D77FA600EF2F59 /* FactoryModule.swift in Sources */,
+				F7DBB7C428D86218002CA5CE /* KeychainWrapper.swift in Sources */,
 				F7C7281428D7AEC700EF2F59 /* Transition+UIViewController.swift in Sources */,
 				F7C7280728D7586400EF2F59 /* AlertCoordinator.swift in Sources */,
 				F7C7280228D6745000EF2F59 /* TransitionOptions.swift in Sources */,
@@ -413,8 +455,10 @@
 				F7C7280A28D7588D00EF2F59 /* HomeCoordinator.swift in Sources */,
 				F7C727FB28D4CB1300EF2F59 /* SecondViewController.swift in Sources */,
 				F7C727FD28D6171100EF2F59 /* Prasentable.swift in Sources */,
+				F7DBB7C728D86488002CA5CE /* AppConfigurationProvider.swift in Sources */,
 				F7C7281028D7817700EF2F59 /* AppDependency.swift in Sources */,
 				F7C727F428D49D8A00EF2F59 /* DipContainerBuilder.swift in Sources */,
+				F7DBB7CC28D86A8F002CA5CE /* HardcodedStrings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -767,6 +811,22 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		F7DBB7BE28D860AA002CA5CE /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				kind = exactVersion;
+				version = 4.2.2;
+			};
+		};
+		F7DBB7C828D86922002CA5CE /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = exactVersion;
+				version = 6.5.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -779,6 +839,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F7C727EE28D4976300EF2F59 /* XCRemoteSwiftPackageReference "netfox" */;
 			productName = netfox;
+		};
+		F7DBB7BF28D860AA002CA5CE /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7DBB7BE28D860AA002CA5CE /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		F7DBB7C928D86922002CA5CE /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7DBB7C828D86922002CA5CE /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
