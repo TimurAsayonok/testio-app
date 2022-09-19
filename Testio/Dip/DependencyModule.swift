@@ -14,8 +14,21 @@ extension DipContainerBuilder {
             container.register { UserDefaults.standard }
             
             container.register {
+                KeychainWrapper(
+                    appConfiguration: try container.resolve()
+                ) as KeychainWrapperProtocol
+            }
+            
+            container.register(.singleton) {
+                AppConfigurationProvider() as AppConfigurationProviderProtocol
+            }
+            
+            container.register {
                 AppDependency(
-                    userDefaults: try container.resolve()
+                    userDefaults: try container.resolve(),
+                    keychainWrapper: try container.resolve(),
+                    apiService: try container.resolve(),
+                    appConfigurationProvider: try container.resolve()
                 ) as Dependencies
             }
         }

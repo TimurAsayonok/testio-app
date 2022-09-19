@@ -17,13 +17,13 @@ extension RouteType {
 
 enum FatRoute: RouteType {
     case alert(AlertRoute)
-    case home(HomeRoute)
+    case start(StartRoute)
     case serverList(ServerListRoute)
     
     init?(route: RouteType) {
         switch route {
         case let route as AlertRoute: self = .alert(route)
-        case let route as HomeRoute: self = .home(route)
+        case let route as StartRoute: self = .start(route)
         case let route as ServerListRoute: self = .serverList(route)
         default: return nil
         }
@@ -40,7 +40,7 @@ struct FatCoordinatorFactory {
     func createPresentable(_ fatRoute: FatRoute) -> Presentable {
         switch fatRoute {
         case let .alert(route): return AlertCoordinator(route: route)
-        case let .home(route): return HomeRouteCoordinator(route: route)
+        case let .start(route): return StartCoordinator(route: route, dependencies: dependencies)
         case let .serverList(route): return ServerListCoordinator(route: route)
         }
     }

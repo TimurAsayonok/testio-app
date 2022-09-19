@@ -39,8 +39,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // DIP
         dipContainer = DipContainerBuilder.build()
-        
-        // Keychain
         keychainWrapper = try? dipContainer.resolve()
         
         window = UIWindow()

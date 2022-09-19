@@ -16,10 +16,11 @@ protocol KeychainWrapperProtocol {
 class KeychainWrapper: KeychainWrapperProtocol {
     let keychain: Keychain
     
-    init(appConfig: AppConfigurationProvider) {
-        self.keychain = Keychain(service: appConfig.keychainService)
+    init(appConfiguration: AppConfigurationProviderProtocol) {
+        self.keychain = Keychain(service: appConfiguration.keychainService)
             .accessibility(.whenUnlocked)
     }
+    
     func setBearerToken(_ token: String?) {
         if let token = token {
             try? keychain.set("Bearer \(token)", key: Key.bearerToken.rawValue)

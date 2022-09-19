@@ -14,6 +14,8 @@ class DipContainerBuilder {
         
         DependencyModule.build(container: container)
         FactoryModule.build(container: container)
+        NetworkModule.build(container: container)
+        ServiceModule.build(container: container)
         
         return container
     }
