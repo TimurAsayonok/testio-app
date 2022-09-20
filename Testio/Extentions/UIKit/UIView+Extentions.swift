@@ -41,3 +41,19 @@ extension UIView {
         return self
     }
 }
+
+extension UIView {
+    @discardableResult
+    func addTo(_ view: UIView) -> Self {
+        translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(self)
+        return self
+    }
+
+    @discardableResult
+    func addAndAnchorTo(_ view: UIView, insets: UIEdgeInsets = UIEdgeInsets.zero, ignoreSafeArea: Bool = true) -> Self {
+        addTo(view)
+        anchorToSuperview(insets: insets, ignoreSafeArea: ignoreSafeArea)
+        return self
+    }
+}
