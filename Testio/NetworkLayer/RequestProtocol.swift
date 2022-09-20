@@ -23,9 +23,12 @@ extension RequestProtocol {
         return JSONDecoder()
     }
     
-//    func getParametersEncoder(_ method: HTTPMethod) -> ParametersEncoder {
-//        return UrlParametersEncoder()
-//    }
+    func getParametersEncoder(_ method: HTTPMethod) -> ParametersEncoder {
+        switch method {
+        case .get, .delete: return UrlParametersEncoder()
+        case .post, .put: return JsonParametersEncoder()
+        }
+    }
     
     func buildRequest(with basedUrl: URL, method: HTTPMethod) throws -> URLRequest {
         let url = basedUrl.appendingPathComponent(path)
@@ -33,7 +36,7 @@ extension RequestProtocol {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         
-        return try UrlParametersEncoder().encode(request, with: try toDictionary())
+        return try getParametersEncoder(method).encode(request, with: try toDictionary())
     }
     
     func toDictionary() throws -> [String: Any] {

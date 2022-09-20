@@ -27,13 +27,6 @@ class StartViewController: BaseViewController<StartViewModel> {
     override func bindViewModel() {
         super.bindViewModel()
         
-//        viewModel.dependencies.apiService.authLogin(
-//            LoginCredentials(username: "tesonet", password: "partyanimal")
-//        )
-//        .subscribe { response in
-//            print("response: ", response)
-//        }
-//        .disposed(by: disposeObject)
         userNameTextField.rx.text.orEmpty.distinctUntilChanged()
             .bind(to: viewModel.state.usernameSubject)
             .disposed(by: disposeBag)
@@ -49,6 +42,9 @@ class StartViewController: BaseViewController<StartViewModel> {
         submitButton.rx.tap
             .bind(to: viewModel.input.submitFormObserver)
             .disposed(by: disposeBag)
+        
+        viewModel.output.loadingDriver
+            .drive(rx.isLoading)
     }
     
     private func setupUI() {

@@ -64,8 +64,8 @@ class ApiProvider: ApiProviderProtocol {
                             
                             observer.onNext(model)
                         } else {
-                            
-                            observer.onError(error ?? ErrorResponse.init(message: ""))
+                            let errorMessage = try T.getJSONDecoder().decode(T.Error.self, from: data ?? Data())
+                            observer.onError(errorMessage)
                         }
                     } catch {
                         observer.onError(error)

@@ -66,6 +66,9 @@
 		F7DBB80E28DA1BFC002CA5CE /* UIButton+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB80D28DA1BFC002CA5CE /* UIButton+RxSwift.swift */; };
 		F7DBB81028DA20DE002CA5CE /* ObservableType+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB80F28DA20DE002CA5CE /* ObservableType+Extention.swift */; };
 		F7DBB81228DA290D002CA5CE /* AppGlobalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB81128DA290D002CA5CE /* AppGlobalState.swift */; };
+		F7DBB81428DA355D002CA5CE /* Codable+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB81328DA355D002CA5CE /* Codable+Extention.swift */; };
+		F7DBB81628DA3B20002CA5CE /* UIView+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB81528DA3B20002CA5CE /* UIView+RxSwift.swift */; };
+		F7DBB81828DA3FDB002CA5CE /* UIViewController+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB81728DA3FDB002CA5CE /* UIViewController+RxSwift.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +146,9 @@
 		F7DBB80D28DA1BFC002CA5CE /* UIButton+RxSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+RxSwift.swift"; sourceTree = "<group>"; };
 		F7DBB80F28DA20DE002CA5CE /* ObservableType+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extention.swift"; sourceTree = "<group>"; };
 		F7DBB81128DA290D002CA5CE /* AppGlobalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGlobalState.swift; sourceTree = "<group>"; };
+		F7DBB81328DA355D002CA5CE /* Codable+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Extention.swift"; sourceTree = "<group>"; };
+		F7DBB81528DA3B20002CA5CE /* UIView+RxSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+RxSwift.swift"; sourceTree = "<group>"; };
+		F7DBB81728DA3FDB002CA5CE /* UIViewController+RxSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+RxSwift.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +303,7 @@
 				F7DBB7DD28D8BB0D002CA5CE /* Encodable+Extention.swift */,
 				F7DBB80328D9C2E0002CA5CE /* NSObject+Settable.swift */,
 				F7DBB80F28DA20DE002CA5CE /* ObservableType+Extention.swift */,
+				F7DBB81328DA355D002CA5CE /* Codable+Extention.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -407,10 +414,12 @@
 			isa = PBXGroup;
 			children = (
 				F7C7281828D7B49500EF2F59 /* UIView+Extentions.swift */,
+				F7DBB81528DA3B20002CA5CE /* UIView+RxSwift.swift */,
 				F7C7281628D7B38100EF2F59 /* UIViewController+Extentions.swift */,
 				F7DBB80528D9C5E1002CA5CE /* UIStackView+Extentions.swift */,
 				F7DBB80B28D9F155002CA5CE /* UIButton+Extention.swift */,
 				F7DBB80D28DA1BFC002CA5CE /* UIButton+RxSwift.swift */,
+				F7DBB81728DA3FDB002CA5CE /* UIViewController+RxSwift.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -623,11 +632,13 @@
 				F7C7281728D7B38100EF2F59 /* UIViewController+Extentions.swift in Sources */,
 				F7C727F928D4C51400EF2F59 /* AppCoordinator.swift in Sources */,
 				F7C727AA28D3905200EF2F59 /* AppDelegate.swift in Sources */,
+				F7DBB81828DA3FDB002CA5CE /* UIViewController+RxSwift.swift in Sources */,
 				F7DBB7FB28D8EFCF002CA5CE /* NetworkModule.swift in Sources */,
 				F7C727F728D4A6DD00EF2F59 /* Coordinator.swift in Sources */,
 				F7C7280A28D7588D00EF2F59 /* StartCoordinator.swift in Sources */,
 				F7DBB7DE28D8BB0D002CA5CE /* Encodable+Extention.swift in Sources */,
 				F7DBB7EC28D8CB68002CA5CE /* LoginCredentials.swift in Sources */,
+				F7DBB81628DA3B20002CA5CE /* UIView+RxSwift.swift in Sources */,
 				F7C727FB28D4CB1300EF2F59 /* SecondViewController.swift in Sources */,
 				F7DBB80628D9C5E1002CA5CE /* UIStackView+Extentions.swift in Sources */,
 				F7DBB80C28D9F155002CA5CE /* UIButton+Extention.swift in Sources */,
@@ -638,6 +649,7 @@
 				F7C7281028D7817700EF2F59 /* AppDependency.swift in Sources */,
 				F7C727F428D49D8A00EF2F59 /* DipContainerBuilder.swift in Sources */,
 				F7DBB7CC28D86A8F002CA5CE /* HardcodedStrings.swift in Sources */,
+				F7DBB81428DA355D002CA5CE /* Codable+Extention.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

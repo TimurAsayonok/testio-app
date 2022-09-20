@@ -36,7 +36,7 @@ final class StartViewModel: ViewModelProtocol {
                 errorObserver: output.errorSubject.asObserver(),
                 serviceMethod: dependencies.apiService.authLogin
             )
-            .subscribe()
+            .subscribe(onNext: { print("Response:", $0) })
             .disposed(by: disposeBag)
         
         output.errorSubject.asObservable()

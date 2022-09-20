@@ -24,9 +24,5 @@ class ApiService: ApiServiceProtocol {
     func authLogin(_ credentials: LoginCredentials) -> Observable<AuthorizationResponse> {
         let request = AuthorizationRequest(credentials: credentials)
         return apiProvider.post(apiRequest: request)
-            .map { response in
-                print("Response: \(response)")
-                return response
-            }
     }
 }
