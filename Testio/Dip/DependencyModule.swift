@@ -13,6 +13,8 @@ extension DipContainerBuilder {
         static func build(container: DependencyContainer) {
             container.register { UserDefaults.standard }
             
+            container.register { AppGlobalState() } 
+            
             container.register {
                 KeychainWrapper(
                     appConfiguration: try container.resolve()
@@ -28,7 +30,8 @@ extension DipContainerBuilder {
                     userDefaults: try container.resolve(),
                     keychainWrapper: try container.resolve(),
                     apiService: try container.resolve(),
-                    appConfigurationProvider: try container.resolve()
+                    appConfigurationProvider: try container.resolve(),
+                    appGlobalState: try container.resolve()
                 ) as Dependencies
             }
         }

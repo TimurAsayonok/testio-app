@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         keyBoardManagerShared.previousNextDisplayMode = .alwaysHide
         keyBoardManagerShared.keyboardDistanceFromTextField = 30
         keyBoardManagerShared.toolbarTintColor = UIColor.black
-        keyBoardManagerShared.toolbarDoneBarButtonItemText = HardcodedStrings.done.rawValue
+        keyBoardManagerShared.toolbarDoneBarButtonItemText = HardcodedStrings.done
         
         // Netfox
         #if DEBUG

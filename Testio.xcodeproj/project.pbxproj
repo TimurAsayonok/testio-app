@@ -65,6 +65,7 @@
 		F7DBB80C28D9F155002CA5CE /* UIButton+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB80B28D9F155002CA5CE /* UIButton+Extention.swift */; };
 		F7DBB80E28DA1BFC002CA5CE /* UIButton+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB80D28DA1BFC002CA5CE /* UIButton+RxSwift.swift */; };
 		F7DBB81028DA20DE002CA5CE /* ObservableType+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB80F28DA20DE002CA5CE /* ObservableType+Extention.swift */; };
+		F7DBB81228DA290D002CA5CE /* AppGlobalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB81128DA290D002CA5CE /* AppGlobalState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +142,7 @@
 		F7DBB80B28D9F155002CA5CE /* UIButton+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extention.swift"; sourceTree = "<group>"; };
 		F7DBB80D28DA1BFC002CA5CE /* UIButton+RxSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+RxSwift.swift"; sourceTree = "<group>"; };
 		F7DBB80F28DA20DE002CA5CE /* ObservableType+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extention.swift"; sourceTree = "<group>"; };
+		F7DBB81128DA290D002CA5CE /* AppGlobalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGlobalState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +255,7 @@
 				F7C7280D28D77FA600EF2F59 /* FactoryModule.swift */,
 				F7DBB7F328D8D7FF002CA5CE /* ServiceModule.swift */,
 				F7DBB7FA28D8EFCF002CA5CE /* NetworkModule.swift */,
+				F7DBB81128DA290D002CA5CE /* AppGlobalState.swift */,
 			);
 			path = Dip;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 			files = (
 				F7C7281228D7A17B00EF2F59 /* DependencyModule.swift in Sources */,
 				F7C727FF28D6704700EF2F59 /* Transition.swift in Sources */,
+				F7DBB81228DA290D002CA5CE /* AppGlobalState.swift in Sources */,
 				F7DBB7DA28D89FA3002CA5CE /* ApiProviderError.swift in Sources */,
 				F7DBB80E28DA1BFC002CA5CE /* UIButton+RxSwift.swift in Sources */,
 				F7C7280E28D77FA600EF2F59 /* FactoryModule.swift in Sources */,

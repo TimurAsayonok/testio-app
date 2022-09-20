@@ -29,6 +29,12 @@ class TextField: UITextField {
         }
     }
     
+    override var leftView: UIView? {
+        didSet {
+            leftView?.tintColor = UIColor.gray.withAlphaComponent(CGFloat(0.6))
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -42,7 +48,7 @@ class TextField: UITextField {
     override func leftViewRect(forBounds bounds: CGRect) -> CGRect {
         var bounds = super.leftViewRect(forBounds: bounds)
         bounds.origin.x += horizontalInset
-        bounds.size.width -= horizontalInset
+        bounds.size.width -= horizontalInset - 5
         return bounds
     }
     
@@ -61,7 +67,6 @@ class TextField: UITextField {
     }
     
     func setup() {
-        leftView?.tintColor = UIColor.gray.withAlphaComponent(CGFloat(0.6))
         layer.cornerRadius = cornerRadius
         borderStyle = UITextField.BorderStyle.none
         autocorrectionType = .no

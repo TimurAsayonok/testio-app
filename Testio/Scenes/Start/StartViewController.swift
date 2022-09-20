@@ -91,7 +91,7 @@ class StartViewController: BaseViewController<StartViewModel> {
             logoIconView,
             
             TextField().setup {
-                $0.placeholder = HardcodedStrings.username.rawValue
+                $0.placeholder = HardcodedStrings.username
                 $0.leftView = buildIcon("person.crop.circle.fill")
                 $0.leftViewMode = .always
                 $0.heightAnchor.constraint(equalToConstant: 40).isActive = true
@@ -99,7 +99,7 @@ class StartViewController: BaseViewController<StartViewModel> {
             },
             
             TextField().setup {
-                $0.placeholder = HardcodedStrings.password.rawValue
+                $0.placeholder = HardcodedStrings.password
                 $0.leftView = buildIcon("lock.circle.fill")
                 $0.leftViewMode = .always
                 $0.textContentType = .password

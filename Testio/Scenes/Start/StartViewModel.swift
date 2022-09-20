@@ -40,9 +40,7 @@ final class StartViewModel: ViewModelProtocol {
             .disposed(by: disposeBag)
         
         output.errorSubject.asObservable()
-            .subscribe { error in
-                print(error)
-            }
+            .bind(to: dependencies.appGlobalState.errorObserver)
             .disposed(by: disposeBag)
     }
 }

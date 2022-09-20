@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ErrorResponse: Codable, Error {
+struct ErrorResponse: Codable, Error, LocalizedError {
     let message: String
     
     enum CodingKeys: String, CodingKey {

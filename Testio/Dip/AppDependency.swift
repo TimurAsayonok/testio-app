@@ -12,6 +12,7 @@ protocol Dependencies {
     var keychainWrapper: KeychainWrapperProtocol { get }
     var apiService: ApiServiceProtocol { get }
     var appConfigurationProvider: AppConfigurationProviderProtocol { get }
+    var appGlobalState: AppGlobalState { get }
 }
 
 struct AppDependency: Dependencies {
@@ -19,4 +20,5 @@ struct AppDependency: Dependencies {
     let keychainWrapper: KeychainWrapperProtocol
     let apiService: ApiServiceProtocol
     let appConfigurationProvider: AppConfigurationProviderProtocol
+    let appGlobalState: AppGlobalState
 }
