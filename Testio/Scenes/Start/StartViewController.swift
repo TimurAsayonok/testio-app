@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class StartViewController: BaseViewController<StartViewModel> {
+    let disposeObject = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -30,6 +34,13 @@ class StartViewController: BaseViewController<StartViewModel> {
         super.bindViewModel()
         
         print("viewModel.dependencies:", viewModel.dependencies)
+        viewModel.dependencies.apiService.authLogin(
+            LoginCredentials(username: "tesonet", password: "partyanimal")
+        )
+        .subscribe { response in
+            print("response: ", response)
+        }
+        .disposed(by: disposeObject)
     }
     
     @objc func buttonTapped() {

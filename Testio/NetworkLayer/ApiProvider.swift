@@ -64,7 +64,8 @@ class ApiProvider: ApiProviderProtocol {
                             
                             observer.onNext(model)
                         } else {
-                            observer.onError(error!)
+                            
+                            observer.onError(error ?? ErrorResponse.init(message: ""))
                         }
                     } catch {
                         observer.onError(error)
