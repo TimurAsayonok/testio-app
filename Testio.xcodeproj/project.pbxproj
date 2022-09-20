@@ -61,6 +61,10 @@
 		F7DBB80228D91D8B002CA5CE /* ViewModelBindableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB80128D91D8B002CA5CE /* ViewModelBindableProtocol.swift */; };
 		F7DBB80428D9C2E0002CA5CE /* NSObject+Settable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB80328D9C2E0002CA5CE /* NSObject+Settable.swift */; };
 		F7DBB80628D9C5E1002CA5CE /* UIStackView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB80528D9C5E1002CA5CE /* UIStackView+Extentions.swift */; };
+		F7DBB80A28D9DCD5002CA5CE /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB80928D9DCD5002CA5CE /* TextField.swift */; };
+		F7DBB80C28D9F155002CA5CE /* UIButton+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB80B28D9F155002CA5CE /* UIButton+Extention.swift */; };
+		F7DBB80E28DA1BFC002CA5CE /* UIButton+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB80D28DA1BFC002CA5CE /* UIButton+RxSwift.swift */; };
+		F7DBB81028DA20DE002CA5CE /* ObservableType+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB80F28DA20DE002CA5CE /* ObservableType+Extention.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +137,10 @@
 		F7DBB80128D91D8B002CA5CE /* ViewModelBindableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBindableProtocol.swift; sourceTree = "<group>"; };
 		F7DBB80328D9C2E0002CA5CE /* NSObject+Settable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Settable.swift"; sourceTree = "<group>"; };
 		F7DBB80528D9C5E1002CA5CE /* UIStackView+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extentions.swift"; sourceTree = "<group>"; };
+		F7DBB80928D9DCD5002CA5CE /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		F7DBB80B28D9F155002CA5CE /* UIButton+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extention.swift"; sourceTree = "<group>"; };
+		F7DBB80D28DA1BFC002CA5CE /* UIButton+RxSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+RxSwift.swift"; sourceTree = "<group>"; };
+		F7DBB80F28DA20DE002CA5CE /* ObservableType+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extention.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +293,7 @@
 				F7DBB80728D9C5EA002CA5CE /* UIKit */,
 				F7DBB7DD28D8BB0D002CA5CE /* Encodable+Extention.swift */,
 				F7DBB80328D9C2E0002CA5CE /* NSObject+Settable.swift */,
+				F7DBB80F28DA20DE002CA5CE /* ObservableType+Extention.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -383,6 +392,7 @@
 		F7DBB7FC28D91AF0002CA5CE /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F7DBB80828D9DCB7002CA5CE /* UIKit */,
 				F7DBB7FD28D91B77002CA5CE /* ViewModelProtocol.swift */,
 				F7DBB7FF28D91D4F002CA5CE /* BaseViewController.swift */,
 				F7DBB80128D91D8B002CA5CE /* ViewModelBindableProtocol.swift */,
@@ -396,6 +406,16 @@
 				F7C7281828D7B49500EF2F59 /* UIView+Extentions.swift */,
 				F7C7281628D7B38100EF2F59 /* UIViewController+Extentions.swift */,
 				F7DBB80528D9C5E1002CA5CE /* UIStackView+Extentions.swift */,
+				F7DBB80B28D9F155002CA5CE /* UIButton+Extention.swift */,
+				F7DBB80D28DA1BFC002CA5CE /* UIButton+RxSwift.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		F7DBB80828D9DCB7002CA5CE /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				F7DBB80928D9DCD5002CA5CE /* TextField.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -570,7 +590,9 @@
 				F7C7281228D7A17B00EF2F59 /* DependencyModule.swift in Sources */,
 				F7C727FF28D6704700EF2F59 /* Transition.swift in Sources */,
 				F7DBB7DA28D89FA3002CA5CE /* ApiProviderError.swift in Sources */,
+				F7DBB80E28DA1BFC002CA5CE /* UIButton+RxSwift.swift in Sources */,
 				F7C7280E28D77FA600EF2F59 /* FactoryModule.swift in Sources */,
+				F7DBB81028DA20DE002CA5CE /* ObservableType+Extention.swift in Sources */,
 				F7DBB7EF28D8CC14002CA5CE /* AuthorizationRequest.swift in Sources */,
 				F7DBB80028D91D4F002CA5CE /* BaseViewController.swift in Sources */,
 				F7DBB7F628D8DA7A002CA5CE /* StartViewController.swift in Sources */,
@@ -590,6 +612,7 @@
 				F7C7280428D7501100EF2F59 /* FatCoordinatorFactory.swift in Sources */,
 				F7C727AE28D3905200EF2F59 /* ViewController.swift in Sources */,
 				F7DBB7F928D8DB11002CA5CE /* StartViewModel.swift in Sources */,
+				F7DBB80A28D9DCD5002CA5CE /* TextField.swift in Sources */,
 				F7DBB7DC28D8B443002CA5CE /* ParametersEncoder.swift in Sources */,
 				F7DBB80228D91D8B002CA5CE /* ViewModelBindableProtocol.swift in Sources */,
 				F7DBB7F428D8D7FF002CA5CE /* ServiceModule.swift in Sources */,
@@ -603,6 +626,7 @@
 				F7DBB7EC28D8CB68002CA5CE /* LoginCredentials.swift in Sources */,
 				F7C727FB28D4CB1300EF2F59 /* SecondViewController.swift in Sources */,
 				F7DBB80628D9C5E1002CA5CE /* UIStackView+Extentions.swift in Sources */,
+				F7DBB80C28D9F155002CA5CE /* UIButton+Extention.swift in Sources */,
 				F7DBB80428D9C2E0002CA5CE /* NSObject+Settable.swift in Sources */,
 				F7C727FD28D6171100EF2F59 /* Prasentable.swift in Sources */,
 				F7DBB7C728D86488002CA5CE /* AppConfigurationProvider.swift in Sources */,

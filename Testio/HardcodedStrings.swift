@@ -6,5 +6,7 @@
 //
 
 internal enum HardcodedStrings: String {
+    case username = "Username"
+    case password = "Password"
     case done = "Done"
 }

@@ -13,4 +13,6 @@ protocol ViewModelProtocol {
     
     var input: Input { get }
     var output: Output { get }
+    
+    func bindSubjects()
 }
