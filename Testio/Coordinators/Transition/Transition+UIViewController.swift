@@ -9,6 +9,12 @@ import Foundation
 import UIKit
 
 extension Transition {
+    static func present(_ presentable: Presentable) -> Transition {
+        Transition { rootViewController, _, _ in
+            rootViewController.present(presentable.viewController, animated: true)
+        }
+    }
+    
     static func multiple<C: Collection>(_ transitions: C) -> Transition where C.Element == Transition {
         Transition { rootViewController, options, completion in
             guard let firstTransition = transitions.first else {

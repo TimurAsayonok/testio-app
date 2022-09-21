@@ -1,5 +1,5 @@
 //
-//  StartViewController.swift
+//  LoginViewController.swift
 //  Testio
 //
 //  Created by Timur Asayonok on 19/09/2022.
@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class StartViewController: BaseViewController<StartViewModel> {
+final class LoginViewController: BaseViewController<LoginViewModel> {
     let disposeBag = DisposeBag()
     
     var backgroundImageView: UIImageView!
@@ -18,9 +18,19 @@ final class StartViewController: BaseViewController<StartViewModel> {
     var passwordTextField: TextField!
     var submitButton: UIButton!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setupUI()
     }
     
@@ -45,6 +55,7 @@ final class StartViewController: BaseViewController<StartViewModel> {
         
         viewModel.output.loadingDriver
             .drive(rx.isLoading)
+            .disposed(by: disposeBag)
     }
     
     private func setupUI() {

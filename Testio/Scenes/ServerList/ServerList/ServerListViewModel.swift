@@ -25,7 +25,7 @@ final class ServerListViewModel: ViewModelProtocol {
         
         bindSubjects()
         
-        input.submitFormObserver.onNext(())
+//        input.submitFormObserver.onNext(())
     }
     
     func bindSubjects() {

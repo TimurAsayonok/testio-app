@@ -1,5 +1,5 @@
 //
-//  StartViewModel.swift
+//  LoginViewModel.swift
 //  Testio
 //
 //  Created by Timur Asayonok on 19/09/2022.
@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-final class StartViewModel: ViewModelProtocol {
+final class LoginViewModel: ViewModelProtocol {
     fileprivate var disposeBag = DisposeBag()
     
     var input: Input = Input()
@@ -36,7 +36,12 @@ final class StartViewModel: ViewModelProtocol {
                 errorObserver: output.errorSubject.asObserver(),
                 serviceMethod: dependencies.apiService.authLogin
             )
-            .subscribe(onNext: { print("Response:", $0) })
+            .subscribe(onNext: { [weak self] in
+                self?.dependencies.appGlobalState.screenTriggerObserver
+                    .onNext(
+                        ScreenLink(ServerListRoute.serverList, presentation: .setNavigationRoot)
+                    )
+            })
             .disposed(by: disposeBag)
         
         output.errorSubject.asObservable()
@@ -45,7 +50,7 @@ final class StartViewModel: ViewModelProtocol {
     }
 }
 
-extension StartViewModel {
+extension LoginViewModel {
     struct State {
         let usernameSubject = BehaviorSubject<String?>(value: "")
         let passwordSubject = BehaviorSubject<String?>(value: "")
@@ -59,14 +64,14 @@ extension StartViewModel {
     }
 }
 
-extension StartViewModel {
+extension LoginViewModel {
     struct Input {
         fileprivate var submitFormSubject = PublishSubject<Void>()
         var submitFormObserver: AnyObserver<Void> { submitFormSubject.asObserver() }
     }
 }
 
-extension StartViewModel {
+extension LoginViewModel {
     struct Output {
         fileprivate var loadingSubject = BehaviorSubject<Bool>(value: false)
         var loadingDriver: Driver<Bool> {

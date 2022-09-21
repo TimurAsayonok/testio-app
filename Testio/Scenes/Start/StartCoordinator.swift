@@ -8,7 +8,6 @@
 import UIKit
 
 enum StartRoute: RouteType {
-    case initStart
     case login
 }
 
@@ -22,14 +21,12 @@ class StartCoordinator: Coordinator<StartRoute> {
     
     override func generateViewController(for route: StartRoute) -> UIViewController {
         switch route {
-        case .initStart:
-            let viewController = StartViewController()
-            let viewModel = StartViewModel(dependencies: dependencies)
+        case .login:
+            let viewController = LoginViewController()
+            let viewModel = LoginViewModel(dependencies: dependencies)
             viewController.bind(to: viewModel)
             
             return viewController
-        case .login:
-            return UIViewController()
         }
     }
 }

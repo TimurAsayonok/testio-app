@@ -26,15 +26,7 @@ struct Transition<RootViewController: UIViewController>: TransitionType {
         _ completion: TransitionCompletion?
     ) -> Void
 
-    
-    // TODO: Add TransitionAnimation if needed
-//    var animation: TransitionAnimation?
     private var perform: PerformClosure
-
-//    init(animation: TransitionAnimation? = nil, perform: @escaping PerformClosure) {
-//        self.animation = animation
-//        self.perform = perform
-//    }
     
     init(perform: @escaping PerformClosure) {
         self.perform = perform

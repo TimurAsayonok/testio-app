@@ -10,7 +10,14 @@ import RxSwift
 import RxCocoa
 
 class AppGlobalState {
+    
+    // PublishSubject for handling errors
     private var errorSubject: PublishSubject<Error> = PublishSubject()
     var errorObserver: AnyObserver<Error> { errorSubject.asObserver() }
     var errorDriver: Driver<Error> { errorSubject.asDriver(onErrorDriveWith: .never()) }
+    
+    // PublishSubject for handling screen triggering
+    private var screenTriggerSubject: PublishSubject<ScreenLink?> = PublishSubject()
+    var screenTriggerObserver: AnyObserver<ScreenLink?> { screenTriggerSubject.asObserver() }
+    var screenTriggerObservable: Observable<ScreenLink?> { screenTriggerSubject.asObservable() }
 }

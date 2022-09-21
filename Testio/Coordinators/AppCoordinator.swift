@@ -40,19 +40,30 @@ class AppCoordinator: CoordinatorType {
     }
     
     func boot() {
-//        let fatRoute = FatRoute.start(StartRoute.initStart)
-//        let presentable = fatCoordinatorFactory.createPresentable(fatRoute)
-        let farRoute = FatRoute.serverList(ServerListRoute.serverList)
-        let presentable = fatCoordinatorFactory.createPresentable(farRoute)
-        let coordinator = NavigationCoordinator(presentable: presentable)
+        let screenLink: ScreenLink = dependencies.keychainWrapper.getBearerToken() != nil
+            ? ScreenLink(ServerListRoute.serverList, presentation: .setNavigationRoot)
+            : ScreenLink(StartRoute.login, presentation: .setViewRoot)
         
-        trigger(transition: Transition.setRoot(coordinator, in: viewController), completion: nil)
+        dependencies.appGlobalState.screenTriggerObserver.onNext(screenLink)
     }
     
     private func observeState() {
+        // handle error subject
         dependencies.appGlobalState.errorDriver
             .drive(onNext: { [weak self] error in
                 self?.handleAppGlobalStateError(error)
+            })
+            .disposed(by: disposeBag)
+        
+        // handle screen trigger subject
+        dependencies.appGlobalState.screenTriggerObservable
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] screenLink in
+                guard let link = screenLink else {
+                    print("Failed Link:", String(describing: screenLink))
+                    return
+                }
+                self?.trigger(link: link)
             })
             .disposed(by: disposeBag)
     }
@@ -70,5 +81,23 @@ class AppCoordinator: CoordinatorType {
         )
         
         rootViewController.present(alert, animated: true)
+    }
+}
+
+extension AppCoordinator {
+    func trigger(link: ScreenLink) {
+        guard let fatRoute = FatRoute(route: link.route)
+        else { return }
+        let presentable = fatCoordinatorFactory.createPresentable(fatRoute)
+        
+        switch link.presentation {
+        case .setViewRoot:
+            trigger(transition: Transition.setRoot(presentable, in: viewController))
+        case .setNavigationRoot:
+            let coordinator = NavigationCoordinator(presentable: presentable)
+            trigger(transition: Transition.setRoot(coordinator, in: viewController))
+        case .present:
+            trigger(transition: Transition.present(presentable))
+        }
     }
 }

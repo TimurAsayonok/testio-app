@@ -13,7 +13,8 @@ extension DipContainerBuilder {
             container.register {
                 ApiService(
                     apiProvider: try container.resolve(),
-                    appConfiguration: try container.resolve()
+                    appConfiguration: try container.resolve(),
+                    keychain: try container.resolve()
                 ) as ApiServiceProtocol
             }
         }
