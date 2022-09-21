@@ -11,7 +11,7 @@ import RxCocoa
 import RxDataSources
 
 final class ServerListViewController: BaseViewController<ServerListViewModel> {
-    let disposeBag = DisposeBag()
+    fileprivate let disposeBag = DisposeBag()
     
     var navigationRightItemView: UIButton!
     var navigationLeftItemView: UIButton!
@@ -21,29 +21,7 @@ final class ServerListViewController: BaseViewController<ServerListViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "Testio."
-        
-        navigationRightItemView = setupNavigationRightButton()
-        navigationLeftItemView = setupNavigationRightButton()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .play)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: navigationLeftItemView)
-        // Do any additional setup after loading the view.
-        
-        tableView = UITableView(frame: CGRect.zero)
-        tableView.register(
-            ServerListEmptyTableViewCell.self,
-            forCellReuseIdentifier: ServerListEmptyTableViewCell.cellIdentifier
-        )
-        tableView.register(
-            ServerListItemTableViewCell.self,
-            forCellReuseIdentifier: ServerListItemTableViewCell.cellIdentifier
-        )
-        tableView.estimatedRowHeight = UITableView.automaticDimension
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.sectionHeaderHeight = UITableView.automaticDimension
-        tableView.sectionFooterHeight = CGFloat.leastNormalMagnitude
-        tableView.backgroundColor = UIColor.systemGray6
-        tableView.addAndAnchorTo(view)
+        setupUI()
     }
     
     override func bindViewModel() {
@@ -70,9 +48,34 @@ final class ServerListViewController: BaseViewController<ServerListViewModel> {
         
         tableView.rx.setDelegate(self)
             .disposed(by: disposeBag)
+        
+        viewModel.input.startObserver.onNext(())
     }
     
-    private func setupUI() {
+    override func setupUI() {
+        navigationItem.title = "Testio."
+        
+        navigationRightItemView = setupNavigationRightButton()
+        navigationLeftItemView = setupNavigationRightButton()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .play)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: navigationLeftItemView)
+        // Do any additional setup after loading the view.
+        
+        tableView = UITableView(frame: CGRect.zero)
+        tableView.register(
+            ServerListEmptyTableViewCell.self,
+            forCellReuseIdentifier: ServerListEmptyTableViewCell.cellIdentifier
+        )
+        tableView.register(
+            ServerListItemTableViewCell.self,
+            forCellReuseIdentifier: ServerListItemTableViewCell.cellIdentifier
+        )
+        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.sectionHeaderHeight = UITableView.automaticDimension
+        tableView.sectionFooterHeight = CGFloat.leastNormalMagnitude
+        tableView.backgroundColor = UIColor.systemGray6
+        tableView.addAndAnchorTo(view)
     }
     
     private func setupNavigationRightButton() -> UIButton {

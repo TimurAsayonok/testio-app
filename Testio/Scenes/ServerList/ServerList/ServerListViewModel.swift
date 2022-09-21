@@ -16,36 +16,48 @@ final class ServerListViewModel: ViewModelProtocol {
     var input: Input = Input()
     var output: Output = Output()
     
-    var state: State = State()
+    var state: State
     
     let dependencies: Dependencies
     
-    init(dependencies: Dependencies) {
+    init(servers: [ServerModel], dependencies: Dependencies) {
         self.dependencies = dependencies
+        self.state = State(servers: servers)
         
         bindSubjects()
-        
-//        input.submitFormObserver.onNext(())
     }
     
     func bindSubjects() {
-        input.submitFormSubject
-            .wrapService(
-                loadingObserver: output.loadingSubject.asObserver(),
-                errorObserver: output.errorSubject.asObserver(),
-                serviceMethod: dependencies.apiService.getServerList
-            )
-            .subscribe(onNext: { [weak self] serverList in
-                let dataModel = [
+        input.startSubject.asObservable()
+            .withLatestFrom(Observable.just(state.servers))
+            .map { servers -> [SectionDataModel] in
+                return [
                     SectionDataModel(
                         model: .list,
-                        items: [.empty] + serverList.map { .item($0) }
+                        items: [.empty] + servers.map { .item($0) }
                     )
                 ]
-                print("Response:", serverList)
-                self?.input.dataModelsSubject.onNext(dataModel)
-            })
+            }
+            .bind(to: input.dataModelsSubject)
             .disposed(by: disposeBag)
+        
+//        input.submitFormSubject
+//            .wrapService(
+//                loadingObserver: output.loadingSubject.asObserver(),
+//                errorObserver: output.errorSubject.asObserver(),
+//                serviceMethod: dependencies.apiService.getServerList
+//            )
+//            .subscribe(onNext: { [weak self] serverList in
+//                let dataModel = [
+//                    SectionDataModel(
+//                        model: .list,
+//                        items: [.empty] + serverList.map { .item($0) }
+//                    )
+//                ]
+//                print("Response:", serverList)
+//                self?.input.dataModelsSubject.onNext(dataModel)
+//            })
+//            .disposed(by: disposeBag)
     }
 }
 
@@ -64,12 +76,15 @@ extension ServerListViewModel {
 
 extension ServerListViewModel {
     struct State {
-        
+        var servers: [ServerModel] = []
     }
 }
 
 extension ServerListViewModel {
     struct Input {
+        fileprivate var startSubject = PublishSubject<Void>()
+        var startObserver: AnyObserver<Void> { startSubject.asObserver() }
+        
         fileprivate var dataModelsSubject: BehaviorSubject<[SectionDataModel]> = BehaviorSubject(value: [])
         var dataModelsDriver: Driver<[SectionDataModel]> {
             dataModelsSubject.asDriver(onErrorJustReturn: [])
@@ -79,9 +94,7 @@ extension ServerListViewModel {
         fileprivate var submitFormSubject = PublishSubject<Void>()
         var submitFormObserver: AnyObserver<Void> { submitFormSubject.asObserver() }
     }
-}
-
-extension ServerListViewModel {
+    
     struct Output {
         fileprivate var loadingSubject = BehaviorSubject<Bool>(value: false)
         var loadingDriver: Driver<Bool> {

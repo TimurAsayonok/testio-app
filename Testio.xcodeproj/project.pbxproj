@@ -79,6 +79,8 @@
 		F7DBB83328DA8BDD002CA5CE /* ServerListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB83228DA8BDD002CA5CE /* ServerListRequest.swift */; };
 		F7DBB83528DB0FD7002CA5CE /* ScreenLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB83428DB0FD7002CA5CE /* ScreenLink.swift */; };
 		F7DBB83728DB18A8002CA5CE /* Transition+UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB83628DB18A8002CA5CE /* Transition+UINavigationController.swift */; };
+		F7DBB83D28DB351D002CA5CE /* ServerListLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB83C28DB351D002CA5CE /* ServerListLoadingViewModel.swift */; };
+		F7DBB83F28DB35C5002CA5CE /* ServerListLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB83E28DB35C5002CA5CE /* ServerListLoadingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +169,8 @@
 		F7DBB83228DA8BDD002CA5CE /* ServerListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListRequest.swift; sourceTree = "<group>"; };
 		F7DBB83428DB0FD7002CA5CE /* ScreenLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenLink.swift; sourceTree = "<group>"; };
 		F7DBB83628DB18A8002CA5CE /* Transition+UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transition+UINavigationController.swift"; sourceTree = "<group>"; };
+		F7DBB83C28DB351D002CA5CE /* ServerListLoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListLoadingViewModel.swift; sourceTree = "<group>"; };
+		F7DBB83E28DB35C5002CA5CE /* ServerListLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListLoadingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -488,6 +492,8 @@
 		F7DBB83928DB333F002CA5CE /* ServerListLoading */ = {
 			isa = PBXGroup;
 			children = (
+				F7DBB83C28DB351D002CA5CE /* ServerListLoadingViewModel.swift */,
+				F7DBB83E28DB35C5002CA5CE /* ServerListLoadingViewController.swift */,
 			);
 			path = ServerListLoading;
 			sourceTree = "<group>";
@@ -688,6 +694,7 @@
 				F7DBB7CF28D88FA8002CA5CE /* ApiProvider.swift in Sources */,
 				F7DBB7FE28D91B77002CA5CE /* ViewModelProtocol.swift in Sources */,
 				F7C7281928D7B49500EF2F59 /* UIView+Extentions.swift in Sources */,
+				F7DBB83D28DB351D002CA5CE /* ServerListLoadingViewModel.swift in Sources */,
 				F7C7280428D7501100EF2F59 /* FatCoordinatorFactory.swift in Sources */,
 				F7DBB7F928D8DB11002CA5CE /* LoginViewModel.swift in Sources */,
 				F7DBB80A28D9DCD5002CA5CE /* TextField.swift in Sources */,
@@ -718,6 +725,7 @@
 				F7DBB7E028D8C14E002CA5CE /* ApiService.swift in Sources */,
 				F7C7281028D7817700EF2F59 /* AppDependency.swift in Sources */,
 				F7C727F428D49D8A00EF2F59 /* DipContainerBuilder.swift in Sources */,
+				F7DBB83F28DB35C5002CA5CE /* ServerListLoadingViewController.swift in Sources */,
 				F7DBB7CC28D86A8F002CA5CE /* HardcodedStrings.swift in Sources */,
 				F7DBB81428DA355D002CA5CE /* Codable+Extention.swift in Sources */,
 				F7DBB83728DB18A8002CA5CE /* Transition+UINavigationController.swift in Sources */,

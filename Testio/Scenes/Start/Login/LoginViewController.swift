@@ -10,23 +10,13 @@ import RxSwift
 import RxCocoa
 
 final class LoginViewController: BaseViewController<LoginViewModel> {
-    let disposeBag = DisposeBag()
+    fileprivate let disposeBag = DisposeBag()
     
     var backgroundImageView: UIImageView!
     var formStackView: UIStackView!
     var userNameTextField: TextField!
     var passwordTextField: TextField!
     var submitButton: UIButton!
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: false)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,9 +48,8 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
             .disposed(by: disposeBag)
     }
     
-    private func setupUI() {
+    override func setupUI() {
         let logoIconView = UIView()
-        submitButton = UIButton.primaryFull(title: "Log in")
         
         // background image
         UIImageView().setup {
@@ -114,8 +103,9 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
                 $0.heightAnchor.constraint(equalToConstant: 40).isActive = true
                 passwordTextField = $0
             },
-            
-            submitButton
+            UIButton.primaryFull(title: HardcodedStrings.logIn).setup {
+                submitButton = $0
+            }
         ])
         formStackView.addTo(view)
                 
