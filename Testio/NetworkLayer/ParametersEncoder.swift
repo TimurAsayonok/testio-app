@@ -12,15 +12,8 @@ protocol ParametersEncoder {
 }
 
 struct UrlParametersEncoder: ParametersEncoder {
-    func encode(_ urlRequest: URLRequest, with parameters: [String : Any]?) throws -> URLRequest {
+    func encode(_ urlRequest: URLRequest, with parameters: [String: Any]?) throws -> URLRequest {
         var urlRequest = urlRequest
-        
-        guard let parameters = parameters else { return urlRequest }
-        
-        guard let url = urlRequest.url,
-              let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
-            throw Error.badUrlComponents
-        }
         
         if urlRequest.value(forHTTPHeaderField: "Content-Type") == nil {
             urlRequest.setValue(
@@ -34,7 +27,7 @@ struct UrlParametersEncoder: ParametersEncoder {
 }
 
 struct JsonParametersEncoder: ParametersEncoder {
-    func encode(_ urlRequest: URLRequest, with parameters: [String : Any]?) throws -> URLRequest {
+    func encode(_ urlRequest: URLRequest, with parameters: [String: Any]?) throws -> URLRequest {
         var urlRequest = urlRequest
         
         guard let parameters = parameters else { return urlRequest }

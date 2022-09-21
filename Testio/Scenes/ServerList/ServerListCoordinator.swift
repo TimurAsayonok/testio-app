@@ -12,13 +12,21 @@ enum ServerListRoute: RouteType {
 }
 
 class ServerListCoordinator: Coordinator<ServerListRoute> {
-    override init(route: ServerListRoute) {
+    let dependencies: Dependencies
+    
+    init(route: ServerListRoute, dependencies: Dependencies) {
+        self.dependencies = dependencies
         super.init(route: route)
     }
     
     override func generateViewController(for route: ServerListRoute) -> UIViewController {
         switch route {
-        case .serverList: return UIViewController()
+        case .serverList:
+            let viewController = ServerListViewController()
+            let viewModel = ServerListViewModel(dependencies: dependencies)
+            viewController.bind(to: viewModel)
+            
+            return viewController
         }
     }
 }

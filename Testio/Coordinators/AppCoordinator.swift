@@ -40,10 +40,13 @@ class AppCoordinator: CoordinatorType {
     }
     
     func boot() {
-        let fatRoute = FatRoute.start(StartRoute.initStart)
-        let presentable = fatCoordinatorFactory.createPresentable(fatRoute)
+//        let fatRoute = FatRoute.start(StartRoute.initStart)
+//        let presentable = fatCoordinatorFactory.createPresentable(fatRoute)
+        let farRoute = FatRoute.serverList(ServerListRoute.serverList)
+        let presentable = fatCoordinatorFactory.createPresentable(farRoute)
+        let coordinator = NavigationCoordinator(presentable: presentable)
         
-        trigger(transition: Transition.setRoot(presentable, in: viewController), completion: nil)
+        trigger(transition: Transition.setRoot(coordinator, in: viewController), completion: nil)
     }
     
     private func observeState() {

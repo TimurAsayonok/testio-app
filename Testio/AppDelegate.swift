@@ -24,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        AppearanceGlobal.setupNavigationBar()
+        
         // Keyboard Setting for working with Forms
         let keyBoardManagerShared = IQKeyboardManager.shared
         keyBoardManagerShared.enable = true

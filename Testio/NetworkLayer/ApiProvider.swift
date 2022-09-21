@@ -50,6 +50,8 @@ class ApiProvider: ApiProviderProtocol {
         var request: URLRequest
         do {
             request = try apiRequest.buildRequest(with: basedUrl, method: method)
+            // TODO: ADD heade
+            request.addValue("Bearer f9731b590611a5a9377fbd02f247fcdf", forHTTPHeaderField: "Authorization")
         } catch {
             print("🐞", type(of: self), "->", error)
             return .error(error)

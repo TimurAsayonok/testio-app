@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LoginCredentials: Codable, Equatable {
+struct LoginCredentialsModel: Codable, Equatable {
     let username: String
     let password: String
     

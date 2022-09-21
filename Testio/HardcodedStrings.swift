@@ -11,4 +11,6 @@ internal enum HardcodedStrings {
     static let done = "Done"
     static let verificationFailedTitle = "Verification Failed"
     static let verificationFailedMessage = "Your username or password is incorrect."
+    static let server = "Server"
+    static let distance = "Distance"
 }

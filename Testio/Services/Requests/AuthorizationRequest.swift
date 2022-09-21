@@ -19,7 +19,7 @@ struct AuthorizationRequest: RequestProtocol {
     let username: String
     let password: String
     
-    init(credentials: LoginCredentials) {
+    init(credentials: LoginCredentialsModel) {
         self.username = credentials.username
         self.password = credentials.password
     }

@@ -1,15 +1,16 @@
 //
-//  StartViewModel.swift
+//  ServiceListViewModel.swift
 //  Testio
 //
-//  Created by Timur Asayonok on 19/09/2022.
+//  Created by Timur Asayonok on 20/09/2022.
 //
 
 import Foundation
 import RxSwift
+import RxDataSources
 import RxCocoa
 
-final class StartViewModel: ViewModelProtocol {
+final class ServerListViewModel: ViewModelProtocol {
     fileprivate var disposeBag = DisposeBag()
     
     var input: Input = Input()
@@ -23,50 +24,64 @@ final class StartViewModel: ViewModelProtocol {
         self.dependencies = dependencies
         
         bindSubjects()
+        
+        input.submitFormObserver.onNext(())
     }
     
     func bindSubjects() {
         input.submitFormSubject
-            .withLatestFrom(state.usernameSubject.asObservable())
-            .withLatestFrom(state.passwordSubject.asObservable()) {
-                LoginCredentialsModel(username: $0 ?? "", password: $1 ?? "")
-            }
             .wrapService(
                 loadingObserver: output.loadingSubject.asObserver(),
                 errorObserver: output.errorSubject.asObserver(),
-                serviceMethod: dependencies.apiService.authLogin
+                serviceMethod: dependencies.apiService.getServerList
             )
-            .subscribe(onNext: { print("Response:", $0) })
-            .disposed(by: disposeBag)
-        
-        output.errorSubject.asObservable()
-            .bind(to: dependencies.appGlobalState.errorObserver)
+            .subscribe(onNext: { [weak self] serverList in
+                let dataModel = [
+                    SectionDataModel(
+                        model: .list,
+                        items: [.empty] + serverList.map { .item($0) }
+                    )
+                ]
+                print("Response:", serverList)
+                self?.input.dataModelsSubject.onNext(dataModel)
+            })
             .disposed(by: disposeBag)
     }
 }
 
-extension StartViewModel {
+extension ServerListViewModel {
+    typealias SectionDataModel = SectionModel<Section, DataModel>
+
+    enum Section: Equatable {
+        case list
+    }
+
+    enum DataModel: Equatable {
+        case empty
+        case item(ServerModel)
+    }
+}
+
+extension ServerListViewModel {
     struct State {
-        let usernameSubject = BehaviorSubject<String?>(value: "")
-        let passwordSubject = BehaviorSubject<String?>(value: "")
         
-        var isValidForm: Observable<Bool> {
-            Observable.combineLatest(usernameSubject, passwordSubject) {
-                if $0?.isEmpty != true && $1?.isEmpty != true { return true }
-                return false
-            }
-        }
     }
 }
 
-extension StartViewModel {
+extension ServerListViewModel {
     struct Input {
+        fileprivate var dataModelsSubject: BehaviorSubject<[SectionDataModel]> = BehaviorSubject(value: [])
+        var dataModelsDriver: Driver<[SectionDataModel]> {
+            dataModelsSubject.asDriver(onErrorJustReturn: [])
+        }
+        
+        
         fileprivate var submitFormSubject = PublishSubject<Void>()
         var submitFormObserver: AnyObserver<Void> { submitFormSubject.asObserver() }
     }
 }
 
-extension StartViewModel {
+extension ServerListViewModel {
     struct Output {
         fileprivate var loadingSubject = BehaviorSubject<Bool>(value: false)
         var loadingDriver: Driver<Bool> {

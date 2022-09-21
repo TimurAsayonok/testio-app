@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class StartViewController: BaseViewController<StartViewModel> {
+final class StartViewController: BaseViewController<StartViewModel> {
     let disposeBag = DisposeBag()
     
     var backgroundImageView: UIImageView!

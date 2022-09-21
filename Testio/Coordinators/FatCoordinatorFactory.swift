@@ -41,7 +41,7 @@ struct FatCoordinatorFactory {
         switch fatRoute {
         case let .alert(route): return AlertCoordinator(route: route)
         case let .start(route): return StartCoordinator(route: route, dependencies: dependencies)
-        case let .serverList(route): return ServerListCoordinator(route: route)
+        case let .serverList(route): return ServerListCoordinator(route: route, dependencies: dependencies)
         }
     }
 }

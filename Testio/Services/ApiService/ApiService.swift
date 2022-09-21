@@ -9,7 +9,8 @@ import Foundation
 import RxSwift
 
 protocol ApiServiceProtocol {
-    func authLogin(_ credentials: LoginCredentials) -> Observable<AuthorizationResponse>
+    func authLogin(_ credentials: LoginCredentialsModel) -> Observable<AuthorizationResponse>
+    func getServerList() -> Observable<[ServerModel]>
 }
 
 class ApiService: ApiServiceProtocol {
@@ -21,8 +22,13 @@ class ApiService: ApiServiceProtocol {
         self.appConfiguration = appConfiguration
     }
     
-    func authLogin(_ credentials: LoginCredentials) -> Observable<AuthorizationResponse> {
+    func authLogin(_ credentials: LoginCredentialsModel) -> Observable<AuthorizationResponse> {
         let request = AuthorizationRequest(credentials: credentials)
         return apiProvider.post(apiRequest: request)
+    }
+    
+    func getServerList() -> Observable<[ServerModel]> {
+        let request = ServerListRequest()
+        return apiProvider.get(apiRequest: request)
     }
 }
