@@ -81,6 +81,7 @@
 		F7DBB83728DB18A8002CA5CE /* Transition+UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB83628DB18A8002CA5CE /* Transition+UINavigationController.swift */; };
 		F7DBB83D28DB351D002CA5CE /* ServerListLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB83C28DB351D002CA5CE /* ServerListLoadingViewModel.swift */; };
 		F7DBB83F28DB35C5002CA5CE /* ServerListLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB83E28DB35C5002CA5CE /* ServerListLoadingViewController.swift */; };
+		F7DBB84128DB56C7002CA5CE /* HeadersRequestDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB84028DB56C7002CA5CE /* HeadersRequestDecorator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +172,7 @@
 		F7DBB83628DB18A8002CA5CE /* Transition+UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transition+UINavigationController.swift"; sourceTree = "<group>"; };
 		F7DBB83C28DB351D002CA5CE /* ServerListLoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListLoadingViewModel.swift; sourceTree = "<group>"; };
 		F7DBB83E28DB35C5002CA5CE /* ServerListLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListLoadingViewController.swift; sourceTree = "<group>"; };
+		F7DBB84028DB56C7002CA5CE /* HeadersRequestDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadersRequestDecorator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -365,10 +367,11 @@
 			isa = PBXGroup;
 			children = (
 				F7DBB7CE28D88FA8002CA5CE /* ApiProvider.swift */,
-				F7DBB7D028D89055002CA5CE /* RequestProtocol.swift */,
-				F7DBB7D228D891E8002CA5CE /* HTTPMethod.swift */,
 				F7DBB7D928D89FA3002CA5CE /* ApiProviderError.swift */,
 				F7DBB7DB28D8B443002CA5CE /* ParametersEncoder.swift */,
+				F7DBB7D028D89055002CA5CE /* RequestProtocol.swift */,
+				F7DBB7D228D891E8002CA5CE /* HTTPMethod.swift */,
+				F7DBB84028DB56C7002CA5CE /* HeadersRequestDecorator.swift */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
@@ -706,6 +709,7 @@
 				F7C727AA28D3905200EF2F59 /* AppDelegate.swift in Sources */,
 				F7DBB83528DB0FD7002CA5CE /* ScreenLink.swift in Sources */,
 				F7DBB81828DA3FDB002CA5CE /* UIViewController+RxSwift.swift in Sources */,
+				F7DBB84128DB56C7002CA5CE /* HeadersRequestDecorator.swift in Sources */,
 				F7DBB7FB28D8EFCF002CA5CE /* NetworkModule.swift in Sources */,
 				F7DBB82F28DA6C74002CA5CE /* ServerListItemTableViewCell.swift in Sources */,
 				F7C727F728D4A6DD00EF2F59 /* Coordinator.swift in Sources */,

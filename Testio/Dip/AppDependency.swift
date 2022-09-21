@@ -13,6 +13,7 @@ protocol Dependencies {
     var apiService: ApiServiceProtocol { get }
     var appConfigurationProvider: AppConfigurationProviderProtocol { get }
     var appGlobalState: AppGlobalState { get }
+    var headersRequestDecorator: HeadersRequestDecoratorProtocol { get }
 }
 
 struct AppDependency: Dependencies {
@@ -21,4 +22,5 @@ struct AppDependency: Dependencies {
     let apiService: ApiServiceProtocol
     let appConfigurationProvider: AppConfigurationProviderProtocol
     let appGlobalState: AppGlobalState
+    let headersRequestDecorator: HeadersRequestDecoratorProtocol
 }

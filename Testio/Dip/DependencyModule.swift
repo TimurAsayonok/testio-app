@@ -21,7 +21,7 @@ extension DipContainerBuilder {
                 ) as KeychainWrapperProtocol
             }
             
-            container.register(.singleton) {
+            container.register {
                 AppConfigurationProvider() as AppConfigurationProviderProtocol
             }
             
@@ -31,7 +31,8 @@ extension DipContainerBuilder {
                     keychainWrapper: try container.resolve(),
                     apiService: try container.resolve(),
                     appConfigurationProvider: try container.resolve(),
-                    appGlobalState: try container.resolve()
+                    appGlobalState: try container.resolve(),
+                    headersRequestDecorator: try container.resolve()
                 ) as Dependencies
             }
         }

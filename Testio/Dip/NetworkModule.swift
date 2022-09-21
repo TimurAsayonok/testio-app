@@ -12,9 +12,16 @@ extension DipContainerBuilder {
     enum NetworkModule {
         static func build(container: DependencyContainer) {
             container.register {
+                HeadersRequestDecorator(
+                    keychainWrapper: try container.resolve()
+                ) as HeadersRequestDecoratorProtocol
+            }
+            
+            container.register {
                 ApiProvider(
                     urlSession: try container.resolve(),
-                    appConfiguration: try container.resolve()
+                    appConfiguration: try container.resolve(),
+                    headersRequestDecorator: try container.resolve()
                 ) as ApiProviderProtocol
             }
             

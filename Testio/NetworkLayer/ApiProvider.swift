@@ -40,18 +40,23 @@ class ApiProvider: ApiProviderProtocol {
     
     private let appConfiguration: AppConfigurationProviderProtocol
     private let urlSession: URLSession
+    private let headersRequestDecorator: HeadersRequestDecoratorProtocol
     
-    init(urlSession: URLSession, appConfiguration: AppConfigurationProviderProtocol) {
+    init(
+        urlSession: URLSession,
+        appConfiguration: AppConfigurationProviderProtocol,
+        headersRequestDecorator: HeadersRequestDecoratorProtocol
+    ) {
         self.appConfiguration = appConfiguration
         self.urlSession = urlSession
+        self.headersRequestDecorator = headersRequestDecorator
     }
     
     func send<T: RequestProtocol>(apiRequest: T, method: HTTPMethod) -> Observable<T.Response> {
         var request: URLRequest
         do {
             request = try apiRequest.buildRequest(with: basedUrl, method: method)
-            // TODO: ADD heade
-            request.addValue("Bearer f9731b590611a5a9377fbd02f247fcdf", forHTTPHeaderField: "Authorization")
+            headersRequestDecorator.decorate(urlRequest: &request)
         } catch {
             print("🐞", type(of: self), "->", error)
             return .error(error)
