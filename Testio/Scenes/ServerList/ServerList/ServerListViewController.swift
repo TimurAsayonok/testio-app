@@ -48,18 +48,17 @@ final class ServerListViewController: BaseViewController<ServerListViewModel> {
         tableView.rx.setDelegate(self)
             .disposed(by: disposeBag)
         
-//        navigationItem.rightBarButtonItem?.customView?.rx.tapGesture()
-//            .when(.recognized)
-//            .map { _ in }
-//            .bind(to: viewModel.input.logoutObserver)
-//            .disposed(by: disposeBag)
+        navigationItem.leftBarButtonItem?.customView?.rx.tapGesture()
+            .when(.recognized)
+            .map { _ in }
+            .bind(to: viewModel.input.presentFilterModalViewObserver)
+            .disposed(by: disposeBag)
         
-//        navigationItem.rightBarButtonItem?.rx
-//            .tapGesture()
-//            .when(.recognized)
-//            .map { _ in }
-//            .bind(to: viewModel.input.logoutObserver)
-//            .disposed(by: disposeBag)
+        navigationItem.rightBarButtonItem?.customView?.rx.tapGesture()
+            .when(.recognized)
+            .map { _ in }
+            .bind(to: viewModel.input.logoutObserver)
+            .disposed(by: disposeBag)
         
         viewModel.input.startObserver.onNext(())
     }

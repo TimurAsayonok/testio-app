@@ -8,11 +8,19 @@
 import Foundation
 
 struct ServerModel: Codable, Equatable {
-    let name: String?
-    let distance: Int?
+    private let nameKey: String?
+    private let distanceKey: Int?
+    
+    var name: String {
+        nameKey ?? ""
+    }
+    
+    var distance: Int {
+        distanceKey ?? 0
+    }
 
     enum CodingKeys: String, CodingKey {
-        case name
-        case distance
+        case nameKey = "name"
+        case distanceKey = "distance"
     }
 }
