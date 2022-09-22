@@ -43,7 +43,7 @@ final class ServerListViewModel: ViewModelProtocol {
                 // delete token and move to login screen
                 self?.dependencies.keychainWrapper.deleteBearerToken()
                 self?.dependencies.appGlobalState.screenTriggerObserver
-                    .onNext(ScreenLink(StartRoute.login, presentation: .setViewRoot)
+                    .onNext(ScreenLink(StartRoute.login, presentation: .asRootView)
                 )
             })
             .disposed(by: disposeBag)

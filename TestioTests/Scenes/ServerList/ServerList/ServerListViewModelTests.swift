@@ -24,7 +24,7 @@ class ServerListViewModelTests: XCTestCase {
         disposeBag = DisposeBag()
     }
     
-    func test_input_startSubject() {
+    func testInputStartSubject() {
         let startObserver = scheduler.createObserver(Bool.self)
         
         viewModel.input.startDriver
@@ -43,7 +43,7 @@ class ServerListViewModelTests: XCTestCase {
         XCTAssertEqual(startObserver.events, [.next(0, true)])
     }
     
-    func test_input_logoutSubject() {
+    func testInputLogoutSubject() {
         let logoutObserver = scheduler.createObserver(Bool.self)
         
         viewModel.input.logoutDriver
@@ -62,7 +62,7 @@ class ServerListViewModelTests: XCTestCase {
         XCTAssertEqual(logoutObserver.events, [.next(0, true)])
     }
     
-    func test_input_dataModelSubject() {
+    func testInputDataModelSubject() {
         typealias SectionDataModel = [ServerListViewModel.SectionDataModel]
         let dataModelObserver = scheduler.createObserver(SectionDataModel.self)
         let dataModelMock: SectionDataModel = [

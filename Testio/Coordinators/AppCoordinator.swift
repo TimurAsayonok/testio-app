@@ -41,8 +41,8 @@ class AppCoordinator: CoordinatorType {
     
     func boot() {
         let screenLink: ScreenLink = dependencies.keychainWrapper.getBearerToken() != nil
-            ? ScreenLink(ServerListRoute.listLoading, presentation: .setViewRoot)
-            : ScreenLink(StartRoute.login, presentation: .setViewRoot)
+            ? ScreenLink(ServerListRoute.listLoading, presentation: .asRootView)
+            : ScreenLink(StartRoute.login, presentation: .asRootView)
         
         dependencies.appGlobalState.screenTriggerObserver.onNext(screenLink)
     }
@@ -91,9 +91,9 @@ extension AppCoordinator {
         let presentable = fatCoordinatorFactory.createPresentable(fatRoute)
         
         switch link.presentation {
-        case .setViewRoot:
+        case .asRootView:
             trigger(transition: Transition.setRoot(presentable, in: viewController))
-        case .setNavigationRoot:
+        case .asRootNavigation:
             let coordinator = NavigationCoordinator(presentable: presentable)
             trigger(transition: Transition.setRoot(coordinator, in: viewController))
         case .present:

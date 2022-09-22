@@ -24,7 +24,7 @@ class LoginViewModelTests: XCTestCase {
         disposeBag = DisposeBag()
     }
     
-    func test_state_UserNameSubject() {
+    func testStateUserNameSubject() {
         let usernameObserver = scheduler.createObserver(String?.self)
         
         viewModel.state.usernameSubject.asDriver(onErrorDriveWith: .just(""))
@@ -43,7 +43,7 @@ class LoginViewModelTests: XCTestCase {
         XCTAssertEqual(usernameObserver.events, [.next(0, ""), .next(5, "user"), .next(10, "username")])
     }
     
-    func test_state_PasswordSubject() {
+    func testStatePasswordSubject() {
         let passwordObserver = scheduler.createObserver(String?.self)
         
         viewModel.state.passwordSubject.asDriver(onErrorDriveWith: .just(""))
@@ -62,7 +62,7 @@ class LoginViewModelTests: XCTestCase {
         XCTAssertEqual(passwordObserver.events, [.next(0, ""), .next(5, "pass"), .next(10, "password")])
     }
     
-    func test_state_isValidForm() {
+    func testStateIsValidForm() {
         let usernameObserver = scheduler.createObserver(String?.self)
         let passwordObserver = scheduler.createObserver(String?.self)
         let isValidObserver = scheduler.createObserver(Bool.self)
@@ -96,7 +96,7 @@ class LoginViewModelTests: XCTestCase {
         XCTAssertEqual(isValidObserver.events, [.next(0, false), .next(5, false), .next(10, true)])
     }
     
-    func test_input_submitFormSubject() {
+    func testInputSubmitFormSubject() {
         let submitFormObserver = scheduler.createObserver(Bool.self)
         
         viewModel.input.submitFormDriver
@@ -115,7 +115,7 @@ class LoginViewModelTests: XCTestCase {
         XCTAssertEqual(submitFormObserver.events, [.next(0, true)])
     }
     
-    func test_output_loadingSubject() {
+    func testOutputLoadingSubject() {
         let loadingObserver = scheduler.createObserver(Bool.self)
         
         viewModel.output.loadingDriver

@@ -38,7 +38,7 @@ final class LoginViewModel: ViewModelProtocol {
             )
             .subscribe(onNext: { [weak self] in
                 self?.dependencies.appGlobalState.screenTriggerObserver
-                    .onNext(ScreenLink(ServerListRoute.listLoading, presentation: .setViewRoot))
+                    .onNext(ScreenLink(ServerListRoute.listLoading, presentation: .asRootView))
             })
             .disposed(by: disposeBag)
         

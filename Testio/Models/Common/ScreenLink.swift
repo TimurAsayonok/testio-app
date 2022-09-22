@@ -18,11 +18,7 @@ struct ScreenLink {
     
     enum Presentation: Equatable {
         case present
-        case setViewRoot
-        case setNavigationRoot
-        
-        static var presentScreen: Presentation = .present
-        static var setViewRootScreen: Presentation = .setViewRoot
-        static var setNavigationRootScreen: Presentation = .setNavigationRoot
+        case asRootView
+        case asRootNavigation
     }
 }

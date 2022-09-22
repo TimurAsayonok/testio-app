@@ -35,7 +35,7 @@ final class ServerListLoadingViewModel: ViewModelProtocol {
             )
             .subscribe(onNext: { [weak self] servers in
                 self?.dependencies.appGlobalState.screenTriggerObserver
-                    .onNext(ScreenLink(ServerListRoute.serverList(servers: servers), presentation: .setNavigationRoot)
+                    .onNext(ScreenLink(ServerListRoute.serverList(servers: servers), presentation: .asRootNavigation)
                 )
             })
             .disposed(by: disposeBag)
