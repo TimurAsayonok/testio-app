@@ -109,6 +109,8 @@
 		F7DBB8C128DC59D0002CA5CE /* ScreenLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8C028DC59D0002CA5CE /* ScreenLinkTests.swift */; };
 		F7DBB8C328DC6569002CA5CE /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8C228DC6569002CA5CE /* URLSessionMock.swift */; };
 		F7DBB8C828DC6892002CA5CE /* DipContainerBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8C728DC6892002CA5CE /* DipContainerBuilderTests.swift */; };
+		F7DBB8CF28DC6E46002CA5CE /* AppConfigProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8CE28DC6E46002CA5CE /* AppConfigProviderTests.swift */; };
+		F7DBB8D128DC6F89002CA5CE /* ApiServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8D028DC6F89002CA5CE /* ApiServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -223,6 +225,8 @@
 		F7DBB8C028DC59D0002CA5CE /* ScreenLinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenLinkTests.swift; sourceTree = "<group>"; };
 		F7DBB8C228DC6569002CA5CE /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		F7DBB8C728DC6892002CA5CE /* DipContainerBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DipContainerBuilderTests.swift; sourceTree = "<group>"; };
+		F7DBB8CE28DC6E46002CA5CE /* AppConfigProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigProviderTests.swift; sourceTree = "<group>"; };
+		F7DBB8D028DC6F89002CA5CE /* ApiServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,6 +314,7 @@
 				F7DBB84628DB8930002CA5CE /* AppDelegateMock.swift */,
 				F7DBB84828DB8AC0002CA5CE /* Scenes */,
 				F7DBB8C628DC685B002CA5CE /* Dip */,
+				F7DBB8C928DC6DC8002CA5CE /* Services */,
 				F7DBB85028DB8CCE002CA5CE /* Mocks */,
 				F7DBB8B428DC5030002CA5CE /* Models */,
 				F7DBB86528DBA53F002CA5CE /* UIView+TestSuport.swift */,
@@ -682,6 +687,47 @@
 			path = Dip;
 			sourceTree = "<group>";
 		};
+		F7DBB8C928DC6DC8002CA5CE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F7DBB8CA28DC6DED002CA5CE /* ApiService */,
+				F7DBB8CB28DC6DFB002CA5CE /* AppConfiguration */,
+				F7DBB8CC28DC6E05002CA5CE /* Requests */,
+				F7DBB8CD28DC6E16002CA5CE /* Wrappers */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F7DBB8CA28DC6DED002CA5CE /* ApiService */ = {
+			isa = PBXGroup;
+			children = (
+				F7DBB8D028DC6F89002CA5CE /* ApiServiceTests.swift */,
+			);
+			path = ApiService;
+			sourceTree = "<group>";
+		};
+		F7DBB8CB28DC6DFB002CA5CE /* AppConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				F7DBB8CE28DC6E46002CA5CE /* AppConfigProviderTests.swift */,
+			);
+			path = AppConfiguration;
+			sourceTree = "<group>";
+		};
+		F7DBB8CC28DC6E05002CA5CE /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		F7DBB8CD28DC6E16002CA5CE /* Wrappers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Wrappers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -939,9 +985,11 @@
 				F7DBB8C328DC6569002CA5CE /* URLSessionMock.swift in Sources */,
 				F7DBB86628DBA53F002CA5CE /* UIView+TestSuport.swift in Sources */,
 				F7DBB8BF28DC5998002CA5CE /* ErrorResponseTests.swift in Sources */,
+				F7DBB8D128DC6F89002CA5CE /* ApiServiceTests.swift in Sources */,
 				F7DBB85D28DB9950002CA5CE /* ApiServiceProtocolMock.swift in Sources */,
 				F7DBB8A828DBEF8D002CA5CE /* ServerListViewModelTests.swift in Sources */,
 				F7DBB8B028DBEFFD002CA5CE /* ServerListItemTableViewCellTests.swift in Sources */,
+				F7DBB8CF28DC6E46002CA5CE /* AppConfigProviderTests.swift in Sources */,
 				F7DBB8AA28DBEFA8002CA5CE /* ServerListLoadingViewControllerTests.swift in Sources */,
 				F7DBB85928DB9359002CA5CE /* KeychainWrapperProtocolMock.swift in Sources */,
 				F7DBB84D28DB8B2B002CA5CE /* LoginViewControllerTests.swift in Sources */,
