@@ -107,6 +107,8 @@
 		F7DBB8BD28DC58CC002CA5CE /* LoginCredentialsModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8BC28DC58CC002CA5CE /* LoginCredentialsModelTests.swift */; };
 		F7DBB8BF28DC5998002CA5CE /* ErrorResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8BE28DC5998002CA5CE /* ErrorResponseTests.swift */; };
 		F7DBB8C128DC59D0002CA5CE /* ScreenLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8C028DC59D0002CA5CE /* ScreenLinkTests.swift */; };
+		F7DBB8C328DC6569002CA5CE /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8C228DC6569002CA5CE /* URLSessionMock.swift */; };
+		F7DBB8C828DC6892002CA5CE /* DipContainerBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8C728DC6892002CA5CE /* DipContainerBuilderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,6 +221,8 @@
 		F7DBB8BC28DC58CC002CA5CE /* LoginCredentialsModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCredentialsModelTests.swift; sourceTree = "<group>"; };
 		F7DBB8BE28DC5998002CA5CE /* ErrorResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponseTests.swift; sourceTree = "<group>"; };
 		F7DBB8C028DC59D0002CA5CE /* ScreenLinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenLinkTests.swift; sourceTree = "<group>"; };
+		F7DBB8C228DC6569002CA5CE /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
+		F7DBB8C728DC6892002CA5CE /* DipContainerBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DipContainerBuilderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +309,7 @@
 			children = (
 				F7DBB84628DB8930002CA5CE /* AppDelegateMock.swift */,
 				F7DBB84828DB8AC0002CA5CE /* Scenes */,
+				F7DBB8C628DC685B002CA5CE /* Dip */,
 				F7DBB85028DB8CCE002CA5CE /* Mocks */,
 				F7DBB8B428DC5030002CA5CE /* Models */,
 				F7DBB86528DBA53F002CA5CE /* UIView+TestSuport.swift */,
@@ -601,6 +606,7 @@
 				F7DBB85C28DB9950002CA5CE /* ApiServiceProtocolMock.swift */,
 				F7DBB85E28DB99FE002CA5CE /* AppConfigurationProviderProtocolMock.swift */,
 				F7DBB86028DB9B4D002CA5CE /* HeadersRequestDecoratorProtocolMock.swift */,
+				F7DBB8C228DC6569002CA5CE /* URLSessionMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -666,6 +672,14 @@
 				F7DBB8B828DC524A002CA5CE /* ServerModelTests.swift */,
 			);
 			path = Server;
+			sourceTree = "<group>";
+		};
+		F7DBB8C628DC685B002CA5CE /* Dip */ = {
+			isa = PBXGroup;
+			children = (
+				F7DBB8C728DC6892002CA5CE /* DipContainerBuilderTests.swift */,
+			);
+			path = Dip;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -922,6 +936,7 @@
 				F7DBB85228DB8D4D002CA5CE /* AppDependencyMock.swift in Sources */,
 				F7DBB85528DB901D002CA5CE /* UserDefaultMock.swift in Sources */,
 				F7DBB8AE28DBEFC8002CA5CE /* ServerListEmptyTableViewCellTests.swift in Sources */,
+				F7DBB8C328DC6569002CA5CE /* URLSessionMock.swift in Sources */,
 				F7DBB86628DBA53F002CA5CE /* UIView+TestSuport.swift in Sources */,
 				F7DBB8BF28DC5998002CA5CE /* ErrorResponseTests.swift in Sources */,
 				F7DBB85D28DB9950002CA5CE /* ApiServiceProtocolMock.swift in Sources */,
@@ -936,6 +951,7 @@
 				F7DBB8BD28DC58CC002CA5CE /* LoginCredentialsModelTests.swift in Sources */,
 				F7DBB8B928DC524A002CA5CE /* ServerModelTests.swift in Sources */,
 				F7DBB8AC28DBEFB4002CA5CE /* ServerListLoadingViewModelTests.swift in Sources */,
+				F7DBB8C828DC6892002CA5CE /* DipContainerBuilderTests.swift in Sources */,
 				F7DBB85F28DB99FE002CA5CE /* AppConfigurationProviderProtocolMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
