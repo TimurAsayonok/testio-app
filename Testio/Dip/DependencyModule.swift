@@ -8,6 +8,8 @@
 import Dip
 import Foundation
 
+// MARK: DependencyModule
+// Registering AppDependency
 extension DipContainerBuilder {
     enum DependencyModule {
         static func build(container: DependencyContainer) {

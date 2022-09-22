@@ -14,15 +14,21 @@ protocol RequestProtocol: Encodable {
     var path: String { get }
 }
 
+// MARK: RequestProtocol
+// Contains addition function for working with Request
 extension RequestProtocol {
+    
+    /// Returns JSONEncoder
     static func getJSONEncoder() -> JSONEncoder {
         return JSONEncoder()
     }
     
+    /// Returns JSON Decoder
     static func getJSONDecoder() -> JSONDecoder {
         return JSONDecoder()
     }
     
+    /// Returns ParametersEncoder for the request method type
     func getParametersEncoder(_ method: HTTPMethod) -> ParametersEncoder {
         switch method {
         case .get, .delete: return UrlParametersEncoder()
@@ -30,6 +36,7 @@ extension RequestProtocol {
         }
     }
     
+    /// Builds `URLRequest` for `URL` and `http method type`
     func buildRequest(with basedUrl: URL, method: HTTPMethod) throws -> URLRequest {
         let url = basedUrl.appendingPathComponent(path)
         

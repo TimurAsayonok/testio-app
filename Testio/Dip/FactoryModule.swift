@@ -7,6 +7,8 @@
 
 import Dip
 
+// MARK: FactoryModule
+// Registering FatCoordinatorFactory and AppCoordinatorFactory
 extension DipContainerBuilder {
     enum FactoryModule {
         static func build(container: DependencyContainer) {

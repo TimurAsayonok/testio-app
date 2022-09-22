@@ -9,6 +9,11 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+// MARK: LoginViewController
+/*
+ ViewController for presenting login for
+ with username, password text fields and submit button
+ */
 final class LoginViewController: BaseViewController<LoginViewModel> {
     fileprivate let disposeBag = DisposeBag()
     
@@ -27,22 +32,27 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
     override func bindViewModel() {
         super.bindViewModel()
         
+        // handle value from `userName` text field and bind to viewModel
         userNameTextField.rx.text.orEmpty.distinctUntilChanged()
             .bind(to: viewModel.state.usernameSubject)
             .disposed(by: disposeBag)
         
+        // handle value from `password` text field and bind to viewModel
         passwordTextField.rx.text.orEmpty.distinctUntilChanged()
             .bind(to: viewModel.state.passwordSubject)
             .disposed(by: disposeBag)
         
-        viewModel.state.isValidForm
-            .bind(to: submitButton.rx.isEnabled)
-            .disposed(by: disposeBag)
-        
+        // handle submit `button` tap event and bind to viewModel
         submitButton.rx.tap
             .bind(to: viewModel.input.submitFormObserver)
             .disposed(by: disposeBag)
         
+        // handle `state.isValid` value and bind to submitButton isEnabled
+        viewModel.state.isValidForm
+            .bind(to: submitButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        // handle loading from viewModel
         viewModel.output.loadingDriver
             .drive(rx.isLoading)
             .disposed(by: disposeBag)
@@ -63,7 +73,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         .addTo(view)
         view.sendSubviewToBack(backgroundImageView)
         
-        // logo icon
+        // logo image view
         UIImageView().setup {
             $0.clipsToBounds = true
             $0.contentMode = .scaleAspectFit
@@ -88,6 +98,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         .setArrangedSubviews([
             logoIconView,
             
+            // user name text field
             TextField().setup {
                 $0.placeholder = HardcodedStrings.username
                 $0.leftView = buildIcon("person.crop.circle.fill")
@@ -96,6 +107,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
                 userNameTextField = $0
             },
             
+            // password text field
             TextField().setup {
                 $0.placeholder = HardcodedStrings.password
                 $0.leftView = buildIcon("lock.circle.fill")
@@ -105,6 +117,8 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
                 $0.heightAnchor.constraint(equalToConstant: 40).isActive = true
                 passwordTextField = $0
             },
+            
+            // submit button
             UIButton.primaryFull(title: HardcodedStrings.logIn).setup {
                 submitButton = $0
             }
@@ -118,7 +132,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
             backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0)
         ])
         
-        // FormStack constraints
+        // formStack constraints
         NSLayoutConstraint.activate([
             formStackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 153),
             formStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
@@ -126,6 +140,10 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         ])
     }
     
+    /// Builds UIImageView
+    /// - parameters:
+    ///     - icon: Icon have for the imageView
+    /// - returns: UIImageView
     private func buildIcon(_ icon: String) -> UIImageView {
         return UIImageView().setup {
             $0.image = UIImage(systemName: icon)

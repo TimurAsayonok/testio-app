@@ -21,8 +21,8 @@ struct AppCoordinatorFactory {
     }
 }
 
-// MARK: - AppCoordinator
-
+// MARK: AppCoordinator
+// Root Coordinator
 class AppCoordinator: CoordinatorType {
     private let disposeBag = DisposeBag()
     
@@ -68,6 +68,7 @@ class AppCoordinator: CoordinatorType {
             .disposed(by: disposeBag)
     }
     
+    //TODO: better to move it to AlerRoute
     private func handleAppGlobalStateError(_ error: Error) {
         let alert = UIAlertController(
             title: HardcodedStrings.verificationFailedTitle,
@@ -77,7 +78,7 @@ class AppCoordinator: CoordinatorType {
 
         // add an action (button)
         alert.addAction(
-            UIAlertAction(title: "OK", style: .default, handler: nil)
+            UIAlertAction(title: HardcodedStrings.ok, style: .default, handler: nil)
         )
         
         rootViewController.present(alert, animated: true)
@@ -85,9 +86,10 @@ class AppCoordinator: CoordinatorType {
 }
 
 extension AppCoordinator {
+    /// Triggers Screen based on link presentation
+    /// - parameters link: ScreenLink
     func trigger(link: ScreenLink) {
-        guard let fatRoute = FatRoute(route: link.route)
-        else { return }
+        guard let fatRoute = FatRoute(route: link.route) else { return }
         let presentable = fatCoordinatorFactory.createPresentable(fatRoute)
         
         switch link.presentation {

@@ -12,6 +12,8 @@ enum ServerListRoute: RouteType {
     case listLoading
 }
 
+// MARK: ServerListCoordinator
+// Coordinator for ServerListRoute
 class ServerListCoordinator: Coordinator<ServerListRoute> {
     let dependencies: Dependencies
     
@@ -20,6 +22,7 @@ class ServerListCoordinator: Coordinator<ServerListRoute> {
         super.init(route: route)
     }
     
+    /// Generates ViewController based on ServerListRoute
     override func generateViewController(for route: ServerListRoute) -> UIViewController {
         switch route {
         case let .serverList(servers):

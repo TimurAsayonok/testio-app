@@ -11,6 +11,8 @@ enum StartRoute: RouteType {
     case login
 }
 
+// MARK: StartCoordinator
+// Coordinator for StartRoute
 class StartCoordinator: Coordinator<StartRoute> {
     let dependencies: Dependencies
     
@@ -19,6 +21,7 @@ class StartCoordinator: Coordinator<StartRoute> {
         super.init(route: route)
     }
     
+    /// Generates ViewControllers based on StartRoute
     override func generateViewController(for route: StartRoute) -> UIViewController {
         switch route {
         case .login:

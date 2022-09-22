@@ -15,6 +15,7 @@ extension RouteType {
     }
 }
 
+// Route of all routes in the app
 enum FatRoute: RouteType {
     case alert(AlertRoute)
     case start(StartRoute)
@@ -30,6 +31,8 @@ enum FatRoute: RouteType {
     }
 }
 
+// MARK: FatCoordinatorFactory
+// Main coordinator for all routes in the app
 struct FatCoordinatorFactory {
     let dependencies: Dependencies
     
@@ -37,6 +40,7 @@ struct FatCoordinatorFactory {
         self.dependencies = dependencies
     }
     
+    /// Creates Presentable for route
     func createPresentable(_ fatRoute: FatRoute) -> Presentable {
         switch fatRoute {
         case let .alert(route): return AlertCoordinator(route: route)

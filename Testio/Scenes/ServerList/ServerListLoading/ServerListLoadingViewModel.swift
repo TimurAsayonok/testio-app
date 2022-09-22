@@ -31,6 +31,9 @@ final class ServerListLoadingViewModel: ViewModelProtocol {
     }
     
     func bindSubjects() {
+        // do `/servers` api call
+        // if - response is successfully done - redirect to ServersList screen
+        // else - fail and present message
         input.startSubject.asObservable()
             .do(onDispose: { [weak self] in self?.state.loadingFailedSubject.onNext(false) })
             .wrapService(
@@ -45,6 +48,7 @@ final class ServerListLoadingViewModel: ViewModelProtocol {
             })
             .disposed(by: disposeBag)
         
+        // handle `/servers` api call fail event
         output.errorSubject.asObservable()
             .subscribe(onNext: { [weak self] in
                 self?.dependencies.appGlobalState.errorObserver.onNext($0)

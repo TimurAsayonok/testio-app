@@ -13,7 +13,7 @@ import UIKit
 
 // MARK: ServerListViewModel
 /*
- Model for presenting list of servers on a table
+ ViewModel for presenting list of servers on a table
  with observing filter and logout button events
  */
 final class ServerListViewModel: ViewModelProtocol {

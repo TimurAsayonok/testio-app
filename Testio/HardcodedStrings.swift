@@ -9,6 +9,8 @@ internal enum HardcodedStrings {
     static let username = "Username"
     static let password = "Password"
     static let done = "Done"
+    static let cancel = "Cancel"
+    static let ok = "OK"
     static let logIn = "Log In"
     static let verificationFailedTitle = "Verification Failed"
     static let verificationFailedMessage = "Your username or password is incorrect."

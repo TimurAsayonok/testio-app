@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+// MARK: TextField
+// Custom TextField with custom styles
 class TextField: UITextField {
     var cornerRadius: CGFloat = 10
     var horizontalInset: CGFloat = 10

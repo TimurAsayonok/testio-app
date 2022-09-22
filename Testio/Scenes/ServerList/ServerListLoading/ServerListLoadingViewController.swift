@@ -13,7 +13,7 @@ import RxSwift
  ViewController for presenting activity indicator or error message
  while working with `/servers` api call
  */
-class ServerListLoadingViewController: BaseViewController<ServerListLoadingViewModel> {
+final class ServerListLoadingViewController: BaseViewController<ServerListLoadingViewModel> {
     fileprivate let disposeBag = DisposeBag()
     
     var backgroundImageView: UIImageView!
@@ -29,19 +29,23 @@ class ServerListLoadingViewController: BaseViewController<ServerListLoadingViewM
     }
     
     override func bindViewModel() {
-        viewModel.output.loadingDriver
-            .drive(rx.isLoading)
-            .disposed(by: disposeBag)
-        
+        // handle reload button tap event and bind it to viewModel
         reloadButton.rx.tap
             .bind(to: viewModel.input.startObserver)
             .disposed(by: disposeBag)
         
+        // handle loading driver and drive it to rx.isLoading
+        viewModel.output.loadingDriver
+            .drive(rx.isLoading)
+            .disposed(by: disposeBag)
+        
+        // handle loading failing driver and present error message
         viewModel.state.loadingFailedDriver
             .map { !$0 }
             .drive(errorMessageStack.rx.isHidden)
             .disposed(by: disposeBag)
         
+        // start `/servers` api call
         viewModel.input.startObserver.onNext(())
     }
     
@@ -78,6 +82,7 @@ class ServerListLoadingViewController: BaseViewController<ServerListLoadingViewM
             }
         ])
         errorMessageStack.addTo(view)
+        
         // image constraints
         NSLayoutConstraint.activate([
             backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),

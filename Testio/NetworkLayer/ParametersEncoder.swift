@@ -7,11 +7,16 @@
 
 import Foundation
 
+// MARK: ParametersEncoder
+// Encoder for working with urlRequest
 protocol ParametersEncoder {
     func encode(_ urlRequest: URLRequest, with parameters: [String: Any]?) throws -> URLRequest
 }
 
+// MARK: UrlParametersEncoder
 struct UrlParametersEncoder: ParametersEncoder {
+    /// Encodes parameters in the urlRequest
+    /// `Note: for next integrations we need to add addition code!`
     func encode(_ urlRequest: URLRequest, with parameters: [String: Any]?) throws -> URLRequest {
         var urlRequest = urlRequest
         
@@ -26,7 +31,9 @@ struct UrlParametersEncoder: ParametersEncoder {
     }
 }
 
+// MARK: JsonParametersEncoder
 struct JsonParametersEncoder: ParametersEncoder {
+    /// Encodes parameters to the urlRequest httpBody
     func encode(_ urlRequest: URLRequest, with parameters: [String: Any]?) throws -> URLRequest {
         var urlRequest = urlRequest
         

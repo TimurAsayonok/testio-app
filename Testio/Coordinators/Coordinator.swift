@@ -12,6 +12,7 @@ protocol CoordinatorType: Presentable {
     
     var rootViewController: RootViewController! { get }
     
+    /// Trigger transition with options and completion
     func trigger(
         transition: Transition<RootViewController>, options: TransitionOptions, completion: TransitionCompletion?
     )
@@ -38,6 +39,10 @@ class Coordinator<Route>: CoordinatorType {
         rootViewController = generateViewController(for: route)
     }
     
+    /// Generates View Controller
+    /// - parameters:
+    ///     - route: Route
+    /// - returns: UIViewController based on route
     func generateViewController(for route: Route) -> UIViewController {
         fatalError("Must override in subClass \(type(of: self))")
     }

@@ -7,6 +7,8 @@
 
 import Dip
 
+// MARK: FactoryModule
+// Registering ApiService
 extension DipContainerBuilder {
     enum ServiceModule {
         static func build(container: DependencyContainer) {

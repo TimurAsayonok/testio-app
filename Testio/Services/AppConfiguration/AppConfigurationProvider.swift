@@ -7,12 +7,13 @@
 
 import Foundation
 
-// Protocol with all needed parameters for Application
 protocol AppConfigurationProviderProtocol {
     var keychainService: String { get }
     var apiBasedUrl: URL { get }
 }
 
+// MARK: AppConfigurationProvider
+// Contains all needed parameters for the Application
 class AppConfigurationProvider: AppConfigurationProviderProtocol {
     // service name for keychain
     var keychainService: String {

@@ -19,6 +19,7 @@ protocol TransitionType {
     )
 }
 
+// Helper for performing ViewControllers
 struct Transition<RootViewController: UIViewController>: TransitionType {
     typealias PerformClosure = (
         _ rootViewController: RootViewController,

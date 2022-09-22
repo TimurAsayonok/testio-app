@@ -75,7 +75,6 @@
 		F7DBB83128DA8922002CA5CE /* AppearanceGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB83028DA8922002CA5CE /* AppearanceGlobal.swift */; };
 		F7DBB83328DA8BDD002CA5CE /* ServerListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB83228DA8BDD002CA5CE /* ServerListRequest.swift */; };
 		F7DBB83528DB0FD7002CA5CE /* ScreenLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB83428DB0FD7002CA5CE /* ScreenLink.swift */; };
-		F7DBB83728DB18A8002CA5CE /* Transition+UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB83628DB18A8002CA5CE /* Transition+UINavigationController.swift */; };
 		F7DBB83D28DB351D002CA5CE /* ServerListLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB83C28DB351D002CA5CE /* ServerListLoadingViewModel.swift */; };
 		F7DBB83F28DB35C5002CA5CE /* ServerListLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB83E28DB35C5002CA5CE /* ServerListLoadingViewController.swift */; };
 		F7DBB84128DB56C7002CA5CE /* HeadersRequestDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB84028DB56C7002CA5CE /* HeadersRequestDecorator.swift */; };
@@ -85,7 +84,6 @@
 		F7DBB85228DB8D4D002CA5CE /* AppDependencyMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB85128DB8D4D002CA5CE /* AppDependencyMock.swift */; };
 		F7DBB85528DB901D002CA5CE /* UserDefaultMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB85428DB901D002CA5CE /* UserDefaultMock.swift */; };
 		F7DBB85928DB9359002CA5CE /* KeychainWrapperProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB85828DB9359002CA5CE /* KeychainWrapperProtocolMock.swift */; };
-		F7DBB85B28DB95DE002CA5CE /* AutoMockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB85A28DB95DE002CA5CE /* AutoMockable.swift */; };
 		F7DBB85D28DB9950002CA5CE /* ApiServiceProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB85C28DB9950002CA5CE /* ApiServiceProtocolMock.swift */; };
 		F7DBB85F28DB99FE002CA5CE /* AppConfigurationProviderProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB85E28DB99FE002CA5CE /* AppConfigurationProviderProtocolMock.swift */; };
 		F7DBB86128DB9B4D002CA5CE /* HeadersRequestDecoratorProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB86028DB9B4D002CA5CE /* HeadersRequestDecoratorProtocolMock.swift */; };
@@ -203,7 +201,6 @@
 		F7DBB83028DA8922002CA5CE /* AppearanceGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceGlobal.swift; sourceTree = "<group>"; };
 		F7DBB83228DA8BDD002CA5CE /* ServerListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListRequest.swift; sourceTree = "<group>"; };
 		F7DBB83428DB0FD7002CA5CE /* ScreenLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenLink.swift; sourceTree = "<group>"; };
-		F7DBB83628DB18A8002CA5CE /* Transition+UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transition+UINavigationController.swift"; sourceTree = "<group>"; };
 		F7DBB83C28DB351D002CA5CE /* ServerListLoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListLoadingViewModel.swift; sourceTree = "<group>"; };
 		F7DBB83E28DB35C5002CA5CE /* ServerListLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListLoadingViewController.swift; sourceTree = "<group>"; };
 		F7DBB84028DB56C7002CA5CE /* HeadersRequestDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadersRequestDecorator.swift; sourceTree = "<group>"; };
@@ -212,7 +209,6 @@
 		F7DBB85128DB8D4D002CA5CE /* AppDependencyMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyMock.swift; sourceTree = "<group>"; };
 		F7DBB85428DB901D002CA5CE /* UserDefaultMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultMock.swift; sourceTree = "<group>"; };
 		F7DBB85828DB9359002CA5CE /* KeychainWrapperProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapperProtocolMock.swift; sourceTree = "<group>"; };
-		F7DBB85A28DB95DE002CA5CE /* AutoMockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoMockable.swift; sourceTree = "<group>"; };
 		F7DBB85C28DB9950002CA5CE /* ApiServiceProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceProtocolMock.swift; sourceTree = "<group>"; };
 		F7DBB85E28DB99FE002CA5CE /* AppConfigurationProviderProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurationProviderProtocolMock.swift; sourceTree = "<group>"; };
 		F7DBB86028DB9B4D002CA5CE /* HeadersRequestDecoratorProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadersRequestDecoratorProtocolMock.swift; sourceTree = "<group>"; };
@@ -387,7 +383,6 @@
 				F7C727FE28D6704700EF2F59 /* Transition.swift */,
 				F7C7280128D6745000EF2F59 /* TransitionOptions.swift */,
 				F7C7281328D7AEC700EF2F59 /* Transition+UIViewController.swift */,
-				F7DBB83628DB18A8002CA5CE /* Transition+UINavigationController.swift */,
 			);
 			path = Transition;
 			sourceTree = "<group>";
@@ -516,7 +511,6 @@
 				F7DBB7FD28D91B77002CA5CE /* ViewModelProtocol.swift */,
 				F7DBB7FF28D91D4F002CA5CE /* BaseViewController.swift */,
 				F7DBB80128D91D8B002CA5CE /* ViewModelBindableProtocol.swift */,
-				F7DBB85A28DB95DE002CA5CE /* AutoMockable.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -990,11 +984,9 @@
 				F7DBB7E028D8C14E002CA5CE /* ApiService.swift in Sources */,
 				F7C7281028D7817700EF2F59 /* AppDependency.swift in Sources */,
 				F7C727F428D49D8A00EF2F59 /* DipContainerBuilder.swift in Sources */,
-				F7DBB85B28DB95DE002CA5CE /* AutoMockable.swift in Sources */,
 				F7DBB83F28DB35C5002CA5CE /* ServerListLoadingViewController.swift in Sources */,
 				F7DBB7CC28D86A8F002CA5CE /* HardcodedStrings.swift in Sources */,
 				F7DBB81428DA355D002CA5CE /* Codable+Extention.swift in Sources */,
-				F7DBB83728DB18A8002CA5CE /* Transition+UINavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

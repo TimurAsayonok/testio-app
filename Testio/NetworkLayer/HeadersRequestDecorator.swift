@@ -12,6 +12,8 @@ protocol HeadersRequestDecoratorProtocol {
     func decorate(urlRequest: inout URLRequest)
 }
 
+// MARK: HeadersRequestDecorator
+// Contains methods for decorating HTTP header
 class HeadersRequestDecorator: HeadersRequestDecoratorProtocol {
     let keychainWrapper: KeychainWrapperProtocol
     
@@ -23,6 +25,7 @@ class HeadersRequestDecorator: HeadersRequestDecoratorProtocol {
         [HeaderRequestKey.xAuthorization.rawValue: keychainWrapper.getBearerToken()]
     }
     
+    /// Adds headers for the `urlRequest`
     func decorate(urlRequest: inout URLRequest) {
         requestHeaders.forEach { key, value in
             urlRequest.setValue(value, forHTTPHeaderField: key)

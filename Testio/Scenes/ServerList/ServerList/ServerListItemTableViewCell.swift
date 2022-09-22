@@ -7,6 +7,10 @@
 
 import UIKit
 
+// MARK: ServerListItemTableViewCell
+/*
+ TableViewCell for presenting server name and server distanse
+ */
 class ServerListItemTableViewCell: UITableViewCell {
     static let cellIdentifier = "serverListItemCell"
     

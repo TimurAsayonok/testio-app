@@ -13,6 +13,8 @@ protocol KeychainWrapperProtocol {
     func deleteBearerToken()
 }
 
+// MARK: KeychainWrapper
+// Works with Keychain in the Application
 class KeychainWrapper: KeychainWrapperProtocol {
     let keychain: Keychain
     
@@ -21,16 +23,20 @@ class KeychainWrapper: KeychainWrapperProtocol {
             .accessibility(.whenUnlocked)
     }
     
+    /// Sets BearerToken
+    /// - parameters: token: String?
     func setBearerToken(_ token: String?) {
         if let token = token {
             try? keychain.set("Bearer \(token)", key: Key.bearerToken.rawValue)
         }
     }
     
+    /// Gets BearerToken
     func getBearerToken() -> String? {
         try? keychain.get(Key.bearerToken.rawValue)
     }
     
+    /// Deletes BearerToken
     func deleteBearerToken() {
         try? keychain.remove(Key.bearerToken.rawValue)
     }

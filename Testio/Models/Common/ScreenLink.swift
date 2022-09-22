@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: ScreenLink
+// Contains route and presentation 
 struct ScreenLink {
     var route: RouteType
     var presentation: ScreenLink.Presentation

@@ -9,6 +9,8 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+// MARK: AppGlobalState
+// Contains global Subjects what can be observed from any places in the app
 class AppGlobalState {
     // PublishSubject for handling errors
     private var errorSubject: PublishSubject<Error> = PublishSubject()

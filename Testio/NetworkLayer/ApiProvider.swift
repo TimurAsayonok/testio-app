@@ -33,6 +33,8 @@ extension ApiProviderProtocol {
     }
 }
 
+// MARK: ApiProvider
+// Provides methods for working with API calls
 class ApiProvider: ApiProviderProtocol {
     var basedUrl: URL {
         appConfiguration.apiBasedUrl
@@ -52,6 +54,7 @@ class ApiProvider: ApiProviderProtocol {
         self.headersRequestDecorator = headersRequestDecorator
     }
     
+    /// Sends ApiRequest and Returns `Observable<T.Response>`
     func send<T: RequestProtocol>(apiRequest: T, method: HTTPMethod) -> Observable<T.Response> {
         var request: URLRequest
         do {

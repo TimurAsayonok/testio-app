@@ -8,6 +8,8 @@
 import Dip
 import Foundation
 
+// MARK: FactoryModule
+// Registering HeadersRequestDecorator, ApiProvider and URLSessionConfiguration
 extension DipContainerBuilder {
     enum NetworkModule {
         static func build(container: DependencyContainer) {

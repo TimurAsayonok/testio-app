@@ -8,6 +8,8 @@
 import Dip
 import Foundation
 
+// MARK: DipContainerBuilder
+// DependencyContainer builder
 class DipContainerBuilder {
     static func build() -> DependencyContainer {
         let container = DependencyContainer()

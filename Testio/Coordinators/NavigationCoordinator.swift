@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+// MARK: NavigationCoordinator
+// Coordinator for UINavigationController
 class NavigationCoordinator: CoordinatorType {
     var rootViewController: UINavigationController!
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol Dependencies: AutoMockable {
+protocol Dependencies {
     var userDefaults: UserDefaults { get }
     var keychainWrapper: KeychainWrapperProtocol { get }
     var apiService: ApiServiceProtocol { get }
@@ -16,6 +16,8 @@ protocol Dependencies: AutoMockable {
     var headersRequestDecorator: HeadersRequestDecoratorProtocol { get }
 }
 
+// MARK: AppDependency
+// Dependencies what can be injected to the screens
 struct AppDependency: Dependencies {
     let userDefaults: UserDefaults
     let keychainWrapper: KeychainWrapperProtocol

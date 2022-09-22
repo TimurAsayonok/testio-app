@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        // Global Appearances
         AppearanceGlobal.setupNavigationBar()
         
         // Keyboard Setting for working with Forms
@@ -34,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         keyBoardManagerShared.toolbarTintColor = UIColor.black
         keyBoardManagerShared.toolbarDoneBarButtonItemText = HardcodedStrings.done
         
-        // Netfox
+        // Netfox - for observing api calls
         #if DEBUG
             NFX.sharedInstance().start()
         #endif
@@ -43,6 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         dipContainer = DipContainerBuilder.build()
         keychainWrapper = try? dipContainer.resolve()
         
+        // AppCoordinator
         window = UIWindow()
         let appCoordinatorFactory: AppCoordinatorFactory! = try? dipContainer.resolve()
         coordinator = appCoordinatorFactory.create()

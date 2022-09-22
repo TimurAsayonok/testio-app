@@ -47,10 +47,6 @@ final class ServerListViewController: BaseViewController<ServerListViewModel> {
             }
         )
         
-        viewModel.input.dataModelsDriver
-            .drive(tableView.rx.items(dataSource: dataSource))
-            .disposed(by: disposeBag)
-        
         tableView.rx.setDelegate(self)
             .disposed(by: disposeBag)
         
@@ -68,6 +64,10 @@ final class ServerListViewController: BaseViewController<ServerListViewModel> {
             .when(.recognized)
             .map { _ in }
             .bind(to: viewModel.input.logoutObserver)
+            .disposed(by: disposeBag)
+        
+        viewModel.input.dataModelsDriver
+            .drive(tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
     }
     
@@ -100,6 +100,12 @@ final class ServerListViewController: BaseViewController<ServerListViewModel> {
         tableView.addAndAnchorTo(view)
     }
     
+    /// Creates Custom Button for Navigation bar
+    /// - parameters:
+    ///     - title: title of the button
+    ///     - iconName: icon next to button
+    ///     - reversed: position icon and title
+    /// - returns: custom button inside UIStackView
     private func setupNavigationButton(title: String, iconName: String, reversed: Bool = false) -> UIStackView {
         let label = UILabel()
         label.text = title

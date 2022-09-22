@@ -13,6 +13,8 @@ protocol ApiServiceProtocol {
     func getServerList() -> Observable<[ServerModel]>
 }
 
+// MARK: ApiService
+// Contains api service methods
 class ApiService: ApiServiceProtocol {
     let apiProvider: ApiProviderProtocol
     let appConfiguration: AppConfigurationProviderProtocol
@@ -28,6 +30,9 @@ class ApiService: ApiServiceProtocol {
         self.keychain = keychain
     }
     
+    /// Calls token from the server
+    /// - parameters: credentials: LoginCredentialsModel
+    /// - returns: Observable<Void>
     func authLogin(_ credentials: LoginCredentialsModel) -> Observable<Void> {
         let request = AuthorizationRequest(credentials: credentials)
         return apiProvider.post(apiRequest: request)
@@ -36,6 +41,8 @@ class ApiService: ApiServiceProtocol {
             .map { _ in }
     }
     
+    /// Calls list of servers
+    /// - returns: Observable<[ServerModel]>
     func getServerList() -> Observable<[ServerModel]> {
         let request = ServerListRequest()
         return apiProvider.get(apiRequest: request)

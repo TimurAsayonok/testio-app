@@ -7,6 +7,10 @@
 
 import UIKit
 
+// MARK: ServerListEmptyTableViewCell
+/*
+ TableViewCell for presenting list of servers
+ */
 class ServerListEmptyTableViewCell: UITableViewCell {
     static let cellIdentifier = "serverListEmptyCell"
     

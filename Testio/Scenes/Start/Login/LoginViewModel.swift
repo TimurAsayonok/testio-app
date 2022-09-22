@@ -9,6 +9,10 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+// MARK: LoginViewModel
+/*
+ ViewModel for presenting login form
+ */
 final class LoginViewModel: ViewModelProtocol {
     fileprivate var disposeBag = DisposeBag()
     
@@ -26,6 +30,9 @@ final class LoginViewModel: ViewModelProtocol {
     }
     
     func bindSubjects() {
+        // handle submit subject and call `/token` api call
+        // if - api call is finished successfully - redirect to server list loading page
+        // else - throw an error
         input.submitFormSubject
             .withLatestFrom(state.usernameSubject.asObservable())
             .withLatestFrom(state.passwordSubject.asObservable()) {
@@ -42,12 +49,14 @@ final class LoginViewModel: ViewModelProtocol {
             })
             .disposed(by: disposeBag)
         
+        // handle error
         output.errorSubject.asObservable()
             .bind(to: dependencies.appGlobalState.errorObserver)
             .disposed(by: disposeBag)
     }
 }
 
+// MARK: State
 extension LoginViewModel {
     struct State {
         let usernameSubject = BehaviorSubject<String?>(value: "")
@@ -62,6 +71,7 @@ extension LoginViewModel {
     }
 }
 
+// MARK: Input
 extension LoginViewModel {
     struct Input {
         fileprivate var submitFormSubject = PublishSubject<Void>()
@@ -70,6 +80,7 @@ extension LoginViewModel {
     }
 }
 
+// MARK: Output
 extension LoginViewModel {
     struct Output {
         fileprivate var errorSubject: PublishSubject<Error> = PublishSubject()
