@@ -38,4 +38,3 @@ class ServerListCoordinator: Coordinator<ServerListRoute> {
         }
     }
 }
-

@@ -32,3 +32,7 @@ extension UIViewController {
         completion?()
     }
 }
+
+extension UIViewController: Presentable {
+    var viewController: UIViewController! { self }
+}

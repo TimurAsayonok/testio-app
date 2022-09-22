@@ -14,8 +14,6 @@ import RxGesture
 final class ServerListViewController: BaseViewController<ServerListViewModel> {
     fileprivate let disposeBag = DisposeBag()
     
-    var navigationRightItemView: UIButton!
-    var navigationLeftItemView: UIButton!
     var tableView: UITableView!
     var dataSource: RxTableViewSectionedReloadDataSource<ServerListViewModel.SectionDataModel>!
     

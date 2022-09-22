@@ -73,23 +73,18 @@ extension ServerListViewModel {
     struct Input {
         fileprivate var startSubject = PublishSubject<Void>()
         var startObserver: AnyObserver<Void> { startSubject.asObserver() }
+        var startDriver: Driver<Void> { startSubject.asDriver(onErrorDriveWith: .just(())) }
         
         fileprivate var dataModelsSubject: BehaviorSubject<[SectionDataModel]> = BehaviorSubject(value: [])
+        var dataModelsObserver: AnyObserver<[SectionDataModel]> { dataModelsSubject.asObserver() }
         var dataModelsDriver: Driver<[SectionDataModel]> {
             dataModelsSubject.asDriver(onErrorJustReturn: [])
         }
         
         fileprivate var logoutSubject = PublishSubject<Void>()
         var logoutObserver: AnyObserver<Void> { logoutSubject.asObserver() }
+        var logoutDriver: Driver<Void> { logoutSubject.asDriver(onErrorDriveWith: .just(())) }
     }
     
-    struct Output {
-        fileprivate var loadingSubject = BehaviorSubject<Bool>(value: false)
-        var loadingDriver: Driver<Bool> {
-            loadingSubject.distinctUntilChanged().asDriver(onErrorJustReturn: false)
-        }
-
-        fileprivate var errorSubject: PublishSubject<Error> = PublishSubject()
-        var errorObservable: Observable<Error> { errorSubject.asObservable() }
-    }
+    struct Output {}
 }

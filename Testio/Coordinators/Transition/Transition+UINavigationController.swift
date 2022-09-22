@@ -10,7 +10,7 @@ import UIKit
 
 extension Transition where RootViewController: UINavigationController {
     static func push(_ presentable: Presentable) -> Transition {
-        Transition { rootViewController, options, completion in
+        Transition { rootViewController, _, _ in
             rootViewController.pushViewController(presentable.viewController, animated: true)
         }
     }

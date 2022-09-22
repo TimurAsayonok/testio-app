@@ -17,8 +17,3 @@ extension Presentable {
         window.makeKeyAndVisible()
     }
 }
-
-// TODO: move to UIViewController+Extentions
-extension UIViewController: Presentable {
-    var viewController: UIViewController! { self }
-}

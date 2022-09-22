@@ -65,9 +65,7 @@ class LoginViewControllerTests: XCTestCase {
         
         XCTAssertEqual(uiActions, [.valueChanged, .valueChanged, .touchUpInside])
     }
-    
-    
-    // TODO: Check how to test becomeFirstResponder
+
     func testMustObserveKeyboard() {
         sut.userNameTextField.becomeFirstResponder()
         XCTAssertTrue(sut.userNameTextField.isFirstResponder)

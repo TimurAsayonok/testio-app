@@ -540,8 +540,8 @@
 		F7DBB83928DB333F002CA5CE /* ServerListLoading */ = {
 			isa = PBXGroup;
 			children = (
-				F7DBB83C28DB351D002CA5CE /* ServerListLoadingViewModel.swift */,
 				F7DBB83E28DB35C5002CA5CE /* ServerListLoadingViewController.swift */,
+				F7DBB83C28DB351D002CA5CE /* ServerListLoadingViewModel.swift */,
 			);
 			path = ServerListLoading;
 			sourceTree = "<group>";
