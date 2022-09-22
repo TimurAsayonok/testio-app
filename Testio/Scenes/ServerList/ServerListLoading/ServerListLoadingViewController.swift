@@ -41,6 +41,7 @@ class ServerListLoadingViewController: BaseViewController<ServerListLoadingViewM
     }
     
     override func setupUI() {
+        super.setupUI()
         // background image
         UIImageView().setup {
             $0.contentMode = .scaleToFill

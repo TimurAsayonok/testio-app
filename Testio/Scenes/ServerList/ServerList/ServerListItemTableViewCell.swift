@@ -10,14 +10,14 @@ import UIKit
 class ServerListItemTableViewCell: UITableViewCell {
     static let cellIdentifier = "serverListItemCell"
     
-    private lazy var serverLabel: UILabel = {
+    lazy var serverLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 17, weight: .regular)
         label.textColor = .black
         return label
     }()
     
-    private lazy var distanceLabel: UILabel = {
+    lazy var distanceLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 17, weight: .regular)
         label.textColor = .black

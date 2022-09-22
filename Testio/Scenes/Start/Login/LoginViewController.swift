@@ -49,6 +49,8 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
     }
     
     override func setupUI() {
+        super.setupUI()
+        
         let logoIconView = UIView()
         
         // background image

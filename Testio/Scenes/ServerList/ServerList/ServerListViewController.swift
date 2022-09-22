@@ -67,6 +67,7 @@ final class ServerListViewController: BaseViewController<ServerListViewModel> {
     }
     
     override func setupUI() {
+        super.setupUI()
         navigationItem.title = "Testio."
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             customView: setupNavigationButton(title: HardcodedStrings.filter, iconName: "arrow.up.arrow.down")

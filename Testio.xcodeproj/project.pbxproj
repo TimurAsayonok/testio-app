@@ -96,6 +96,12 @@
 		F7DBB89E28DBDD6C002CA5CE /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = F7DBB89D28DBDD6C002CA5CE /* RxRelay */; };
 		F7DBB8A028DBDD6C002CA5CE /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F7DBB89F28DBDD6C002CA5CE /* RxSwift */; };
 		F7DBB8A228DBDD6C002CA5CE /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = F7DBB8A128DBDD6C002CA5CE /* RxTest */; };
+		F7DBB8A528DBEEDF002CA5CE /* ServerListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8A428DBEEDF002CA5CE /* ServerListViewControllerTests.swift */; };
+		F7DBB8A828DBEF8D002CA5CE /* ServerListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8A728DBEF8D002CA5CE /* ServerListViewModelTests.swift */; };
+		F7DBB8AA28DBEFA8002CA5CE /* ServerListLoadingControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8A928DBEFA8002CA5CE /* ServerListLoadingControllerTests.swift */; };
+		F7DBB8AC28DBEFB4002CA5CE /* ServerListLoadingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8AB28DBEFB4002CA5CE /* ServerListLoadingViewModelTests.swift */; };
+		F7DBB8AE28DBEFC8002CA5CE /* ServerListEmptyTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8AD28DBEFC8002CA5CE /* ServerListEmptyTableViewCellTests.swift */; };
+		F7DBB8B028DBEFFD002CA5CE /* ServerListItemTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8AF28DBEFFD002CA5CE /* ServerListItemTableViewCellTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -197,6 +203,12 @@
 		F7DBB86028DB9B4D002CA5CE /* HeadersRequestDecoratorProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadersRequestDecoratorProtocolMock.swift; sourceTree = "<group>"; };
 		F7DBB86528DBA53F002CA5CE /* UIView+TestSuport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TestSuport.swift"; sourceTree = "<group>"; };
 		F7DBB86728DBCF37002CA5CE /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		F7DBB8A428DBEEDF002CA5CE /* ServerListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListViewControllerTests.swift; sourceTree = "<group>"; };
+		F7DBB8A728DBEF8D002CA5CE /* ServerListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListViewModelTests.swift; sourceTree = "<group>"; };
+		F7DBB8A928DBEFA8002CA5CE /* ServerListLoadingControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListLoadingControllerTests.swift; sourceTree = "<group>"; };
+		F7DBB8AB28DBEFB4002CA5CE /* ServerListLoadingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListLoadingViewModelTests.swift; sourceTree = "<group>"; };
+		F7DBB8AD28DBEFC8002CA5CE /* ServerListEmptyTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListEmptyTableViewCellTests.swift; sourceTree = "<group>"; };
+		F7DBB8AF28DBEFFD002CA5CE /* ServerListItemTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListItemTableViewCellTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -563,6 +575,8 @@
 		F7DBB84B28DB8B00002CA5CE /* ServerList */ = {
 			isa = PBXGroup;
 			children = (
+				F7DBB8A628DBEF6B002CA5CE /* ServerList */,
+				F7DBB8A328DBEEBD002CA5CE /* ServerListLoading */,
 			);
 			path = ServerList;
 			sourceTree = "<group>";
@@ -585,6 +599,26 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F7DBB8A328DBEEBD002CA5CE /* ServerListLoading */ = {
+			isa = PBXGroup;
+			children = (
+				F7DBB8A928DBEFA8002CA5CE /* ServerListLoadingControllerTests.swift */,
+				F7DBB8AB28DBEFB4002CA5CE /* ServerListLoadingViewModelTests.swift */,
+			);
+			path = ServerListLoading;
+			sourceTree = "<group>";
+		};
+		F7DBB8A628DBEF6B002CA5CE /* ServerList */ = {
+			isa = PBXGroup;
+			children = (
+				F7DBB8A428DBEEDF002CA5CE /* ServerListViewControllerTests.swift */,
+				F7DBB8A728DBEF8D002CA5CE /* ServerListViewModelTests.swift */,
+				F7DBB8AD28DBEFC8002CA5CE /* ServerListEmptyTableViewCellTests.swift */,
+				F7DBB8AF28DBEFFD002CA5CE /* ServerListItemTableViewCellTests.swift */,
+			);
+			path = ServerList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -835,15 +869,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7DBB8A528DBEEDF002CA5CE /* ServerListViewControllerTests.swift in Sources */,
 				F7DBB86828DBCF37002CA5CE /* LoginViewModelTests.swift in Sources */,
 				F7DBB86128DB9B4D002CA5CE /* HeadersRequestDecoratorProtocolMock.swift in Sources */,
 				F7DBB85228DB8D4D002CA5CE /* AppDependencyMock.swift in Sources */,
 				F7DBB85528DB901D002CA5CE /* UserDefaultMock.swift in Sources */,
+				F7DBB8AE28DBEFC8002CA5CE /* ServerListEmptyTableViewCellTests.swift in Sources */,
 				F7DBB86628DBA53F002CA5CE /* UIView+TestSuport.swift in Sources */,
 				F7DBB85D28DB9950002CA5CE /* ApiServiceProtocolMock.swift in Sources */,
+				F7DBB8A828DBEF8D002CA5CE /* ServerListViewModelTests.swift in Sources */,
+				F7DBB8B028DBEFFD002CA5CE /* ServerListItemTableViewCellTests.swift in Sources */,
+				F7DBB8AA28DBEFA8002CA5CE /* ServerListLoadingControllerTests.swift in Sources */,
 				F7DBB85928DB9359002CA5CE /* KeychainWrapperProtocolMock.swift in Sources */,
 				F7DBB84D28DB8B2B002CA5CE /* LoginViewControllerTests.swift in Sources */,
 				F7DBB84728DB8930002CA5CE /* AppDelegateMock.swift in Sources */,
+				F7DBB8AC28DBEFB4002CA5CE /* ServerListLoadingViewModelTests.swift in Sources */,
 				F7DBB85F28DB99FE002CA5CE /* AppConfigurationProviderProtocolMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

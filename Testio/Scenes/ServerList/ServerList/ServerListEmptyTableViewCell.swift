@@ -10,7 +10,7 @@ import UIKit
 class ServerListEmptyTableViewCell: UITableViewCell {
     static let cellIdentifier = "serverListEmptyCell"
     
-    private lazy var serverLabel: UILabel = {
+    lazy var serverLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12, weight: .regular)
         label.textColor = .systemGray
@@ -18,7 +18,7 @@ class ServerListEmptyTableViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var distanceLabel: UILabel = {
+    lazy var distanceLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12, weight: .regular)
         label.textColor = .systemGray
@@ -37,7 +37,7 @@ class ServerListEmptyTableViewCell: UITableViewCell {
         setupUI()
     }
     
-    func setupUI() {
+    private func setupUI() {
         contentView.backgroundColor = UIColor.systemGray6
         contentView.removeSubviews()
 
