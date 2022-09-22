@@ -8,6 +8,7 @@
 @testable import Testio
 import Foundation
 import XCTest
+import RxTest
 
 class ApiServiceTests: XCTestCase {
     var sut: ApiService!
@@ -31,23 +32,41 @@ class ApiServiceTests: XCTestCase {
         )
     }
   
-    func testAuthLogin() {
-//        urlSession.data = try! AuthorizationRequest.Response(token: "Token").toData()
+    func testAuthLoginSuccess() {
+        urlSession.data = try? AuthorizationRequest.Response.mock.toData(jsonEncoder: JSONEncoder())
         urlSession.response = HTTPURLResponse.mock(200)
-        let request = AuthorizationRequest(credentials: LoginCredentialsModel(username: "", password: ""))
-        let result = sut.apiProvider.send(apiRequest: request, method: .post)
-        XCTAssertEqual(try result.toBlocking().single(), AuthorizationRequest.Response.init(token: ""))
+        let request = AuthorizationRequest(credentials: LoginCredentialsModel.mock)
+        let result = sut.apiProvider.post(apiRequest: request)
+        XCTAssertEqual(try result.toBlocking().single(), AuthorizationRequest.Response.mock)
     }
-//    func authLogin(_ credentials: LoginCredentialsModel) -> Observable<Void> {
-//        let request = AuthorizationRequest(credentials: credentials)
-//        return apiProvider.post(apiRequest: request)
-//            // do: save token in keychain
-//            .do { [weak self] in self?.keychain.setBearerToken($0.token) }
-//            .map { _ in }
-//    }
-//
-//    func getServerList() -> Observable<[ServerModel]> {
-//        let request = ServerListRequest()
-//        return apiProvider.get(apiRequest: request)
-//    }
+
+    func testAuthLoginError() {
+        urlSession.data = try? AuthorizationRequest.Error.mock.toData(jsonEncoder: JSONEncoder())
+        urlSession.response = HTTPURLResponse.mock(401)
+        let request = AuthorizationRequest(credentials: LoginCredentialsModel.mock)
+        let result = sut.apiProvider.post(apiRequest: request)
+        
+        XCTAssertThrowsError(try result.toBlocking().single()) { error in
+            XCTAssertEqual(error as? ErrorResponse, ErrorResponse.mock)
+        }
+    }
+    
+    func testGetServerListSuccess() {
+        urlSession.data = try? ServerListRequest.Response([.mock]).toData(jsonEncoder: JSONEncoder())
+        urlSession.response = HTTPURLResponse.mock(200)
+        let request = ServerListRequest()
+        let result = sut.apiProvider.get(apiRequest: request)
+        XCTAssertEqual(try result.toBlocking().single(), ServerListRequest.Response([.mock]))
+    }
+    
+    func testGetServerListError() {
+        urlSession.data = try? ServerListRequest.Error.mock.toData(jsonEncoder: JSONEncoder())
+        urlSession.response = HTTPURLResponse.mock(401)
+        let request = ServerListRequest()
+        let result = sut.apiProvider.post(apiRequest: request)
+        
+        XCTAssertThrowsError(try result.toBlocking().single()) { error in
+            XCTAssertEqual(error as? ErrorResponse, ErrorResponse.mock)
+        }
+    }
 }

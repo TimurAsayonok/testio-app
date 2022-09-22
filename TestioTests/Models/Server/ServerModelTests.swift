@@ -18,9 +18,15 @@ class ServerModelTests: XCTestCase {
     }
 
     func testMustInitWithAllValues() {
-        let sut = ServerModel(name: "Server", distance: 10)
+        let sut = ServerModel.mock
         XCTAssertNotNil(sut)
         XCTAssertNotNil(sut.name)
         XCTAssertNotNil(sut.distance)
+    }
+}
+
+extension ServerModel {
+    static var mock: Self {
+        .init(name: "name", distance: 0)
     }
 }

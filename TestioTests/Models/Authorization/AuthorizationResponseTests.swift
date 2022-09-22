@@ -16,3 +16,9 @@ class AuthorizationResponseTests: XCTestCase {
         XCTAssertNotNil(sut.token)
     }
 }
+
+extension AuthorizationResponse {
+    static var mock: Self {
+        .init(token: "Token")
+    }
+}

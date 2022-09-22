@@ -11,9 +11,15 @@ import XCTest
 
 class ErrorResponseTests: XCTestCase {
     func testMustInitWithAllValues() {
-        let sut = ErrorResponse(message: "Error")
+        let sut = ErrorResponse.mock
         XCTAssertNotNil(sut)
         XCTAssertNotNil(sut.message)
+    }
+}
+
+extension ErrorResponse {
+    static var mock: Self {
+        .init(message: "error")
     }
 }
 
