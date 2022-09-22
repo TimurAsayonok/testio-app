@@ -9,6 +9,11 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+// MARK: ServerListLoadingViewModel
+/*
+ Model for calling `/serves` api call
+ and navigate to list of servers for presenting activity indicator or error message
+ */
 final class ServerListLoadingViewModel: ViewModelProtocol {
     fileprivate let disposeBag = DisposeBag()
     
@@ -49,19 +54,26 @@ final class ServerListLoadingViewModel: ViewModelProtocol {
     }
 }
 
+// MARK: State
 extension ServerListLoadingViewModel {
     struct State {
         fileprivate let loadingFailedSubject = BehaviorSubject<Bool>(value: false)
         var loadingFaildeObserver: AnyObserver<Bool> { loadingFailedSubject.asObserver() }
         var loadingFailedDriver: Driver<Bool> { loadingFailedSubject.asDriver(onErrorJustReturn: false) }
     }
-    
+}
+
+// MARK: Input
+extension ServerListLoadingViewModel {
     struct Input {
         fileprivate var startSubject = PublishSubject<Void>()
         var startObserver: AnyObserver<Void> { startSubject.asObserver() }
         var startDriver: Driver<Void> { startSubject.asDriver(onErrorJustReturn: ()) }
     }
-    
+}
+
+// MARK: Output
+extension ServerListLoadingViewModel {
     struct Output {
         fileprivate var loadingSubject = BehaviorSubject<Bool>(value: false)
         var loadingObserver: AnyObserver<Bool> { loadingSubject.asObserver() }

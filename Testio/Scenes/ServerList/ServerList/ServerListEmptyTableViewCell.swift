@@ -23,6 +23,7 @@ class ServerListEmptyTableViewCell: UITableViewCell {
         label.font = .systemFont(ofSize: 12, weight: .regular)
         label.textColor = .systemGray
         label.text = HardcodedStrings.distance.uppercased()
+        label.textAlignment = .right
         return label
     }()
     
@@ -45,7 +46,7 @@ class ServerListEmptyTableViewCell: UITableViewCell {
         UIStackView().setup {
             $0.axis = .horizontal
             $0.alignment = .fill
-            $0.distribution = .equalSpacing
+            $0.distribution = .fill
             stackView = $0
         }
         .setArrangedSubviews([

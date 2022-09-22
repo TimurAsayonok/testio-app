@@ -1,5 +1,5 @@
 //
-//  ServiceListViewController.swift
+//  ServerListViewController.swift
 //  Testio
 //
 //  Created by Timur Asayonok on 20/09/2022.
@@ -11,6 +11,11 @@ import RxCocoa
 import RxDataSources
 import RxGesture
 
+// MARK: ServerListViewController
+/*
+ ViewController for presenting list of servers
+ with filter and logout buttons
+ */
 final class ServerListViewController: BaseViewController<ServerListViewModel> {
     fileprivate let disposeBag = DisposeBag()
     
@@ -26,6 +31,7 @@ final class ServerListViewController: BaseViewController<ServerListViewModel> {
     override func bindViewModel() {
         super.bindViewModel()
         
+        // configure Table view with cells based on dataModel
         dataSource = RxTableViewSectionedReloadDataSource<ServerListViewModel.SectionDataModel>(
             configureCell: { _, _, _, model in
                 switch model {
@@ -48,19 +54,21 @@ final class ServerListViewController: BaseViewController<ServerListViewModel> {
         tableView.rx.setDelegate(self)
             .disposed(by: disposeBag)
         
+        // handle Rx tap event on `navigationItem.leftBarButtonItem`
+        // and bind to viewModel
         navigationItem.leftBarButtonItem?.customView?.rx.tapGesture()
             .when(.recognized)
             .map { _ in }
             .bind(to: viewModel.input.presentFilterModalViewObserver)
             .disposed(by: disposeBag)
         
+        // handle Rx tap event on `navigationItem.rightBarButtonItem`
+        // and bind to viewModel
         navigationItem.rightBarButtonItem?.customView?.rx.tapGesture()
             .when(.recognized)
             .map { _ in }
             .bind(to: viewModel.input.logoutObserver)
             .disposed(by: disposeBag)
-        
-        viewModel.input.startObserver.onNext(())
     }
     
     override func setupUI() {

@@ -11,6 +11,11 @@ import RxDataSources
 import RxCocoa
 import UIKit
 
+// MARK: ServerListViewModel
+/*
+ Model for presenting list of servers on a table
+ with observing filter and logout button events
+ */
 final class ServerListViewModel: ViewModelProtocol {
     fileprivate var disposeBag = DisposeBag()
     
@@ -23,20 +28,18 @@ final class ServerListViewModel: ViewModelProtocol {
     
     init(servers: [ServerModel], dependencies: Dependencies) {
         self.dependencies = dependencies
-        self.state = State(servers: servers)
+        self.state = State(serversSubject: .init(value: servers))
         
         bindSubjects()
     }
     
     func bindSubjects() {
-        input.startSubject.asObservable()
-            .withLatestFrom(Observable.just(state.servers))
-            .map { servers -> [SectionDataModel] in
-                [SectionDataModel(model: .list, items: [.empty] + servers.map { .item($0) })]
-            }
-            .bind(to: input.dataModelsSubject)
+        // bind list of servers for preparing it to dataModel
+        state.serversSubject.asObservable()
+            .bind(to: input.prepareDataModelSubject)
             .disposed(by: disposeBag)
         
+        // bind list of servers to dataModel
         input.prepareDataModelSubject.asObservable()
             .map { servers -> [SectionDataModel] in
                 [SectionDataModel(model: .list, items: [.empty] + servers.map { .item($0) })]
@@ -44,6 +47,7 @@ final class ServerListViewModel: ViewModelProtocol {
             .bind(to: input.dataModelsSubject)
             .disposed(by: disposeBag)
         
+        // observe logout button tap event
         input.logoutSubject.asObservable()
             .subscribe(onNext: { [weak self] in
                 // delete token and move to login screen
@@ -54,6 +58,7 @@ final class ServerListViewModel: ViewModelProtocol {
             })
             .disposed(by: disposeBag)
         
+        // observe filter button tap event and trigger for presenting ActionSheet
         input.presentFilterModalViewSubject.asObservable()
             .map { [weak self] () -> ScreenLink in
                 ScreenLink(AlertRoute.actionSheet(actions: self?.setupActions() ?? []), presentation: .present)
@@ -61,31 +66,41 @@ final class ServerListViewModel: ViewModelProtocol {
             .bind(to: dependencies.appGlobalState.screenTriggerObserver)
             .disposed(by: disposeBag)
         
+        // filter list of servers based on filter type and update data model
         state.filterStatusSubject.asObservable()
-            .flatMap { [weak self] filter -> Observable<[ServerModel]> in
+            .withLatestFrom(state.serversSubject, resultSelector: { ($0, $1) })
+            .flatMap { [weak self] (filter, servers) -> Observable<[ServerModel]> in
                 guard let self = self else { return .never() }
-                return Observable.just(self.sortServers(by: filter))
+                return Observable.just(self.sort(servers, by: filter))
             }
             .bind(to: input.prepareDataModelSubject)
             .disposed(by: disposeBag)
     }
     
-    private func sortServers(by filter: Filter = .byName) -> [ServerModel] {
+    /// Sorts list of `servers` based on `filter's` type
+    /// - parameters:
+    ///     - servers:  array of `servers`
+    ///     - filter: type of `filter` for sorting servers
+    /// - returns: Sorted list of `servers` based on `filter's` type
+    ///
+    private func sort(_ servers: [ServerModel], by filter: Filter = .byName) -> [ServerModel] {
         switch filter {
-        case .byName: return state.servers.sorted { $0.name < $1.name }
-        case .byDistance: return state.servers.sorted { $0.distance < $1.distance }
+        case .byName: return servers.sorted { $0.name < $1.name }
+        case .byDistance: return servers.sorted { $0.distance < $1.distance }
         }
     }
     
+    /// Returns array of `Alert actions`
+    /// - returns: Array of UIAlertAction
     private func setupActions() -> [UIAlertAction] {
         return [
             .init(
-                title: "By distance",
+                title: HardcodedStrings.distance,
                 style: .default,
                 handler: { [weak self] _ in self?.state.filterStatusSubject.onNext(.byDistance)}
             ),
             .init(
-                title: "Alphabetical",
+                title: HardcodedStrings.alphabetical,
                 style: .default,
                 handler: { [weak self] _ in self?.state.filterStatusSubject.onNext(.byName)}
             )
@@ -93,6 +108,7 @@ final class ServerListViewModel: ViewModelProtocol {
     }
 }
 
+// MARK: SectionDataModel
 extension ServerListViewModel {
     typealias SectionDataModel = SectionModel<Section, DataModel>
 
@@ -106,9 +122,10 @@ extension ServerListViewModel {
     }
 }
 
+// MARK: State & Filter
 extension ServerListViewModel {
     struct State {
-        var servers: [ServerModel] = []
+        var serversSubject = BehaviorSubject<[ServerModel]>(value: [])
         var filterStatusSubject = BehaviorSubject<Filter>(value: .byName)
     }
     
@@ -118,12 +135,9 @@ extension ServerListViewModel {
     }
 }
 
+// MARK: Input
 extension ServerListViewModel {
     struct Input {
-        fileprivate var startSubject = PublishSubject<Void>()
-        var startObserver: AnyObserver<Void> { startSubject.asObserver() }
-        var startDriver: Driver<Void> { startSubject.asDriver(onErrorDriveWith: .just(())) }
-        
         fileprivate var prepareDataModelSubject: BehaviorSubject<[ServerModel]> = BehaviorSubject(value: [])
         
         fileprivate var dataModelsSubject: BehaviorSubject<[SectionDataModel]> = BehaviorSubject(value: [])
@@ -140,6 +154,9 @@ extension ServerListViewModel {
             presentFilterModalViewSubject.asDriver(onErrorDriveWith: .just(()))
         }
     }
-    
+}
+
+// MARK: OUTPUT
+extension ServerListViewModel {
     struct Output {}
 }

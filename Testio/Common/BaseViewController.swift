@@ -10,7 +10,7 @@ import UIKit
 
 class BaseViewController<ViewModel>: UIViewController, ViewModelBindableProtocol {
     var viewModel: ViewModel!
-    
+
     func bindViewModel() {}
     func setupUI() {}
     

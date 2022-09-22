@@ -21,6 +21,7 @@ class ServerListItemTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = .systemFont(ofSize: 17, weight: .regular)
         label.textColor = .black
+        label.textAlignment = .right
         return label
     }()
 
@@ -46,7 +47,7 @@ class ServerListItemTableViewCell: UITableViewCell {
         UIStackView().setup {
             $0.axis = .horizontal
             $0.alignment = .fill
-            $0.distribution = .equalSpacing
+            $0.distribution = .fill
             stackView = $0
         }
         .setArrangedSubviews([

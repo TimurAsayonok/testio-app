@@ -8,6 +8,11 @@
 import UIKit
 import RxSwift
 
+// MARK: ServerListLoadingViewController
+/*
+ ViewController for presenting activity indicator or error message
+ while working with `/servers` api call
+ */
 class ServerListLoadingViewController: BaseViewController<ServerListLoadingViewModel> {
     fileprivate let disposeBag = DisposeBag()
     
