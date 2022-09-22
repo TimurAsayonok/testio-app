@@ -64,6 +64,10 @@ class ApiProvider: ApiProviderProtocol {
         
         return Observable.create { observer in
             let task = self.urlSession.dataTask(with: request) { data, response, error in
+                if let error = error {
+                    observer.onError(error)
+                }
+                
                 if let httpResponse = response as? HTTPURLResponse {
                     do {
                         if 200..<300 ~= httpResponse.statusCode {
@@ -75,6 +79,7 @@ class ApiProvider: ApiProviderProtocol {
                             observer.onError(errorMessage)
                         }
                     } catch {
+                        print("fgdfg")
                         observer.onError(error)
                     }
                 }
