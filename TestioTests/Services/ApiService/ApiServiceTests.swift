@@ -12,12 +12,14 @@ import XCTest
 class ApiServiceTests: XCTestCase {
     var sut: ApiService!
     var apiProvider: ApiProvider!
+    var urlSession: URLSessionMock!
     
     override func setUp() {
         super.setUp()
         let appConfiguration = AppConfigurationProviderProtocolMock()
+        urlSession = URLSessionMock()
         apiProvider = ApiProvider(
-            urlSession: URLSessionMock(),
+            urlSession: urlSession,
             appConfiguration: appConfiguration,
             headersRequestDecorator: HeadersRequestDecoratorProtocolMock()
         )
@@ -30,9 +32,11 @@ class ApiServiceTests: XCTestCase {
     }
   
     func testAuthLogin() {
-//        let request = AuthorizationRequest(credentials: LoginCredentialsModel(username: "", password: ""))
-//        let result = sut.apiProvider.post(apiRequest: request).
-//        XCTAssertEqual(try result.toBlocking().single(), AuthorizationRequest.Response.init(token: ""))
+//        urlSession.data = try! AuthorizationRequest.Response(token: "Token").toData()
+        urlSession.response = HTTPURLResponse.mock(200)
+        let request = AuthorizationRequest(credentials: LoginCredentialsModel(username: "", password: ""))
+        let result = sut.apiProvider.send(apiRequest: request, method: .post)
+        XCTAssertEqual(try result.toBlocking().single(), AuthorizationRequest.Response.init(token: ""))
     }
 //    func authLogin(_ credentials: LoginCredentialsModel) -> Observable<Void> {
 //        let request = AuthorizationRequest(credentials: credentials)

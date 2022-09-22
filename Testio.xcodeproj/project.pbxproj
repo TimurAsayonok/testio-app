@@ -111,6 +111,9 @@
 		F7DBB8C828DC6892002CA5CE /* DipContainerBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8C728DC6892002CA5CE /* DipContainerBuilderTests.swift */; };
 		F7DBB8CF28DC6E46002CA5CE /* AppConfigProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8CE28DC6E46002CA5CE /* AppConfigProviderTests.swift */; };
 		F7DBB8D128DC6F89002CA5CE /* ApiServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8D028DC6F89002CA5CE /* ApiServiceTests.swift */; };
+		F7DBB8D328DC7D42002CA5CE /* KeychainWrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8D228DC7D42002CA5CE /* KeychainWrapperTests.swift */; };
+		F7DBB8D528DC7FFD002CA5CE /* AuthorizationRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8D428DC7FFD002CA5CE /* AuthorizationRequestTests.swift */; };
+		F7DBB8D728DC8172002CA5CE /* ServerListRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8D628DC8172002CA5CE /* ServerListRequestTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -227,6 +230,9 @@
 		F7DBB8C728DC6892002CA5CE /* DipContainerBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DipContainerBuilderTests.swift; sourceTree = "<group>"; };
 		F7DBB8CE28DC6E46002CA5CE /* AppConfigProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigProviderTests.swift; sourceTree = "<group>"; };
 		F7DBB8D028DC6F89002CA5CE /* ApiServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceTests.swift; sourceTree = "<group>"; };
+		F7DBB8D228DC7D42002CA5CE /* KeychainWrapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapperTests.swift; sourceTree = "<group>"; };
+		F7DBB8D428DC7FFD002CA5CE /* AuthorizationRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRequestTests.swift; sourceTree = "<group>"; };
+		F7DBB8D628DC8172002CA5CE /* ServerListRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListRequestTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -717,6 +723,8 @@
 		F7DBB8CC28DC6E05002CA5CE /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				F7DBB8D428DC7FFD002CA5CE /* AuthorizationRequestTests.swift */,
+				F7DBB8D628DC8172002CA5CE /* ServerListRequestTests.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -724,6 +732,7 @@
 		F7DBB8CD28DC6E16002CA5CE /* Wrappers */ = {
 			isa = PBXGroup;
 			children = (
+				F7DBB8D228DC7D42002CA5CE /* KeychainWrapperTests.swift */,
 			);
 			path = Wrappers;
 			sourceTree = "<group>";
@@ -978,7 +987,10 @@
 			files = (
 				F7DBB8A528DBEEDF002CA5CE /* ServerListViewControllerTests.swift in Sources */,
 				F7DBB86828DBCF37002CA5CE /* LoginViewModelTests.swift in Sources */,
+				F7DBB8D728DC8172002CA5CE /* ServerListRequestTests.swift in Sources */,
+				F7DBB8D528DC7FFD002CA5CE /* AuthorizationRequestTests.swift in Sources */,
 				F7DBB86128DB9B4D002CA5CE /* HeadersRequestDecoratorProtocolMock.swift in Sources */,
+				F7DBB8D328DC7D42002CA5CE /* KeychainWrapperTests.swift in Sources */,
 				F7DBB85228DB8D4D002CA5CE /* AppDependencyMock.swift in Sources */,
 				F7DBB85528DB901D002CA5CE /* UserDefaultMock.swift in Sources */,
 				F7DBB8AE28DBEFC8002CA5CE /* ServerListEmptyTableViewCellTests.swift in Sources */,
