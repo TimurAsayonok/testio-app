@@ -36,11 +36,6 @@ final class ServerListViewModel: ViewModelProtocol {
     func bindSubjects() {
         // bind list of servers for preparing it to dataModel
         state.serversSubject.asObservable()
-            .bind(to: input.prepareDataModelSubject)
-            .disposed(by: disposeBag)
-        
-        // bind list of servers to dataModel
-        input.prepareDataModelSubject.asObservable()
             .map { servers -> [SectionDataModel] in
                 [SectionDataModel(model: .list, items: [.empty] + servers.map { .item($0) })]
             }
@@ -73,7 +68,7 @@ final class ServerListViewModel: ViewModelProtocol {
                 guard let self = self else { return .never() }
                 return Observable.just(self.sort(servers, by: filter))
             }
-            .bind(to: input.prepareDataModelSubject)
+            .bind(to: state.serversSubject)
             .disposed(by: disposeBag)
     }
     
@@ -138,8 +133,6 @@ extension ServerListViewModel {
 // MARK: Input
 extension ServerListViewModel {
     struct Input {
-        fileprivate var prepareDataModelSubject: BehaviorSubject<[ServerModel]> = BehaviorSubject(value: [])
-        
         fileprivate var dataModelsSubject: BehaviorSubject<[SectionDataModel]> = BehaviorSubject(value: [])
         var dataModelsObserver: AnyObserver<[SectionDataModel]> { dataModelsSubject.asObserver() }
         var dataModelsDriver: Driver<[SectionDataModel]> { dataModelsSubject.asDriver(onErrorJustReturn: []) }
