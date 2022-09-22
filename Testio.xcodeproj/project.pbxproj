@@ -116,6 +116,7 @@
 		F7DBB8D728DC8172002CA5CE /* ServerListRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8D628DC8172002CA5CE /* ServerListRequestTests.swift */; };
 		F7DBB8D928DCA67F002CA5CE /* TestRequestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8D828DCA67E002CA5CE /* TestRequestMock.swift */; };
 		F7DBB8DC28DCA7B2002CA5CE /* ApiProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8DB28DCA7B2002CA5CE /* ApiProviderTests.swift */; };
+		F7DBB8DE28DCAF11002CA5CE /* HeadersRequestDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8DD28DCAF11002CA5CE /* HeadersRequestDecoratorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -237,6 +238,7 @@
 		F7DBB8D628DC8172002CA5CE /* ServerListRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListRequestTests.swift; sourceTree = "<group>"; };
 		F7DBB8D828DCA67E002CA5CE /* TestRequestMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRequestMock.swift; sourceTree = "<group>"; };
 		F7DBB8DB28DCA7B2002CA5CE /* ApiProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProviderTests.swift; sourceTree = "<group>"; };
+		F7DBB8DD28DCAF11002CA5CE /* HeadersRequestDecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadersRequestDecoratorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -747,6 +749,7 @@
 			isa = PBXGroup;
 			children = (
 				F7DBB8DB28DCA7B2002CA5CE /* ApiProviderTests.swift */,
+				F7DBB8DD28DCAF11002CA5CE /* HeadersRequestDecoratorTests.swift */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
@@ -1008,6 +1011,7 @@
 				F7DBB85228DB8D4D002CA5CE /* AppDependencyMock.swift in Sources */,
 				F7DBB85528DB901D002CA5CE /* UserDefaultMock.swift in Sources */,
 				F7DBB8AE28DBEFC8002CA5CE /* ServerListEmptyTableViewCellTests.swift in Sources */,
+				F7DBB8DE28DCAF11002CA5CE /* HeadersRequestDecoratorTests.swift in Sources */,
 				F7DBB8C328DC6569002CA5CE /* URLSessionMock.swift in Sources */,
 				F7DBB86628DBA53F002CA5CE /* UIView+TestSuport.swift in Sources */,
 				F7DBB8BF28DC5998002CA5CE /* ErrorResponseTests.swift in Sources */,
