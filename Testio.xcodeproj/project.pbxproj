@@ -102,6 +102,7 @@
 		F7DBB8AC28DBEFB4002CA5CE /* ServerListLoadingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8AB28DBEFB4002CA5CE /* ServerListLoadingViewModelTests.swift */; };
 		F7DBB8AE28DBEFC8002CA5CE /* ServerListEmptyTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8AD28DBEFC8002CA5CE /* ServerListEmptyTableViewCellTests.swift */; };
 		F7DBB8B028DBEFFD002CA5CE /* ServerListItemTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8AF28DBEFFD002CA5CE /* ServerListItemTableViewCellTests.swift */; };
+		F7DBB8B928DC524A002CA5CE /* ServerModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8B828DC524A002CA5CE /* ServerModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -209,6 +210,7 @@
 		F7DBB8AB28DBEFB4002CA5CE /* ServerListLoadingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListLoadingViewModelTests.swift; sourceTree = "<group>"; };
 		F7DBB8AD28DBEFC8002CA5CE /* ServerListEmptyTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListEmptyTableViewCellTests.swift; sourceTree = "<group>"; };
 		F7DBB8AF28DBEFFD002CA5CE /* ServerListItemTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListItemTableViewCellTests.swift; sourceTree = "<group>"; };
+		F7DBB8B828DC524A002CA5CE /* ServerModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +298,7 @@
 				F7DBB84628DB8930002CA5CE /* AppDelegateMock.swift */,
 				F7DBB84828DB8AC0002CA5CE /* Scenes */,
 				F7DBB85028DB8CCE002CA5CE /* Mocks */,
+				F7DBB8B428DC5030002CA5CE /* Models */,
 				F7DBB86528DBA53F002CA5CE /* UIView+TestSuport.swift */,
 			);
 			path = TestioTests;
@@ -621,6 +624,38 @@
 			path = ServerList;
 			sourceTree = "<group>";
 		};
+		F7DBB8B428DC5030002CA5CE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F7DBB8B728DC5235002CA5CE /* Server */,
+				F7DBB8B628DC5228002CA5CE /* Authorization */,
+				F7DBB8B528DC51F6002CA5CE /* Common */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F7DBB8B528DC51F6002CA5CE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F7DBB8B628DC5228002CA5CE /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		F7DBB8B728DC5235002CA5CE /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				F7DBB8B828DC524A002CA5CE /* ServerModelTests.swift */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -883,6 +918,7 @@
 				F7DBB85928DB9359002CA5CE /* KeychainWrapperProtocolMock.swift in Sources */,
 				F7DBB84D28DB8B2B002CA5CE /* LoginViewControllerTests.swift in Sources */,
 				F7DBB84728DB8930002CA5CE /* AppDelegateMock.swift in Sources */,
+				F7DBB8B928DC524A002CA5CE /* ServerModelTests.swift in Sources */,
 				F7DBB8AC28DBEFB4002CA5CE /* ServerListLoadingViewModelTests.swift in Sources */,
 				F7DBB85F28DB99FE002CA5CE /* AppConfigurationProviderProtocolMock.swift in Sources */,
 			);

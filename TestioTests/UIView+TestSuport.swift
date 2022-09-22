@@ -34,4 +34,11 @@ extension UIView {
 
         controller.view.addSubview(self)
     }
+    
+    /// sending event to `view.rx.tapGesture()`
+    func sendActionsForTapGestures() {
+        gestureRecognizers?
+            .compactMap { $0 as? UITapGestureRecognizer }
+            .forEach { $0.state = .ended }
+    }
 }
