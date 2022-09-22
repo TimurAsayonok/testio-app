@@ -76,8 +76,6 @@ extension LoginViewModel {
         
         fileprivate var loadingSubject = BehaviorSubject<Bool>(value: false)
         var loadingObserver: AnyObserver<Bool> { loadingSubject.asObserver() }
-        var loadingDriver: Driver<Bool> {
-            loadingSubject.distinctUntilChanged().asDriver(onErrorJustReturn: false)
-        }
+        var loadingDriver: Driver<Bool> { loadingSubject.asDriver(onErrorJustReturn: false) }
     }
 }

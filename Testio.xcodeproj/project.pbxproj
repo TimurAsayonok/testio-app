@@ -98,7 +98,7 @@
 		F7DBB8A228DBDD6C002CA5CE /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = F7DBB8A128DBDD6C002CA5CE /* RxTest */; };
 		F7DBB8A528DBEEDF002CA5CE /* ServerListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8A428DBEEDF002CA5CE /* ServerListViewControllerTests.swift */; };
 		F7DBB8A828DBEF8D002CA5CE /* ServerListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8A728DBEF8D002CA5CE /* ServerListViewModelTests.swift */; };
-		F7DBB8AA28DBEFA8002CA5CE /* ServerListLoadingControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8A928DBEFA8002CA5CE /* ServerListLoadingControllerTests.swift */; };
+		F7DBB8AA28DBEFA8002CA5CE /* ServerListLoadingViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8A928DBEFA8002CA5CE /* ServerListLoadingViewControllerTests.swift */; };
 		F7DBB8AC28DBEFB4002CA5CE /* ServerListLoadingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8AB28DBEFB4002CA5CE /* ServerListLoadingViewModelTests.swift */; };
 		F7DBB8AE28DBEFC8002CA5CE /* ServerListEmptyTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8AD28DBEFC8002CA5CE /* ServerListEmptyTableViewCellTests.swift */; };
 		F7DBB8B028DBEFFD002CA5CE /* ServerListItemTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8AF28DBEFFD002CA5CE /* ServerListItemTableViewCellTests.swift */; };
@@ -205,7 +205,7 @@
 		F7DBB86728DBCF37002CA5CE /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		F7DBB8A428DBEEDF002CA5CE /* ServerListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListViewControllerTests.swift; sourceTree = "<group>"; };
 		F7DBB8A728DBEF8D002CA5CE /* ServerListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListViewModelTests.swift; sourceTree = "<group>"; };
-		F7DBB8A928DBEFA8002CA5CE /* ServerListLoadingControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListLoadingControllerTests.swift; sourceTree = "<group>"; };
+		F7DBB8A928DBEFA8002CA5CE /* ServerListLoadingViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListLoadingViewControllerTests.swift; sourceTree = "<group>"; };
 		F7DBB8AB28DBEFB4002CA5CE /* ServerListLoadingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListLoadingViewModelTests.swift; sourceTree = "<group>"; };
 		F7DBB8AD28DBEFC8002CA5CE /* ServerListEmptyTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListEmptyTableViewCellTests.swift; sourceTree = "<group>"; };
 		F7DBB8AF28DBEFFD002CA5CE /* ServerListItemTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListItemTableViewCellTests.swift; sourceTree = "<group>"; };
@@ -604,7 +604,7 @@
 		F7DBB8A328DBEEBD002CA5CE /* ServerListLoading */ = {
 			isa = PBXGroup;
 			children = (
-				F7DBB8A928DBEFA8002CA5CE /* ServerListLoadingControllerTests.swift */,
+				F7DBB8A928DBEFA8002CA5CE /* ServerListLoadingViewControllerTests.swift */,
 				F7DBB8AB28DBEFB4002CA5CE /* ServerListLoadingViewModelTests.swift */,
 			);
 			path = ServerListLoading;
@@ -879,7 +879,7 @@
 				F7DBB85D28DB9950002CA5CE /* ApiServiceProtocolMock.swift in Sources */,
 				F7DBB8A828DBEF8D002CA5CE /* ServerListViewModelTests.swift in Sources */,
 				F7DBB8B028DBEFFD002CA5CE /* ServerListItemTableViewCellTests.swift in Sources */,
-				F7DBB8AA28DBEFA8002CA5CE /* ServerListLoadingControllerTests.swift in Sources */,
+				F7DBB8AA28DBEFA8002CA5CE /* ServerListLoadingViewControllerTests.swift in Sources */,
 				F7DBB85928DB9359002CA5CE /* KeychainWrapperProtocolMock.swift in Sources */,
 				F7DBB84D28DB8B2B002CA5CE /* LoginViewControllerTests.swift in Sources */,
 				F7DBB84728DB8930002CA5CE /* AppDelegateMock.swift in Sources */,

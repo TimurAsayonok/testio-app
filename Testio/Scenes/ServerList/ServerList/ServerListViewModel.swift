@@ -77,9 +77,7 @@ extension ServerListViewModel {
         
         fileprivate var dataModelsSubject: BehaviorSubject<[SectionDataModel]> = BehaviorSubject(value: [])
         var dataModelsObserver: AnyObserver<[SectionDataModel]> { dataModelsSubject.asObserver() }
-        var dataModelsDriver: Driver<[SectionDataModel]> {
-            dataModelsSubject.asDriver(onErrorJustReturn: [])
-        }
+        var dataModelsDriver: Driver<[SectionDataModel]> { dataModelsSubject.asDriver(onErrorJustReturn: []) }
         
         fileprivate var logoutSubject = PublishSubject<Void>()
         var logoutObserver: AnyObserver<Void> { logoutSubject.asObserver() }

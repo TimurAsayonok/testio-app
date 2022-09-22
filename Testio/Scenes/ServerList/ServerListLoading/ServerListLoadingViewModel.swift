@@ -52,21 +52,20 @@ final class ServerListLoadingViewModel: ViewModelProtocol {
 extension ServerListLoadingViewModel {
     struct State {
         fileprivate let loadingFailedSubject = BehaviorSubject<Bool>(value: false)
-        var loadingFailedDriver: Driver<Bool> {
-            loadingFailedSubject.distinctUntilChanged().asDriver(onErrorJustReturn: false)
-        }
+        var loadingFaildeObserver: AnyObserver<Bool> { loadingFailedSubject.asObserver() }
+        var loadingFailedDriver: Driver<Bool> { loadingFailedSubject.asDriver(onErrorJustReturn: false) }
     }
     
     struct Input {
         fileprivate var startSubject = PublishSubject<Void>()
         var startObserver: AnyObserver<Void> { startSubject.asObserver() }
+        var startDriver: Driver<Void> { startSubject.asDriver(onErrorJustReturn: ()) }
     }
     
     struct Output {
         fileprivate var loadingSubject = BehaviorSubject<Bool>(value: false)
-        var loadingDriver: Driver<Bool> {
-            loadingSubject.distinctUntilChanged().asDriver(onErrorJustReturn: false)
-        }
+        var loadingObserver: AnyObserver<Bool> { loadingSubject.asObserver() }
+        var loadingDriver: Driver<Bool> { loadingSubject.asDriver(onErrorJustReturn: false) }
 
         fileprivate var errorSubject: PublishSubject<Error> = PublishSubject()
         var errorObservable: Observable<Error> { errorSubject.asObservable() }

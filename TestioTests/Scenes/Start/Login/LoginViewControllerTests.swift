@@ -47,7 +47,7 @@ class LoginViewControllerTests: XCTestCase {
         XCTAssertTrue(sut.submitButton.isEnabled)
     }
     
-    func testMustObserveLogin() {
+    func testMustObserveLoginButton() {
         var uiActions: [UIControl.Event] = []
         
         sut.userNameTextField.text = "userName"
