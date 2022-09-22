@@ -31,33 +31,22 @@ final class ServerListViewModel: ViewModelProtocol {
         input.startSubject.asObservable()
             .withLatestFrom(Observable.just(state.servers))
             .map { servers -> [SectionDataModel] in
-                return [
-                    SectionDataModel(
-                        model: .list,
-                        items: [.empty] + servers.map { .item($0) }
+                [SectionDataModel(model: .list, items: [.empty] + servers.map { .item($0) }
                     )
                 ]
             }
             .bind(to: input.dataModelsSubject)
             .disposed(by: disposeBag)
         
-//        input.submitFormSubject
-//            .wrapService(
-//                loadingObserver: output.loadingSubject.asObserver(),
-//                errorObserver: output.errorSubject.asObserver(),
-//                serviceMethod: dependencies.apiService.getServerList
-//            )
-//            .subscribe(onNext: { [weak self] serverList in
-//                let dataModel = [
-//                    SectionDataModel(
-//                        model: .list,
-//                        items: [.empty] + serverList.map { .item($0) }
-//                    )
-//                ]
-//                print("Response:", serverList)
-//                self?.input.dataModelsSubject.onNext(dataModel)
-//            })
-//            .disposed(by: disposeBag)
+        input.logoutSubject.asObservable()
+            .subscribe(onNext: { [weak self] in
+                // delete token and move to login screen
+                self?.dependencies.keychainWrapper.deleteBearerToken()
+                self?.dependencies.appGlobalState.screenTriggerObserver
+                    .onNext(ScreenLink(StartRoute.login, presentation: .setViewRoot)
+                )
+            })
+            .disposed(by: disposeBag)
     }
 }
 
@@ -90,9 +79,8 @@ extension ServerListViewModel {
             dataModelsSubject.asDriver(onErrorJustReturn: [])
         }
         
-        
-        fileprivate var submitFormSubject = PublishSubject<Void>()
-        var submitFormObserver: AnyObserver<Void> { submitFormSubject.asObserver() }
+        fileprivate var logoutSubject = PublishSubject<Void>()
+        var logoutObserver: AnyObserver<Void> { logoutSubject.asObserver() }
     }
     
     struct Output {

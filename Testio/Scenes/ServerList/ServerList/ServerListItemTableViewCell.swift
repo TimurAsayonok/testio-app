@@ -35,7 +35,7 @@ class ServerListItemTableViewCell: UITableViewCell {
     
     func setupWith(model: ServerModel) {
         serverLabel.text = model.name
-        distanceLabel.text = String(describing: model.distance)
+        distanceLabel.text = "\(model.distance ?? 0) km"
     }
     
     private func setupUI() {

@@ -7,9 +7,18 @@
 
 import UIKit
 
+//UIApplicationMain(
+//    CommandLine.argc,
+//    CommandLine.unsafeArgv,
+//    nil,
+//    NSStringFromClass(AppDelegate.self)
+//)
+
+let appDelegateClass: AnyClass = NSClassFromString("AppDelegateMock") ?? AppDelegate.self
+
 UIApplicationMain(
     CommandLine.argc,
     CommandLine.unsafeArgv,
     nil,
-    NSStringFromClass(AppDelegate.self)
+    NSStringFromClass(appDelegateClass)
 )

@@ -15,4 +15,6 @@ internal enum HardcodedStrings {
     static let server = "Server"
     static let distance = "Distance"
     static let serverListLoadingError = "Ups! Something went wrong. \n Please try again."
+    static let logout = "Logout"
+    static let filter = "Filter"
 }

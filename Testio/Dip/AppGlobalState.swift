@@ -10,7 +10,6 @@ import RxSwift
 import RxCocoa
 
 class AppGlobalState {
-    
     // PublishSubject for handling errors
     private var errorSubject: PublishSubject<Error> = PublishSubject()
     var errorObserver: AnyObserver<Error> { errorSubject.asObserver() }

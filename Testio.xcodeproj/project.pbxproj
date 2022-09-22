@@ -10,7 +10,6 @@
 		F7C727AA28D3905200EF2F59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C727A928D3905200EF2F59 /* AppDelegate.swift */; };
 		F7C727B328D3905400EF2F59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7C727B228D3905400EF2F59 /* Assets.xcassets */; };
 		F7C727B628D3905400EF2F59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7C727B428D3905400EF2F59 /* LaunchScreen.storyboard */; };
-		F7C727C128D3905400EF2F59 /* TestioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C727C028D3905400EF2F59 /* TestioTests.swift */; };
 		F7C727CB28D3905400EF2F59 /* TestioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C727CA28D3905400EF2F59 /* TestioUITests.swift */; };
 		F7C727CD28D3905400EF2F59 /* TestioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C727CC28D3905400EF2F59 /* TestioUITestsLaunchTests.swift */; };
 		F7C727EB28D4925000EF2F59 /* Dip in Frameworks */ = {isa = PBXBuildFile; productRef = F7C727EA28D4925000EF2F59 /* Dip */; };
@@ -40,8 +39,6 @@
 		F7DBB7CF28D88FA8002CA5CE /* ApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB7CE28D88FA8002CA5CE /* ApiProvider.swift */; };
 		F7DBB7D128D89055002CA5CE /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB7D028D89055002CA5CE /* RequestProtocol.swift */; };
 		F7DBB7D328D891E8002CA5CE /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB7D228D891E8002CA5CE /* HTTPMethod.swift */; };
-		F7DBB7D628D89D6D002CA5CE /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = F7DBB7D528D89D6D002CA5CE /* RxCocoa */; };
-		F7DBB7D828D89D6D002CA5CE /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F7DBB7D728D89D6D002CA5CE /* RxSwift */; };
 		F7DBB7DA28D89FA3002CA5CE /* ApiProviderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB7D928D89FA3002CA5CE /* ApiProviderError.swift */; };
 		F7DBB7DC28D8B443002CA5CE /* ParametersEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB7DB28D8B443002CA5CE /* ParametersEncoder.swift */; };
 		F7DBB7DE28D8BB0D002CA5CE /* Encodable+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB7DD28D8BB0D002CA5CE /* Encodable+Extention.swift */; };
@@ -82,6 +79,23 @@
 		F7DBB83D28DB351D002CA5CE /* ServerListLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB83C28DB351D002CA5CE /* ServerListLoadingViewModel.swift */; };
 		F7DBB83F28DB35C5002CA5CE /* ServerListLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB83E28DB35C5002CA5CE /* ServerListLoadingViewController.swift */; };
 		F7DBB84128DB56C7002CA5CE /* HeadersRequestDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB84028DB56C7002CA5CE /* HeadersRequestDecorator.swift */; };
+		F7DBB84528DB8586002CA5CE /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = F7DBB84428DB8586002CA5CE /* RxGesture */; };
+		F7DBB84728DB8930002CA5CE /* AppDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB84628DB8930002CA5CE /* AppDelegateMock.swift */; };
+		F7DBB84D28DB8B2B002CA5CE /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB84C28DB8B2B002CA5CE /* LoginViewControllerTests.swift */; };
+		F7DBB85228DB8D4D002CA5CE /* AppDependencyMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB85128DB8D4D002CA5CE /* AppDependencyMock.swift */; };
+		F7DBB85528DB901D002CA5CE /* UserDefaultMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB85428DB901D002CA5CE /* UserDefaultMock.swift */; };
+		F7DBB85928DB9359002CA5CE /* KeychainWrapperProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB85828DB9359002CA5CE /* KeychainWrapperProtocolMock.swift */; };
+		F7DBB85B28DB95DE002CA5CE /* AutoMockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB85A28DB95DE002CA5CE /* AutoMockable.swift */; };
+		F7DBB85D28DB9950002CA5CE /* ApiServiceProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB85C28DB9950002CA5CE /* ApiServiceProtocolMock.swift */; };
+		F7DBB85F28DB99FE002CA5CE /* AppConfigurationProviderProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB85E28DB99FE002CA5CE /* AppConfigurationProviderProtocolMock.swift */; };
+		F7DBB86128DB9B4D002CA5CE /* HeadersRequestDecoratorProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB86028DB9B4D002CA5CE /* HeadersRequestDecoratorProtocolMock.swift */; };
+		F7DBB86628DBA53F002CA5CE /* UIView+TestSuport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB86528DBA53F002CA5CE /* UIView+TestSuport.swift */; };
+		F7DBB86828DBCF37002CA5CE /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB86728DBCF37002CA5CE /* LoginViewModelTests.swift */; };
+		F7DBB89A28DBDD6C002CA5CE /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = F7DBB89928DBDD6C002CA5CE /* RxBlocking */; };
+		F7DBB89C28DBDD6C002CA5CE /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = F7DBB89B28DBDD6C002CA5CE /* RxCocoa */; };
+		F7DBB89E28DBDD6C002CA5CE /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = F7DBB89D28DBDD6C002CA5CE /* RxRelay */; };
+		F7DBB8A028DBDD6C002CA5CE /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F7DBB89F28DBDD6C002CA5CE /* RxSwift */; };
+		F7DBB8A228DBDD6C002CA5CE /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = F7DBB8A128DBDD6C002CA5CE /* RxTest */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,7 +122,6 @@
 		F7C727B528D3905400EF2F59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7C727B728D3905400EF2F59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7C727BC28D3905400EF2F59 /* TestioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F7C727C028D3905400EF2F59 /* TestioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestioTests.swift; sourceTree = "<group>"; };
 		F7C727C628D3905400EF2F59 /* TestioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C727CA28D3905400EF2F59 /* TestioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestioUITests.swift; sourceTree = "<group>"; };
 		F7C727CC28D3905400EF2F59 /* TestioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestioUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -173,6 +186,17 @@
 		F7DBB83C28DB351D002CA5CE /* ServerListLoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListLoadingViewModel.swift; sourceTree = "<group>"; };
 		F7DBB83E28DB35C5002CA5CE /* ServerListLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListLoadingViewController.swift; sourceTree = "<group>"; };
 		F7DBB84028DB56C7002CA5CE /* HeadersRequestDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadersRequestDecorator.swift; sourceTree = "<group>"; };
+		F7DBB84628DB8930002CA5CE /* AppDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateMock.swift; sourceTree = "<group>"; };
+		F7DBB84C28DB8B2B002CA5CE /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
+		F7DBB85128DB8D4D002CA5CE /* AppDependencyMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyMock.swift; sourceTree = "<group>"; };
+		F7DBB85428DB901D002CA5CE /* UserDefaultMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultMock.swift; sourceTree = "<group>"; };
+		F7DBB85828DB9359002CA5CE /* KeychainWrapperProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapperProtocolMock.swift; sourceTree = "<group>"; };
+		F7DBB85A28DB95DE002CA5CE /* AutoMockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoMockable.swift; sourceTree = "<group>"; };
+		F7DBB85C28DB9950002CA5CE /* ApiServiceProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceProtocolMock.swift; sourceTree = "<group>"; };
+		F7DBB85E28DB99FE002CA5CE /* AppConfigurationProviderProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurationProviderProtocolMock.swift; sourceTree = "<group>"; };
+		F7DBB86028DB9B4D002CA5CE /* HeadersRequestDecoratorProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadersRequestDecoratorProtocolMock.swift; sourceTree = "<group>"; };
+		F7DBB86528DBA53F002CA5CE /* UIView+TestSuport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TestSuport.swift"; sourceTree = "<group>"; };
+		F7DBB86728DBCF37002CA5CE /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,13 +204,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7DBB89E28DBDD6C002CA5CE /* RxRelay in Frameworks */,
 				F7DBB81F28DA587F002CA5CE /* Differentiator in Frameworks */,
-				F7DBB7D828D89D6D002CA5CE /* RxSwift in Frameworks */,
+				F7DBB8A028DBDD6C002CA5CE /* RxSwift in Frameworks */,
+				F7DBB84528DB8586002CA5CE /* RxGesture in Frameworks */,
 				F7C727F028D4976300EF2F59 /* netfox in Frameworks */,
 				F7DBB7CA28D86922002CA5CE /* IQKeyboardManagerSwift in Frameworks */,
-				F7DBB7D628D89D6D002CA5CE /* RxCocoa in Frameworks */,
 				F7DBB82128DA587F002CA5CE /* RxDataSources in Frameworks */,
 				F7C727EB28D4925000EF2F59 /* Dip in Frameworks */,
+				F7DBB89C28DBDD6C002CA5CE /* RxCocoa in Frameworks */,
 				F7DBB7C028D860AA002CA5CE /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,6 +221,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7DBB8A228DBDD6C002CA5CE /* RxTest in Frameworks */,
+				F7DBB89A28DBDD6C002CA5CE /* RxBlocking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +243,7 @@
 				F7C727BF28D3905400EF2F59 /* TestioTests */,
 				F7C727C928D3905400EF2F59 /* TestioUITests */,
 				F7C727A728D3905200EF2F59 /* Products */,
+				F7DBB87428DBD193002CA5CE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -252,7 +281,10 @@
 		F7C727BF28D3905400EF2F59 /* TestioTests */ = {
 			isa = PBXGroup;
 			children = (
-				F7C727C028D3905400EF2F59 /* TestioTests.swift */,
+				F7DBB84628DB8930002CA5CE /* AppDelegateMock.swift */,
+				F7DBB84828DB8AC0002CA5CE /* Scenes */,
+				F7DBB85028DB8CCE002CA5CE /* Mocks */,
+				F7DBB86528DBA53F002CA5CE /* UIView+TestSuport.swift */,
 			);
 			path = TestioTests;
 			sourceTree = "<group>";
@@ -438,6 +470,7 @@
 				F7DBB7FD28D91B77002CA5CE /* ViewModelProtocol.swift */,
 				F7DBB7FF28D91D4F002CA5CE /* BaseViewController.swift */,
 				F7DBB80128D91D8B002CA5CE /* ViewModelBindableProtocol.swift */,
+				F7DBB85A28DB95DE002CA5CE /* AutoMockable.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -501,6 +534,59 @@
 			path = ServerListLoading;
 			sourceTree = "<group>";
 		};
+		F7DBB84828DB8AC0002CA5CE /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F7DBB84A28DB8AF8002CA5CE /* Start */,
+				F7DBB84B28DB8B00002CA5CE /* ServerList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F7DBB84928DB8AE9002CA5CE /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F7DBB84C28DB8B2B002CA5CE /* LoginViewControllerTests.swift */,
+				F7DBB86728DBCF37002CA5CE /* LoginViewModelTests.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F7DBB84A28DB8AF8002CA5CE /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				F7DBB84928DB8AE9002CA5CE /* Login */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
+		F7DBB84B28DB8B00002CA5CE /* ServerList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ServerList;
+			sourceTree = "<group>";
+		};
+		F7DBB85028DB8CCE002CA5CE /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				F7DBB85128DB8D4D002CA5CE /* AppDependencyMock.swift */,
+				F7DBB85428DB901D002CA5CE /* UserDefaultMock.swift */,
+				F7DBB85828DB9359002CA5CE /* KeychainWrapperProtocolMock.swift */,
+				F7DBB85C28DB9950002CA5CE /* ApiServiceProtocolMock.swift */,
+				F7DBB85E28DB99FE002CA5CE /* AppConfigurationProviderProtocolMock.swift */,
+				F7DBB86028DB9B4D002CA5CE /* HeadersRequestDecoratorProtocolMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		F7DBB87428DBD193002CA5CE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -523,10 +609,12 @@
 				F7C727EF28D4976300EF2F59 /* netfox */,
 				F7DBB7BF28D860AA002CA5CE /* KeychainAccess */,
 				F7DBB7C928D86922002CA5CE /* IQKeyboardManagerSwift */,
-				F7DBB7D528D89D6D002CA5CE /* RxCocoa */,
-				F7DBB7D728D89D6D002CA5CE /* RxSwift */,
 				F7DBB81E28DA587F002CA5CE /* Differentiator */,
 				F7DBB82028DA587F002CA5CE /* RxDataSources */,
+				F7DBB84428DB8586002CA5CE /* RxGesture */,
+				F7DBB89B28DBDD6C002CA5CE /* RxCocoa */,
+				F7DBB89D28DBDD6C002CA5CE /* RxRelay */,
+				F7DBB89F28DBDD6C002CA5CE /* RxSwift */,
 			);
 			productName = Testio;
 			productReference = F7C727A628D3905200EF2F59 /* Testio.app */;
@@ -546,6 +634,10 @@
 				F7C727BE28D3905400EF2F59 /* PBXTargetDependency */,
 			);
 			name = TestioTests;
+			packageProductDependencies = (
+				F7DBB89928DBDD6C002CA5CE /* RxBlocking */,
+				F7DBB8A128DBDD6C002CA5CE /* RxTest */,
+			);
 			productName = TestioTests;
 			productReference = F7C727BC28D3905400EF2F59 /* TestioTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -605,8 +697,10 @@
 				F7C727EE28D4976300EF2F59 /* XCRemoteSwiftPackageReference "netfox" */,
 				F7DBB7BE28D860AA002CA5CE /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 				F7DBB7C828D86922002CA5CE /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
-				F7DBB7D428D89D6D002CA5CE /* XCRemoteSwiftPackageReference "RxSwift" */,
 				F7DBB81D28DA587F002CA5CE /* XCRemoteSwiftPackageReference "RxDataSources" */,
+				F7DBB84228DB8505002CA5CE /* XCRemoteSwiftPackageReference "RxGesture" */,
+				F7DBB84328DB8586002CA5CE /* XCRemoteSwiftPackageReference "RxGesture" */,
+				F7DBB89828DBDD6C002CA5CE /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = F7C727A728D3905200EF2F59 /* Products */;
 			projectDirPath = "";
@@ -729,6 +823,7 @@
 				F7DBB7E028D8C14E002CA5CE /* ApiService.swift in Sources */,
 				F7C7281028D7817700EF2F59 /* AppDependency.swift in Sources */,
 				F7C727F428D49D8A00EF2F59 /* DipContainerBuilder.swift in Sources */,
+				F7DBB85B28DB95DE002CA5CE /* AutoMockable.swift in Sources */,
 				F7DBB83F28DB35C5002CA5CE /* ServerListLoadingViewController.swift in Sources */,
 				F7DBB7CC28D86A8F002CA5CE /* HardcodedStrings.swift in Sources */,
 				F7DBB81428DA355D002CA5CE /* Codable+Extention.swift in Sources */,
@@ -740,7 +835,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7C727C128D3905400EF2F59 /* TestioTests.swift in Sources */,
+				F7DBB86828DBCF37002CA5CE /* LoginViewModelTests.swift in Sources */,
+				F7DBB86128DB9B4D002CA5CE /* HeadersRequestDecoratorProtocolMock.swift in Sources */,
+				F7DBB85228DB8D4D002CA5CE /* AppDependencyMock.swift in Sources */,
+				F7DBB85528DB901D002CA5CE /* UserDefaultMock.swift in Sources */,
+				F7DBB86628DBA53F002CA5CE /* UIView+TestSuport.swift in Sources */,
+				F7DBB85D28DB9950002CA5CE /* ApiServiceProtocolMock.swift in Sources */,
+				F7DBB85928DB9359002CA5CE /* KeychainWrapperProtocolMock.swift in Sources */,
+				F7DBB84D28DB8B2B002CA5CE /* LoginViewControllerTests.swift in Sources */,
+				F7DBB84728DB8930002CA5CE /* AppDelegateMock.swift in Sources */,
+				F7DBB85F28DB99FE002CA5CE /* AppConfigurationProviderProtocolMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1101,20 +1205,36 @@
 				version = 6.5.0;
 			};
 		};
-		F7DBB7D428D89D6D002CA5CE /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift";
-			requirement = {
-				kind = exactVersion;
-				version = 6.5.0;
-			};
-		};
 		F7DBB81D28DA587F002CA5CE /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.0.0;
+			};
+		};
+		F7DBB84228DB8505002CA5CE /* XCRemoteSwiftPackageReference "RxGesture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxGesture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		F7DBB84328DB8586002CA5CE /* XCRemoteSwiftPackageReference "RxGesture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxGesture";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		F7DBB89828DBDD6C002CA5CE /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = exactVersion;
+				version = 6.5.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1140,16 +1260,6 @@
 			package = F7DBB7C828D86922002CA5CE /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
 		};
-		F7DBB7D528D89D6D002CA5CE /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F7DBB7D428D89D6D002CA5CE /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		F7DBB7D728D89D6D002CA5CE /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F7DBB7D428D89D6D002CA5CE /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
 		F7DBB81E28DA587F002CA5CE /* Differentiator */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F7DBB81D28DA587F002CA5CE /* XCRemoteSwiftPackageReference "RxDataSources" */;
@@ -1159,6 +1269,36 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F7DBB81D28DA587F002CA5CE /* XCRemoteSwiftPackageReference "RxDataSources" */;
 			productName = RxDataSources;
+		};
+		F7DBB84428DB8586002CA5CE /* RxGesture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7DBB84328DB8586002CA5CE /* XCRemoteSwiftPackageReference "RxGesture" */;
+			productName = RxGesture;
+		};
+		F7DBB89928DBDD6C002CA5CE /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7DBB89828DBDD6C002CA5CE /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		F7DBB89B28DBDD6C002CA5CE /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7DBB89828DBDD6C002CA5CE /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		F7DBB89D28DBDD6C002CA5CE /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7DBB89828DBDD6C002CA5CE /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		F7DBB89F28DBDD6C002CA5CE /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7DBB89828DBDD6C002CA5CE /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		F7DBB8A128DBDD6C002CA5CE /* RxTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7DBB89828DBDD6C002CA5CE /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxTest;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

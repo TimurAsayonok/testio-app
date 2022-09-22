@@ -24,10 +24,10 @@ public extension Reactive where Base: UIView {
                 return
             }
             
-            let activityIndicator = UIActivityIndicatorView(style: .medium).setup {
+            let activityIndicator = UIActivityIndicatorView(style: .large).setup {
                 $0.hidesWhenStopped = true
                 $0.translatesAutoresizingMaskIntoConstraints = false
-                $0.color = UIColor.black
+                $0.color = UIColor.gray
             }
             activityIndicator.startAnimating()
             view.addSubview(activityIndicator)

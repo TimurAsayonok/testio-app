@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxDataSources
+import RxGesture
 
 final class ServerListViewController: BaseViewController<ServerListViewModel> {
     fileprivate let disposeBag = DisposeBag()
@@ -49,17 +50,32 @@ final class ServerListViewController: BaseViewController<ServerListViewModel> {
         tableView.rx.setDelegate(self)
             .disposed(by: disposeBag)
         
+//        navigationItem.rightBarButtonItem?.customView?.rx.tapGesture()
+//            .when(.recognized)
+//            .map { _ in }
+//            .bind(to: viewModel.input.logoutObserver)
+//            .disposed(by: disposeBag)
+        
+//        navigationItem.rightBarButtonItem?.rx
+//            .tapGesture()
+//            .when(.recognized)
+//            .map { _ in }
+//            .bind(to: viewModel.input.logoutObserver)
+//            .disposed(by: disposeBag)
+        
         viewModel.input.startObserver.onNext(())
     }
     
     override func setupUI() {
         navigationItem.title = "Testio."
-        
-        navigationRightItemView = setupNavigationRightButton()
-        navigationLeftItemView = setupNavigationRightButton()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .play)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: navigationLeftItemView)
-        // Do any additional setup after loading the view.
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            customView: setupNavigationButton(title: HardcodedStrings.filter, iconName: "arrow.up.arrow.down")
+        )
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            customView: setupNavigationButton(
+                title: HardcodedStrings.logout, iconName: "rectangle.portrait.and.arrow.right", reversed: true
+            )
+        )
         
         tableView = UITableView(frame: CGRect.zero)
         tableView.register(
@@ -78,11 +94,23 @@ final class ServerListViewController: BaseViewController<ServerListViewModel> {
         tableView.addAndAnchorTo(view)
     }
     
-    private func setupNavigationRightButton() -> UIButton {
-        let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "rectangle.portrait.and.arrow.right"), for: .normal)
+    private func setupNavigationButton(title: String, iconName: String, reversed: Bool = false) -> UIStackView {
+        let label = UILabel()
+        label.text = title
+        label.textColor = UIColor.systemBlue
         
-        return button
+        let imageView = UIImageView(image: UIImage(systemName: iconName))
+        imageView.tintColor = UIColor.systemBlue
+
+        let stackView = UIStackView()
+        stackView.setup {
+            $0.axis = .horizontal
+            $0.distribution = .fill
+            $0.alignment = .fill
+            $0.spacing = 10
+        }.setArrangedSubviews(reversed ? [label, imageView] : [imageView, label])
+        
+        return stackView
     }
 }
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol Dependencies {
+protocol Dependencies: AutoMockable {
     var userDefaults: UserDefaults { get }
     var keychainWrapper: KeychainWrapperProtocol { get }
     var apiService: ApiServiceProtocol { get }

@@ -66,17 +66,18 @@ extension LoginViewModel {
     struct Input {
         fileprivate var submitFormSubject = PublishSubject<Void>()
         var submitFormObserver: AnyObserver<Void> { submitFormSubject.asObserver() }
+        var submitFormDriver: Driver<Void> { submitFormSubject.asDriver(onErrorJustReturn: ()) }
     }
 }
 
 extension LoginViewModel {
     struct Output {
+        fileprivate var errorSubject: PublishSubject<Error> = PublishSubject()
+        
         fileprivate var loadingSubject = BehaviorSubject<Bool>(value: false)
+        var loadingObserver: AnyObserver<Bool> { loadingSubject.asObserver() }
         var loadingDriver: Driver<Bool> {
             loadingSubject.distinctUntilChanged().asDriver(onErrorJustReturn: false)
         }
-
-        fileprivate var errorSubject: PublishSubject<Error> = PublishSubject()
-        var errorObservable: Observable<Error> { errorSubject.asObservable() }
     }
 }
