@@ -1,32 +1,19 @@
 //
-//  RealmDataManager.swift
-//  Testio
+//  RealmDataManagerProtocolMock.swift
+//  TestioTests
 //
 //  Created by Timur Asayonok on 23/09/2022.
 //
 
+@testable import Testio
 import Foundation
-import RxSwift
 import RealmSwift
+import RxSwift
 
-protocol RealmDataManagerProtocol {
-    func save(object: Storable) throws
-    func delete(object: Storable) throws
-    func deleteAll() throws
-    func fetch<T: Storable>(
-        _ model: T.Type, predicate: NSPredicate?, sorted: Sorted?
-    ) -> Observable<[T?]>
-    func fetchFirst<T: Storable>(
-        _ model: T.Type, predicate: NSPredicate?, sorted: Sorted?
-    ) -> Observable<T?>
-}
-
-class RealmDataManage: RealmDataManagerProtocol {
-    private let realm: Realm?
-    
-    init(configuration: Realm.Configuration = Realm.Configuration(schemaVersion: 1)) {
-        self.realm = try? Realm(configuration: configuration)
-    }
+// MARK: RealmDataManagerProtocolMock
+// Contains method for working with realm data manage
+class RealmDataManagerProtocolMock: RealmDataManagerProtocol {
+    private let realm = try? Realm(configuration: Realm.Configuration(inMemoryIdentifier: "RealmMock"))
     
     func save(object: Storable) throws {
         guard let realm = realm, let object = object as? Object else { throw RealmError.saveError }
@@ -73,10 +60,4 @@ class RealmDataManage: RealmDataManagerProtocol {
         return fetch(model, predicate: predicate, sorted: sorted)
             .map { $0.compactMap({ $0 }).first }
     }
-}
-
-enum RealmError: String, Error {
-    case realmOrObjectIsNil
-    case saveError = "Error during saving server lists to Realm"
-    case deleteAllError = "Error during deleting All Objects in a Realm"
 }

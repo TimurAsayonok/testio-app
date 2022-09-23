@@ -27,8 +27,7 @@ class ServerListRealmRepository: ServerListRealmRepositoryProtocol {
         DispatchQueue.main.async { [weak self] in
             do {
                 try self?.realmDataManager.save(object: ServerListRealmModel.makeListFrom(servers: list))
-            }
-            catch { print("😱", error.localizedDescription) }
+            } catch { print("😱", error.localizedDescription) }
         }
     }
     

@@ -49,6 +49,7 @@ class AppCoordinator: CoordinatorType {
     
     func boot() {
         
+        // navigate to Login screen on Server List screen
         let screenLink: ScreenLink = dependencies.keychainWrapper.getBearerToken() != nil
             ? ScreenLink(ServerListRoute.serverList, presentation: .asRootNavigation)
             : ScreenLink(StartRoute.login, presentation: .asRootView)

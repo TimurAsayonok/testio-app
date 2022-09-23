@@ -8,8 +8,7 @@
 @testable import Testio
 import Foundation
 
-// MARK: - Test Request + Error
-
+// MARK: Test Request + Error
 struct TestRequest: RequestProtocol {
     typealias Response = TestResponse
     typealias Error = TestError

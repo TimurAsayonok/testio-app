@@ -11,7 +11,7 @@ import XCTest
 
 class ServerModelTests: XCTestCase {
     func testMustInitOnlyWithDefaultValues() {
-        let sut = ServerModel(name: nil, distance: nil)
+        let sut = ServerModel.mock
         XCTAssertNotNil(sut)
         XCTAssertEqual(sut.name, "")
         XCTAssertEqual(sut.distance, 0)

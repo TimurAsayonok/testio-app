@@ -28,7 +28,8 @@ class ApiServiceTests: XCTestCase {
         sut = ApiService(
             apiProvider: apiProvider,
             appConfiguration: appConfiguration,
-            keychain: KeychainWrapperProtocolMock()
+            keychain: KeychainWrapperProtocolMock(),
+            serverListRealmRepository: ServerListRealmRepositoryProtocolMock()
         )
     }
   

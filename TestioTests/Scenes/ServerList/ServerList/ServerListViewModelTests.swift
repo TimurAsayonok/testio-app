@@ -7,10 +7,8 @@
 
 @testable import Testio
 import XCTest
-import RxCocoa
 import RxTest
 import RxSwift
-import RxBlocking
 
 class ServerListViewModelTests: XCTestCase {
     var viewModel: ServerListViewModel!
@@ -19,7 +17,7 @@ class ServerListViewModelTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        viewModel = ServerListViewModel(servers: [], dependencies: AppDependencyMock())
+        viewModel = ServerListViewModel(dependencies: AppDependencyMock())
         scheduler = TestScheduler(initialClock: 0)
         disposeBag = DisposeBag()
     }
@@ -58,6 +56,36 @@ class ServerListViewModelTests: XCTestCase {
         scheduler.start()
         
         XCTAssertEqual(filterStatusObserver.events, [.next(0, .byName), .next(5, .byDistance)])
+    }
+    
+    func testInputStartSubject() {
+        let startObserver = scheduler.createObserver(Bool.self)
+        
+        viewModel.input.startDriver
+            .map { _ in true }
+            .drive(startObserver)
+            .disposed(by: disposeBag)
+        
+        viewModel.input.startObserver.onNext(())
+        
+        scheduler.start()
+        
+        XCTAssertEqual(startObserver.events, [.next(0, true)])
+    }
+    
+    func testInputGetServersApiRequestSubject() {
+        let getServersApiRequestObserver = scheduler.createObserver(Bool.self)
+        
+        viewModel.input.getServersApiRequestDriver
+            .map { _ in true }
+            .drive(getServersApiRequestObserver)
+            .disposed(by: disposeBag)
+        
+        viewModel.input.getServersApiRequestObserver.onNext(())
+        
+        scheduler.start()
+        
+        XCTAssertEqual(getServersApiRequestObserver.events, [.next(0, true)])
     }
     
     func testInputLogoutSubject() {

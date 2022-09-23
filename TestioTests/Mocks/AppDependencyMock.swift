@@ -15,4 +15,6 @@ struct AppDependencyMock: Dependencies {
     var appGlobalState: AppGlobalState = AppGlobalState()
     var headersRequestDecorator: HeadersRequestDecoratorProtocol = HeadersRequestDecoratorProtocolMock()
     var userDefaults = UserDefaults.mock()
+    var serverListRealmRepository: ServerListRealmRepositoryProtocol = ServerListRealmRepositoryProtocolMock()
+    var realmDataManage: RealmDataManagerProtocol = RealmDataManagerProtocolMock()
 }

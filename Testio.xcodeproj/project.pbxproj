@@ -119,6 +119,9 @@
 		F7DBB93B28DDD892002CA5CE /* Sorted.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB93A28DDD892002CA5CE /* Sorted.swift */; };
 		F7DBB93D28DDF535002CA5CE /* ServerListRealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB93C28DDF535002CA5CE /* ServerListRealmRepository.swift */; };
 		F7DBB94128DE03C8002CA5CE /* ServerListRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB94028DE03C7002CA5CE /* ServerListRealmModel.swift */; };
+		F7DBB94328DE2DB2002CA5CE /* ServerListRealmRepositoryProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB94228DE2DB2002CA5CE /* ServerListRealmRepositoryProtocolMock.swift */; };
+		F7DBB94528DE2EF5002CA5CE /* RealmDataManagerProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB94428DE2EF5002CA5CE /* RealmDataManagerProtocolMock.swift */; };
+		F7DBB94A28DE5785002CA5CE /* ServerListRealmRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB94928DE5785002CA5CE /* ServerListRealmRepositoryTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -241,6 +244,9 @@
 		F7DBB93A28DDD892002CA5CE /* Sorted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sorted.swift; sourceTree = "<group>"; };
 		F7DBB93C28DDF535002CA5CE /* ServerListRealmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListRealmRepository.swift; sourceTree = "<group>"; };
 		F7DBB94028DE03C7002CA5CE /* ServerListRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListRealmModel.swift; sourceTree = "<group>"; };
+		F7DBB94228DE2DB2002CA5CE /* ServerListRealmRepositoryProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListRealmRepositoryProtocolMock.swift; sourceTree = "<group>"; };
+		F7DBB94428DE2EF5002CA5CE /* RealmDataManagerProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataManagerProtocolMock.swift; sourceTree = "<group>"; };
+		F7DBB94928DE5785002CA5CE /* ServerListRealmRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListRealmRepositoryTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -622,6 +628,8 @@
 				F7DBB86028DB9B4D002CA5CE /* HeadersRequestDecoratorProtocolMock.swift */,
 				F7DBB8C228DC6569002CA5CE /* URLSessionMock.swift */,
 				F7DBB8D828DCA67E002CA5CE /* TestRequestMock.swift */,
+				F7DBB94228DE2DB2002CA5CE /* ServerListRealmRepositoryProtocolMock.swift */,
+				F7DBB94428DE2EF5002CA5CE /* RealmDataManagerProtocolMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -690,6 +698,7 @@
 		F7DBB8C928DC6DC8002CA5CE /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F7DBB94628DE5469002CA5CE /* RealmDataManager */,
 				F7DBB8CA28DC6DED002CA5CE /* ApiService */,
 				F7DBB8CB28DC6DFB002CA5CE /* AppConfiguration */,
 				F7DBB8CC28DC6E05002CA5CE /* Requests */,
@@ -756,6 +765,14 @@
 				F7DBB93528DDD328002CA5CE /* StorableProtocol.swift */,
 			);
 			path = Realm;
+			sourceTree = "<group>";
+		};
+		F7DBB94628DE5469002CA5CE /* RealmDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				F7DBB94928DE5785002CA5CE /* ServerListRealmRepositoryTest.swift */,
+			);
+			path = RealmDataManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1015,11 +1032,14 @@
 				F7DBB8A528DBEEDF002CA5CE /* ServerListViewControllerTests.swift in Sources */,
 				F7DBB86828DBCF37002CA5CE /* LoginViewModelTests.swift in Sources */,
 				F7DBB8D728DC8172002CA5CE /* ServerListRequestTests.swift in Sources */,
+				F7DBB94328DE2DB2002CA5CE /* ServerListRealmRepositoryProtocolMock.swift in Sources */,
 				F7DBB8D528DC7FFD002CA5CE /* AuthorizationRequestTests.swift in Sources */,
 				F7DBB86128DB9B4D002CA5CE /* HeadersRequestDecoratorProtocolMock.swift in Sources */,
+				F7DBB94A28DE5785002CA5CE /* ServerListRealmRepositoryTest.swift in Sources */,
 				F7DBB8D328DC7D42002CA5CE /* KeychainWrapperTests.swift in Sources */,
 				F7DBB85228DB8D4D002CA5CE /* AppDependencyMock.swift in Sources */,
 				F7DBB85528DB901D002CA5CE /* UserDefaultMock.swift in Sources */,
+				F7DBB94528DE2EF5002CA5CE /* RealmDataManagerProtocolMock.swift in Sources */,
 				F7DBB8DE28DCAF11002CA5CE /* HeadersRequestDecoratorTests.swift in Sources */,
 				F7DBB8C328DC6569002CA5CE /* URLSessionMock.swift in Sources */,
 				F7DBB86628DBA53F002CA5CE /* UIView+TestSuport.swift in Sources */,

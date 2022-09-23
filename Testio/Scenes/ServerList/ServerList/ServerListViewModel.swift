@@ -94,7 +94,9 @@ final class ServerListViewModel: ViewModelProtocol {
             .bind(to: dependencies.appGlobalState.screenTriggerObserver)
             .disposed(by: disposeBag)
     }
-    
+}
+
+extension ServerListViewModel {
     /// Sorts list of `servers` based on `filter's` type
     /// - parameters:
     ///     - servers:  array of `servers`
@@ -157,9 +159,11 @@ extension ServerListViewModel {
     struct Input {
         fileprivate var startSubject = PublishSubject<Void>()
         var startObserver: AnyObserver<Void> { startSubject.asObserver() }
+        var startDriver: Driver<Void> { startSubject.asDriver(onErrorJustReturn: ()) }
         
         fileprivate var getServersApiRequestSubject = PublishSubject<Void>()
         var getServersApiRequestObserver: AnyObserver<Void> { getServersApiRequestSubject.asObserver() }
+        var getServersApiRequestDriver: Driver<Void> { getServersApiRequestSubject.asDriver(onErrorJustReturn: ()) }
         
         fileprivate var dataModelsSubject: BehaviorSubject<[SectionDataModel]> = BehaviorSubject(value: [])
         var dataModelsObserver: AnyObserver<[SectionDataModel]> { dataModelsSubject.asObserver() }
