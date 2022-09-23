@@ -46,23 +46,36 @@ class ServerListItemTableViewCell: UITableViewCell {
     private func setupUI() {
         contentView.backgroundColor = UIColor.white
         contentView.removeSubviews()
-
-        var stackView: UIStackView!
+        
+        var serverInfoRmationView: UIStackView!
         UIStackView().setup {
             $0.axis = .horizontal
             $0.alignment = .fill
             $0.distribution = .fill
-            stackView = $0
+            serverInfoRmationView = $0
         }
         .setArrangedSubviews([
             serverLabel,
             distanceLabel
         ])
+
+        var mainView: UIStackView!
+        UIStackView().setup {
+            $0.axis = .vertical
+            $0.alignment = .fill
+            $0.distribution = .fill
+            $0.spacing = 12
+            mainView = $0
+        }
+        .setArrangedSubviews([
+            serverInfoRmationView,
+            UIView.separator()
+        ])
         
-        contentView.addSubview(stackView)
-        stackView.anchorToSuperview(
+        contentView.addSubview(mainView)
+        mainView.anchorToSuperview(
             insets: UIEdgeInsets(
-                top: 12, left: 16, bottom: 12, right: 16
+                top: 12, left: 16, bottom: 0, right: 16
             )
         )
     }

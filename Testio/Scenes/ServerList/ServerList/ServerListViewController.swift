@@ -35,10 +35,6 @@ final class ServerListViewController: BaseViewController<ServerListViewModel> {
         dataSource = RxTableViewSectionedReloadDataSource<ServerListViewModel.SectionDataModel>(
             configureCell: { _, _, _, model in
                 switch model {
-                case .empty:
-                    let cell = ServerListEmptyTableViewCell()
-                    return cell
-                    
                 case let .item(serverItemModel):
                     let cell = ServerListItemTableViewCell()
                     cell.setupWith(model: serverItemModel)
@@ -85,17 +81,14 @@ final class ServerListViewController: BaseViewController<ServerListViewModel> {
         
         tableView = UITableView(frame: CGRect.zero)
         tableView.register(
-            ServerListEmptyTableViewCell.self,
-            forCellReuseIdentifier: ServerListEmptyTableViewCell.cellIdentifier
-        )
-        tableView.register(
             ServerListItemTableViewCell.self,
             forCellReuseIdentifier: ServerListItemTableViewCell.cellIdentifier
         )
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedSectionHeaderHeight = UITableView.automaticDimension
         tableView.sectionHeaderHeight = UITableView.automaticDimension
-        tableView.sectionFooterHeight = CGFloat.leastNormalMagnitude
+        tableView.sectionHeaderTopPadding = 0
         tableView.backgroundColor = UIColor.systemGray6
         tableView.addAndAnchorTo(view)
     }
@@ -129,5 +122,42 @@ final class ServerListViewController: BaseViewController<ServerListViewModel> {
 extension ServerListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return buildTableHeader()
+    }
+    
+    /// Builds Custom Header for the Table Header Section
+    private func buildTableHeader() -> UIView {
+        let view = UIView()
+        view.backgroundColor = UIColor.systemGray6
+        let stackView = UIStackView()
+        stackView.setup {
+            $0.axis = .horizontal
+            $0.alignment = .fill
+            $0.distribution = .fill
+        }
+        .setArrangedSubviews([
+            UILabel().setup {
+                $0.font = .systemFont(ofSize: 12, weight: .regular)
+                $0.textColor = .systemGray
+                $0.text = HardcodedStrings.server.uppercased()
+            },
+            UILabel().setup {
+                $0.font = .systemFont(ofSize: 12, weight: .regular)
+                $0.textColor = .systemGray
+                $0.text = HardcodedStrings.distance.uppercased()
+                $0.textAlignment = .right
+            }
+        ])
+        
+        stackView.addAndAnchorTo(
+            view,
+            insets: UIEdgeInsets(top: 24, left: 16, bottom: 8, right: 16),
+            ignoreSafeArea: false
+        )
+        
+        return view
     }
 }

@@ -70,7 +70,6 @@
 		F7DBB82128DA587F002CA5CE /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = F7DBB82028DA587F002CA5CE /* RxDataSources */; };
 		F7DBB82328DA5E6A002CA5CE /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB82228DA5E6A002CA5CE /* NavigationCoordinator.swift */; };
 		F7DBB82628DA680E002CA5CE /* ServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB82528DA680E002CA5CE /* ServerModel.swift */; };
-		F7DBB82D28DA6C05002CA5CE /* ServerListEmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB82C28DA6C05002CA5CE /* ServerListEmptyTableViewCell.swift */; };
 		F7DBB82F28DA6C74002CA5CE /* ServerListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB82E28DA6C74002CA5CE /* ServerListItemTableViewCell.swift */; };
 		F7DBB83128DA8922002CA5CE /* AppearanceGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB83028DA8922002CA5CE /* AppearanceGlobal.swift */; };
 		F7DBB83328DA8BDD002CA5CE /* ServerListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB83228DA8BDD002CA5CE /* ServerListRequest.swift */; };
@@ -196,7 +195,6 @@
 		F7DBB81B28DA5695002CA5CE /* ServerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListViewModel.swift; sourceTree = "<group>"; };
 		F7DBB82228DA5E6A002CA5CE /* NavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
 		F7DBB82528DA680E002CA5CE /* ServerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerModel.swift; sourceTree = "<group>"; };
-		F7DBB82C28DA6C05002CA5CE /* ServerListEmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListEmptyTableViewCell.swift; sourceTree = "<group>"; };
 		F7DBB82E28DA6C74002CA5CE /* ServerListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListItemTableViewCell.swift; sourceTree = "<group>"; };
 		F7DBB83028DA8922002CA5CE /* AppearanceGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceGlobal.swift; sourceTree = "<group>"; };
 		F7DBB83228DA8BDD002CA5CE /* ServerListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListRequest.swift; sourceTree = "<group>"; };
@@ -550,7 +548,6 @@
 			children = (
 				F7DBB81928DA564C002CA5CE /* ServerListViewController.swift */,
 				F7DBB81B28DA5695002CA5CE /* ServerListViewModel.swift */,
-				F7DBB82C28DA6C05002CA5CE /* ServerListEmptyTableViewCell.swift */,
 				F7DBB82E28DA6C74002CA5CE /* ServerListItemTableViewCell.swift */,
 			);
 			path = ServerList;
@@ -945,7 +942,6 @@
 				F7C7280728D7586400EF2F59 /* AlertCoordinator.swift in Sources */,
 				F7C7280228D6745000EF2F59 /* TransitionOptions.swift in Sources */,
 				F7DBB7E528D8C300002CA5CE /* AuthorizationResponse.swift in Sources */,
-				F7DBB82D28DA6C05002CA5CE /* ServerListEmptyTableViewCell.swift in Sources */,
 				F7C7281D28D7C14D00EF2F59 /* main.swift in Sources */,
 				F7C7280C28D7589900EF2F59 /* ServerListCoordinator.swift in Sources */,
 				F7DBB7D328D891E8002CA5CE /* HTTPMethod.swift in Sources */,

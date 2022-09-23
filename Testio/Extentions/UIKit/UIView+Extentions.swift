@@ -8,6 +8,8 @@
 import UIKit
 
 extension UIView {
+    
+    /// Anchors to super view with insets
     @discardableResult
     func anchorToSuperview(insets: UIEdgeInsets = .zero, ignoreSafeArea: Bool = false) -> Self {
         guard let superview = superview else { return self }
@@ -15,6 +17,7 @@ extension UIView {
         return anchorTo(view: superview, insets: insets, ignoreSafeArea: ignoreSafeArea)
     }
     
+    /// Anchors to specific view with insets
     @discardableResult
     func anchorTo(view: UIView, insets: UIEdgeInsets = .zero, ignoreSafeArea: Bool = false) -> Self {
         translatesAutoresizingMaskIntoConstraints = false
@@ -41,12 +44,14 @@ extension UIView {
         return self
     }
     
+    /// Removes subview from view
     func removeSubviews() {
         subviews.forEach { $0.removeFromSuperview() }
     }
 }
 
 extension UIView {
+    /// Adds view to specific view
     @discardableResult
     func addTo(_ view: UIView) -> Self {
         translatesAutoresizingMaskIntoConstraints = false
@@ -54,6 +59,7 @@ extension UIView {
         return self
     }
 
+    /// Adds and Anchors to specific view
     @discardableResult
     func addAndAnchorTo(_ view: UIView, insets: UIEdgeInsets = UIEdgeInsets.zero, ignoreSafeArea: Bool = true) -> Self {
         addTo(view)
@@ -61,3 +67,15 @@ extension UIView {
         return self
     }
 }
+
+extension UIView {
+    /// Creates UIView as a line with custom color and height
+    static func separator(color: UIColor = .systemGray5, height: CGFloat = 1) -> UIView {
+        let separator = UIView()
+        separator.backgroundColor = color
+        separator.translatesAutoresizingMaskIntoConstraints = false
+        separator.heightAnchor.constraint(equalToConstant: height).isActive = true
+        return separator
+    }
+}
+

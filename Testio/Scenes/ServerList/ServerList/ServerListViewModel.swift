@@ -37,7 +37,7 @@ final class ServerListViewModel: ViewModelProtocol {
         // bind list of servers for preparing it to dataModel
         state.serversSubject.asObservable()
             .map { servers -> [SectionDataModel] in
-                [SectionDataModel(model: .list, items: [.empty] + servers.map { .item($0) })]
+                [SectionDataModel(model: .list, items: servers.map { .item($0) })]
             }
             .bind(to: input.dataModelsSubject)
             .disposed(by: disposeBag)
@@ -112,7 +112,6 @@ extension ServerListViewModel {
     }
 
     enum DataModel: Equatable {
-        case empty
         case item(ServerModel)
     }
 }
