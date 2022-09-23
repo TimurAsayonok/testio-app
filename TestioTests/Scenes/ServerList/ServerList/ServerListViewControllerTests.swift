@@ -36,8 +36,8 @@ class ServerListViewControllerTests: XCTestCase {
         XCTAssertNotNil(sut.tableView.numberOfRows(inSection: 0) == 1)
         
         // server list is not empty
-        viewModel.state.servers = [ServerModel(name: "Server 1", distance: 12)]
-        XCTAssertNotNil(sut.tableView.numberOfRows(inSection: 0) == viewModel.state.servers.count + 1)
+        viewModel.state.serversSubject.onNext([ServerModel.mock])
+        XCTAssertNotNil(sut.tableView.numberOfRows(inSection: 0) > 0)
     }
     
     //TODO: ADD NavigationBatItemEvents

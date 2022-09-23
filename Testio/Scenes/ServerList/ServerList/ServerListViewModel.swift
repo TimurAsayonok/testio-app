@@ -42,6 +42,16 @@ final class ServerListViewModel: ViewModelProtocol {
             .bind(to: input.dataModelsSubject)
             .disposed(by: disposeBag)
         
+        // filter list of servers based on filter type and update data model
+        state.filterStatusSubject.asObservable()
+            .withLatestFrom(state.serversSubject, resultSelector: { ($0, $1) })
+            .flatMap { [weak self] (filter, servers) -> Observable<[ServerModel]> in
+                guard let self = self else { return .never() }
+                return Observable.just(self.sort(servers, by: filter))
+            }
+            .bind(to: state.serversSubject)
+            .disposed(by: disposeBag)
+        
         // observe logout button tap event
         input.logoutSubject.asObservable()
             .subscribe(onNext: { [weak self] in
@@ -59,16 +69,6 @@ final class ServerListViewModel: ViewModelProtocol {
                 ScreenLink(AlertRoute.actionSheet(actions: self?.setupActions() ?? []), presentation: .present)
             }
             .bind(to: dependencies.appGlobalState.screenTriggerObserver)
-            .disposed(by: disposeBag)
-        
-        // filter list of servers based on filter type and update data model
-        state.filterStatusSubject.asObservable()
-            .withLatestFrom(state.serversSubject, resultSelector: { ($0, $1) })
-            .flatMap { [weak self] (filter, servers) -> Observable<[ServerModel]> in
-                guard let self = self else { return .never() }
-                return Observable.just(self.sort(servers, by: filter))
-            }
-            .bind(to: state.serversSubject)
             .disposed(by: disposeBag)
     }
     

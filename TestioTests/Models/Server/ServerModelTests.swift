@@ -13,8 +13,8 @@ class ServerModelTests: XCTestCase {
     func testMustInitOnlyWithDefaultValues() {
         let sut = ServerModel(name: nil, distance: nil)
         XCTAssertNotNil(sut)
-        XCTAssertNil(sut.name)
-        XCTAssertNil(sut.distance)
+        XCTAssertEqual(sut.name, "")
+        XCTAssertEqual(sut.distance, 0)
     }
 
     func testMustInitWithAllValues() {

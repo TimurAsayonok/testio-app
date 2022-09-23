@@ -18,6 +18,11 @@ struct ServerModel: Codable, Equatable {
     var distance: Int {
         distanceKey ?? 0
     }
+    
+    init(name: String?, distance: Int?) {
+        self.nameKey = name
+        self.distanceKey = distance
+    }
 
     enum CodingKeys: String, CodingKey {
         case nameKey = "name"
