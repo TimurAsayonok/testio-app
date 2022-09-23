@@ -9,7 +9,6 @@ import UIKit
 
 enum ServerListRoute: RouteType {
     case serverList(servers: [ServerModel])
-    case listLoading
 }
 
 // MARK: ServerListCoordinator
@@ -28,13 +27,6 @@ class ServerListCoordinator: Coordinator<ServerListRoute> {
         case let .serverList(servers):
             let viewController = ServerListViewController()
             let viewModel = ServerListViewModel(servers: servers, dependencies: dependencies)
-            viewController.bind(to: viewModel)
-            
-            return viewController
-            
-        case .listLoading:
-            let viewController = ServerListLoadingViewController()
-            let viewModel = ServerListLoadingViewModel(dependencies: dependencies)
             viewController.bind(to: viewModel)
             
             return viewController

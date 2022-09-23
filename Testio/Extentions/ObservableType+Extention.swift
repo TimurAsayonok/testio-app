@@ -11,7 +11,7 @@ import RxSwift
 public extension ObservableType {
     func wrapService<R>(
         loadingObserver: AnyObserver<Bool>?,
-        errorObserver: AnyObserver<Error>,
+        errorObserver: AnyObserver<Error>?,
         serviceMethod: @escaping (Element) -> Observable<R>
     ) -> Observable<R> {
         flatMap { parameters -> Observable<Event<R>> in
@@ -25,7 +25,7 @@ public extension ObservableType {
                 return .just(element)
 
             case let .error(error):
-                errorObserver.onNext(error)
+                errorObserver?.onNext(error)
                 return .never()
 
             case .completed:

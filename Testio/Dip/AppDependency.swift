@@ -14,6 +14,7 @@ protocol Dependencies {
     var appConfigurationProvider: AppConfigurationProviderProtocol { get }
     var appGlobalState: AppGlobalState { get }
     var headersRequestDecorator: HeadersRequestDecoratorProtocol { get }
+    var serverListRealmRepository: ServerListRealmRepositoryProtocol { get }
 }
 
 // MARK: AppDependency
@@ -25,4 +26,5 @@ struct AppDependency: Dependencies {
     let appConfigurationProvider: AppConfigurationProviderProtocol
     let appGlobalState: AppGlobalState
     let headersRequestDecorator: HeadersRequestDecoratorProtocol
+    let serverListRealmRepository: ServerListRealmRepositoryProtocol
 }

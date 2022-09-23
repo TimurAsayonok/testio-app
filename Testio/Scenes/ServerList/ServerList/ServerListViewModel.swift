@@ -22,13 +22,12 @@ final class ServerListViewModel: ViewModelProtocol {
     var input: Input = Input()
     var output: Output = Output()
     
-    var state: State
+    var state = State()
     
     let dependencies: Dependencies
     
     init(servers: [ServerModel], dependencies: Dependencies) {
         self.dependencies = dependencies
-        self.state = State(serversSubject: .init(value: servers))
         
         bindSubjects()
     }
@@ -49,6 +48,30 @@ final class ServerListViewModel: ViewModelProtocol {
                 guard let self = self else { return .never() }
                 return Observable.just(self.sort(servers, by: filter))
             }
+            .bind(to: state.serversSubject)
+            .disposed(by: disposeBag)
+        
+        // handle start event for getting servers from Realm or Server
+        input.startSubject.asObservable()
+            .wrapService(
+                loadingObserver: output.loadingObserver,
+                errorObserver: output.errorSubject.asObserver(),
+                serviceMethod: dependencies.serverListRealmRepository.getServerList
+            )
+            .subscribe(onNext: { [weak self] in
+                $0.isEmpty
+                    ? self?.input.getServersApiRequestSubject.onNext(())
+                    : self?.state.serversSubject.onNext($0)
+            })
+            .disposed(by: disposeBag)
+        
+        // get servers from api call
+        input.getServersApiRequestSubject.asObservable()
+            .wrapService(
+                loadingObserver: output.loadingSubject.asObserver(),
+                errorObserver: output.errorSubject.asObserver(),
+                serviceMethod: dependencies.apiService.getServerList
+            )
             .bind(to: state.serversSubject)
             .disposed(by: disposeBag)
         
@@ -132,6 +155,12 @@ extension ServerListViewModel {
 // MARK: Input
 extension ServerListViewModel {
     struct Input {
+        fileprivate var startSubject = PublishSubject<Void>()
+        var startObserver: AnyObserver<Void> { startSubject.asObserver() }
+        
+        fileprivate var getServersApiRequestSubject = PublishSubject<Void>()
+        var getServersApiRequestObserver: AnyObserver<Void> { getServersApiRequestSubject.asObserver() }
+        
         fileprivate var dataModelsSubject: BehaviorSubject<[SectionDataModel]> = BehaviorSubject(value: [])
         var dataModelsObserver: AnyObserver<[SectionDataModel]> { dataModelsSubject.asObserver() }
         var dataModelsDriver: Driver<[SectionDataModel]> { dataModelsSubject.asDriver(onErrorJustReturn: []) }
@@ -150,5 +179,12 @@ extension ServerListViewModel {
 
 // MARK: OUTPUT
 extension ServerListViewModel {
-    struct Output {}
+    struct Output {
+        fileprivate var loadingSubject = BehaviorSubject<Bool>(value: false)
+        var loadingObserver: AnyObserver<Bool> { loadingSubject.asObserver() }
+        var loadingDriver: Driver<Bool> { loadingSubject.asDriver(onErrorJustReturn: false) }
+
+        fileprivate var errorSubject: PublishSubject<Error> = PublishSubject()
+        var errorObservable: Observable<Error> { errorSubject.asObservable() }
+    }
 }

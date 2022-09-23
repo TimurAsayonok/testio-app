@@ -28,13 +28,18 @@ extension DipContainerBuilder {
             }
             
             container.register {
+                RealmDataManage() as RealmDataManagerProtocol
+            }
+            
+            container.register {
                 AppDependency(
                     userDefaults: try container.resolve(),
                     keychainWrapper: try container.resolve(),
                     apiService: try container.resolve(),
                     appConfigurationProvider: try container.resolve(),
                     appGlobalState: try container.resolve(),
-                    headersRequestDecorator: try container.resolve()
+                    headersRequestDecorator: try container.resolve(),
+                    serverListRealmRepository: try container.resolve()
                 ) as Dependencies
             }
         }

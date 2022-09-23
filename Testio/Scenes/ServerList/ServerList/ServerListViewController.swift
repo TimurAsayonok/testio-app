@@ -65,6 +65,14 @@ final class ServerListViewController: BaseViewController<ServerListViewModel> {
         viewModel.input.dataModelsDriver
             .drive(tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
+        
+        // start presenting servers or ask new servers from backed
+        viewModel.input.startObserver.onNext(())
+        
+        // handle loading driver and drive it to rx.isLoading
+        viewModel.output.loadingDriver
+            .drive(rx.isLoading)
+            .disposed(by: disposeBag)
     }
     
     override func setupUI() {

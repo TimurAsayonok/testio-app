@@ -12,11 +12,13 @@ import RxCocoa
 struct AppCoordinatorFactory {
     let fatCoordinatorFactory: FatCoordinatorFactory
     let dependencies: Dependencies
+    let serverListRealmRepository: ServerListRealmRepositoryProtocol
     
     func create() -> AppCoordinator {
         AppCoordinator(
             fatCoordinatorFactory: fatCoordinatorFactory,
-            dependencies: dependencies
+            dependencies: dependencies,
+            serverListRealmRepository: serverListRealmRepository
         )
     }
 }
@@ -30,18 +32,25 @@ class AppCoordinator: CoordinatorType {
     
     let fatCoordinatorFactory: FatCoordinatorFactory
     let dependencies: Dependencies
+    let serverListRealmRepository: ServerListRealmRepositoryProtocol
     
-    init(fatCoordinatorFactory: FatCoordinatorFactory, dependencies: Dependencies) {
+    init(
+        fatCoordinatorFactory: FatCoordinatorFactory,
+        dependencies: Dependencies,
+        serverListRealmRepository: ServerListRealmRepositoryProtocol
+    ) {
         self.fatCoordinatorFactory = fatCoordinatorFactory
         self.dependencies = dependencies
+        self.serverListRealmRepository = serverListRealmRepository
         rootViewController.view.backgroundColor = UIColor.white
         
         observeState()
     }
     
     func boot() {
+        
         let screenLink: ScreenLink = dependencies.keychainWrapper.getBearerToken() != nil
-            ? ScreenLink(ServerListRoute.listLoading, presentation: .asRootView)
+            ? ScreenLink(ServerListRoute.serverList(servers: []), presentation: .asRootNavigation)
             : ScreenLink(StartRoute.login, presentation: .asRootView)
         
         dependencies.appGlobalState.screenTriggerObserver.onNext(screenLink)

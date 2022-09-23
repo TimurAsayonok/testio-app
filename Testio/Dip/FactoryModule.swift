@@ -15,7 +15,8 @@ extension DipContainerBuilder {
             container.register {
                 AppCoordinatorFactory(
                     fatCoordinatorFactory: try container.resolve(),
-                    dependencies: try container.resolve()
+                    dependencies: try container.resolve(),
+                    serverListRealmRepository: try container.resolve()
                 )
             }
             

@@ -74,8 +74,6 @@
 		F7DBB83128DA8922002CA5CE /* AppearanceGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB83028DA8922002CA5CE /* AppearanceGlobal.swift */; };
 		F7DBB83328DA8BDD002CA5CE /* ServerListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB83228DA8BDD002CA5CE /* ServerListRequest.swift */; };
 		F7DBB83528DB0FD7002CA5CE /* ScreenLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB83428DB0FD7002CA5CE /* ScreenLink.swift */; };
-		F7DBB83D28DB351D002CA5CE /* ServerListLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB83C28DB351D002CA5CE /* ServerListLoadingViewModel.swift */; };
-		F7DBB83F28DB35C5002CA5CE /* ServerListLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB83E28DB35C5002CA5CE /* ServerListLoadingViewController.swift */; };
 		F7DBB84128DB56C7002CA5CE /* HeadersRequestDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB84028DB56C7002CA5CE /* HeadersRequestDecorator.swift */; };
 		F7DBB84528DB8586002CA5CE /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = F7DBB84428DB8586002CA5CE /* RxGesture */; };
 		F7DBB84728DB8930002CA5CE /* AppDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB84628DB8930002CA5CE /* AppDelegateMock.swift */; };
@@ -95,8 +93,6 @@
 		F7DBB8A228DBDD6C002CA5CE /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = F7DBB8A128DBDD6C002CA5CE /* RxTest */; };
 		F7DBB8A528DBEEDF002CA5CE /* ServerListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8A428DBEEDF002CA5CE /* ServerListViewControllerTests.swift */; };
 		F7DBB8A828DBEF8D002CA5CE /* ServerListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8A728DBEF8D002CA5CE /* ServerListViewModelTests.swift */; };
-		F7DBB8AA28DBEFA8002CA5CE /* ServerListLoadingViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8A928DBEFA8002CA5CE /* ServerListLoadingViewControllerTests.swift */; };
-		F7DBB8AC28DBEFB4002CA5CE /* ServerListLoadingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8AB28DBEFB4002CA5CE /* ServerListLoadingViewModelTests.swift */; };
 		F7DBB8B028DBEFFD002CA5CE /* ServerListItemTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8AF28DBEFFD002CA5CE /* ServerListItemTableViewCellTests.swift */; };
 		F7DBB8B928DC524A002CA5CE /* ServerModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8B828DC524A002CA5CE /* ServerModelTests.swift */; };
 		F7DBB8BB28DC5893002CA5CE /* AuthorizationResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8BA28DC5893002CA5CE /* AuthorizationResponseTests.swift */; };
@@ -114,6 +110,15 @@
 		F7DBB8DC28DCA7B2002CA5CE /* ApiProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8DB28DCA7B2002CA5CE /* ApiProviderTests.swift */; };
 		F7DBB8DE28DCAF11002CA5CE /* HeadersRequestDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8DD28DCAF11002CA5CE /* HeadersRequestDecoratorTests.swift */; };
 		F7DBB8E028DD357B002CA5CE /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8DF28DD357B002CA5CE /* Asset.swift */; };
+		F7DBB92D28DDD0FB002CA5CE /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = F7DBB92C28DDD0FB002CA5CE /* Realm */; };
+		F7DBB92F28DDD0FB002CA5CE /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F7DBB92E28DDD0FB002CA5CE /* RealmSwift */; };
+		F7DBB93228DDD1BC002CA5CE /* ServerRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB93128DDD1BC002CA5CE /* ServerRealmModel.swift */; };
+		F7DBB93428DDD2EC002CA5CE /* MappableModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB93328DDD2EC002CA5CE /* MappableModelProtocol.swift */; };
+		F7DBB93628DDD328002CA5CE /* StorableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB93528DDD328002CA5CE /* StorableProtocol.swift */; };
+		F7DBB93928DDD7DB002CA5CE /* RealmDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB93828DDD7DB002CA5CE /* RealmDataManager.swift */; };
+		F7DBB93B28DDD892002CA5CE /* Sorted.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB93A28DDD892002CA5CE /* Sorted.swift */; };
+		F7DBB93D28DDF535002CA5CE /* ServerListRealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB93C28DDF535002CA5CE /* ServerListRealmRepository.swift */; };
+		F7DBB94128DE03C8002CA5CE /* ServerListRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB94028DE03C7002CA5CE /* ServerListRealmModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -199,8 +204,6 @@
 		F7DBB83028DA8922002CA5CE /* AppearanceGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceGlobal.swift; sourceTree = "<group>"; };
 		F7DBB83228DA8BDD002CA5CE /* ServerListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListRequest.swift; sourceTree = "<group>"; };
 		F7DBB83428DB0FD7002CA5CE /* ScreenLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenLink.swift; sourceTree = "<group>"; };
-		F7DBB83C28DB351D002CA5CE /* ServerListLoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListLoadingViewModel.swift; sourceTree = "<group>"; };
-		F7DBB83E28DB35C5002CA5CE /* ServerListLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListLoadingViewController.swift; sourceTree = "<group>"; };
 		F7DBB84028DB56C7002CA5CE /* HeadersRequestDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadersRequestDecorator.swift; sourceTree = "<group>"; };
 		F7DBB84628DB8930002CA5CE /* AppDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateMock.swift; sourceTree = "<group>"; };
 		F7DBB84C28DB8B2B002CA5CE /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
@@ -214,8 +217,6 @@
 		F7DBB86728DBCF37002CA5CE /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		F7DBB8A428DBEEDF002CA5CE /* ServerListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListViewControllerTests.swift; sourceTree = "<group>"; };
 		F7DBB8A728DBEF8D002CA5CE /* ServerListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListViewModelTests.swift; sourceTree = "<group>"; };
-		F7DBB8A928DBEFA8002CA5CE /* ServerListLoadingViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListLoadingViewControllerTests.swift; sourceTree = "<group>"; };
-		F7DBB8AB28DBEFB4002CA5CE /* ServerListLoadingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListLoadingViewModelTests.swift; sourceTree = "<group>"; };
 		F7DBB8AF28DBEFFD002CA5CE /* ServerListItemTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListItemTableViewCellTests.swift; sourceTree = "<group>"; };
 		F7DBB8B828DC524A002CA5CE /* ServerModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerModelTests.swift; sourceTree = "<group>"; };
 		F7DBB8BA28DC5893002CA5CE /* AuthorizationResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationResponseTests.swift; sourceTree = "<group>"; };
@@ -233,6 +234,13 @@
 		F7DBB8DB28DCA7B2002CA5CE /* ApiProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProviderTests.swift; sourceTree = "<group>"; };
 		F7DBB8DD28DCAF11002CA5CE /* HeadersRequestDecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadersRequestDecoratorTests.swift; sourceTree = "<group>"; };
 		F7DBB8DF28DD357B002CA5CE /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		F7DBB93128DDD1BC002CA5CE /* ServerRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRealmModel.swift; sourceTree = "<group>"; };
+		F7DBB93328DDD2EC002CA5CE /* MappableModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappableModelProtocol.swift; sourceTree = "<group>"; };
+		F7DBB93528DDD328002CA5CE /* StorableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorableProtocol.swift; sourceTree = "<group>"; };
+		F7DBB93828DDD7DB002CA5CE /* RealmDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataManager.swift; sourceTree = "<group>"; };
+		F7DBB93A28DDD892002CA5CE /* Sorted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sorted.swift; sourceTree = "<group>"; };
+		F7DBB93C28DDF535002CA5CE /* ServerListRealmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListRealmRepository.swift; sourceTree = "<group>"; };
+		F7DBB94028DE03C7002CA5CE /* ServerListRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListRealmModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +248,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7DBB92F28DDD0FB002CA5CE /* RealmSwift in Frameworks */,
+				F7DBB92D28DDD0FB002CA5CE /* Realm in Frameworks */,
 				F7DBB89E28DBDD6C002CA5CE /* RxRelay in Frameworks */,
 				F7DBB81F28DA587F002CA5CE /* Differentiator in Frameworks */,
 				F7DBB8A028DBDD6C002CA5CE /* RxSwift in Frameworks */,
@@ -389,7 +399,6 @@
 			children = (
 				F7C7280B28D7589900EF2F59 /* ServerListCoordinator.swift */,
 				F7DBB82928DA6BCA002CA5CE /* ServerList */,
-				F7DBB83928DB333F002CA5CE /* ServerListLoading */,
 			);
 			path = ServerList;
 			sourceTree = "<group>";
@@ -412,6 +421,7 @@
 				F7DBB7E128D8C152002CA5CE /* ApiService */,
 				F7DBB7C528D8646D002CA5CE /* AppConfiguration */,
 				F7DBB7ED28D8CBD5002CA5CE /* Requests */,
+				F7DBB93028DDD188002CA5CE /* RealmDataManager */,
 				F7DBB7C228D861FD002CA5CE /* Wrappers */,
 			);
 			path = Services;
@@ -487,6 +497,7 @@
 			children = (
 				F7DBB7F128D8D056002CA5CE /* ErrorResponse.swift */,
 				F7DBB83428DB0FD7002CA5CE /* ScreenLink.swift */,
+				F7DBB93A28DDD892002CA5CE /* Sorted.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -503,6 +514,7 @@
 		F7DBB7FC28D91AF0002CA5CE /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F7DBB93728DDD32E002CA5CE /* Realm */,
 				F7DBB80828D9DCB7002CA5CE /* UIKit */,
 				F7DBB83028DA8922002CA5CE /* AppearanceGlobal.swift */,
 				F7DBB7FD28D91B77002CA5CE /* ViewModelProtocol.swift */,
@@ -540,6 +552,8 @@
 			isa = PBXGroup;
 			children = (
 				F7DBB82528DA680E002CA5CE /* ServerModel.swift */,
+				F7DBB93128DDD1BC002CA5CE /* ServerRealmModel.swift */,
+				F7DBB94028DE03C7002CA5CE /* ServerListRealmModel.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -561,15 +575,6 @@
 				F7DBB7F828D8DB11002CA5CE /* LoginViewModel.swift */,
 			);
 			path = Login;
-			sourceTree = "<group>";
-		};
-		F7DBB83928DB333F002CA5CE /* ServerListLoading */ = {
-			isa = PBXGroup;
-			children = (
-				F7DBB83E28DB35C5002CA5CE /* ServerListLoadingViewController.swift */,
-				F7DBB83C28DB351D002CA5CE /* ServerListLoadingViewModel.swift */,
-			);
-			path = ServerListLoading;
 			sourceTree = "<group>";
 		};
 		F7DBB84828DB8AC0002CA5CE /* Scenes */ = {
@@ -602,7 +607,6 @@
 			isa = PBXGroup;
 			children = (
 				F7DBB8A628DBEF6B002CA5CE /* ServerList */,
-				F7DBB8A328DBEEBD002CA5CE /* ServerListLoading */,
 			);
 			path = ServerList;
 			sourceTree = "<group>";
@@ -627,15 +631,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F7DBB8A328DBEEBD002CA5CE /* ServerListLoading */ = {
-			isa = PBXGroup;
-			children = (
-				F7DBB8A928DBEFA8002CA5CE /* ServerListLoadingViewControllerTests.swift */,
-				F7DBB8AB28DBEFB4002CA5CE /* ServerListLoadingViewModelTests.swift */,
-			);
-			path = ServerListLoading;
 			sourceTree = "<group>";
 		};
 		F7DBB8A628DBEF6B002CA5CE /* ServerList */ = {
@@ -745,6 +740,24 @@
 			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
+		F7DBB93028DDD188002CA5CE /* RealmDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				F7DBB93828DDD7DB002CA5CE /* RealmDataManager.swift */,
+				F7DBB93C28DDF535002CA5CE /* ServerListRealmRepository.swift */,
+			);
+			path = RealmDataManager;
+			sourceTree = "<group>";
+		};
+		F7DBB93728DDD32E002CA5CE /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				F7DBB93328DDD2EC002CA5CE /* MappableModelProtocol.swift */,
+				F7DBB93528DDD328002CA5CE /* StorableProtocol.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -773,6 +786,8 @@
 				F7DBB89B28DBDD6C002CA5CE /* RxCocoa */,
 				F7DBB89D28DBDD6C002CA5CE /* RxRelay */,
 				F7DBB89F28DBDD6C002CA5CE /* RxSwift */,
+				F7DBB92C28DDD0FB002CA5CE /* Realm */,
+				F7DBB92E28DDD0FB002CA5CE /* RealmSwift */,
 			);
 			productName = Testio;
 			productReference = F7C727A628D3905200EF2F59 /* Testio.app */;
@@ -859,6 +874,7 @@
 				F7DBB84228DB8505002CA5CE /* XCRemoteSwiftPackageReference "RxGesture" */,
 				F7DBB84328DB8586002CA5CE /* XCRemoteSwiftPackageReference "RxGesture" */,
 				F7DBB89828DBDD6C002CA5CE /* XCRemoteSwiftPackageReference "RxSwift" */,
+				F7DBB92B28DDD0FB002CA5CE /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = F7C727A728D3905200EF2F59 /* Products */;
 			projectDirPath = "";
@@ -929,9 +945,11 @@
 				F7DBB81228DA290D002CA5CE /* AppGlobalState.swift in Sources */,
 				F7DBB7DA28D89FA3002CA5CE /* ApiProviderError.swift in Sources */,
 				F7DBB83328DA8BDD002CA5CE /* ServerListRequest.swift in Sources */,
+				F7DBB93B28DDD892002CA5CE /* Sorted.swift in Sources */,
 				F7DBB80E28DA1BFC002CA5CE /* UIButton+RxSwift.swift in Sources */,
 				F7C7280E28D77FA600EF2F59 /* FactoryModule.swift in Sources */,
 				F7DBB81028DA20DE002CA5CE /* ObservableType+Extention.swift in Sources */,
+				F7DBB93928DDD7DB002CA5CE /* RealmDataManager.swift in Sources */,
 				F7DBB7EF28D8CC14002CA5CE /* AuthorizationRequest.swift in Sources */,
 				F7DBB80028D91D4F002CA5CE /* BaseViewController.swift in Sources */,
 				F7DBB7F628D8DA7A002CA5CE /* LoginViewController.swift in Sources */,
@@ -941,6 +959,7 @@
 				F7DBB8E028DD357B002CA5CE /* Asset.swift in Sources */,
 				F7C7281428D7AEC700EF2F59 /* Transition+UIViewController.swift in Sources */,
 				F7C7280728D7586400EF2F59 /* AlertCoordinator.swift in Sources */,
+				F7DBB93D28DDF535002CA5CE /* ServerListRealmRepository.swift in Sources */,
 				F7C7280228D6745000EF2F59 /* TransitionOptions.swift in Sources */,
 				F7DBB7E528D8C300002CA5CE /* AuthorizationResponse.swift in Sources */,
 				F7C7281D28D7C14D00EF2F59 /* main.swift in Sources */,
@@ -949,7 +968,8 @@
 				F7DBB7CF28D88FA8002CA5CE /* ApiProvider.swift in Sources */,
 				F7DBB7FE28D91B77002CA5CE /* ViewModelProtocol.swift in Sources */,
 				F7C7281928D7B49500EF2F59 /* UIView+Extentions.swift in Sources */,
-				F7DBB83D28DB351D002CA5CE /* ServerListLoadingViewModel.swift in Sources */,
+				F7DBB94128DE03C8002CA5CE /* ServerListRealmModel.swift in Sources */,
+				F7DBB93428DDD2EC002CA5CE /* MappableModelProtocol.swift in Sources */,
 				F7C7280428D7501100EF2F59 /* FatCoordinatorFactory.swift in Sources */,
 				F7DBB7F928D8DB11002CA5CE /* LoginViewModel.swift in Sources */,
 				F7DBB80A28D9DCD5002CA5CE /* TextField.swift in Sources */,
@@ -959,6 +979,7 @@
 				F7C7281728D7B38100EF2F59 /* UIViewController+Extentions.swift in Sources */,
 				F7C727F928D4C51400EF2F59 /* AppCoordinator.swift in Sources */,
 				F7C727AA28D3905200EF2F59 /* AppDelegate.swift in Sources */,
+				F7DBB93228DDD1BC002CA5CE /* ServerRealmModel.swift in Sources */,
 				F7DBB83528DB0FD7002CA5CE /* ScreenLink.swift in Sources */,
 				F7DBB81828DA3FDB002CA5CE /* UIViewController+RxSwift.swift in Sources */,
 				F7DBB84128DB56C7002CA5CE /* HeadersRequestDecorator.swift in Sources */,
@@ -981,9 +1002,9 @@
 				F7DBB7E028D8C14E002CA5CE /* ApiService.swift in Sources */,
 				F7C7281028D7817700EF2F59 /* AppDependency.swift in Sources */,
 				F7C727F428D49D8A00EF2F59 /* DipContainerBuilder.swift in Sources */,
-				F7DBB83F28DB35C5002CA5CE /* ServerListLoadingViewController.swift in Sources */,
 				F7DBB7CC28D86A8F002CA5CE /* HardcodedStrings.swift in Sources */,
 				F7DBB81428DA355D002CA5CE /* Codable+Extention.swift in Sources */,
+				F7DBB93628DDD328002CA5CE /* StorableProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1009,7 +1030,6 @@
 				F7DBB8A828DBEF8D002CA5CE /* ServerListViewModelTests.swift in Sources */,
 				F7DBB8B028DBEFFD002CA5CE /* ServerListItemTableViewCellTests.swift in Sources */,
 				F7DBB8CF28DC6E46002CA5CE /* AppConfigProviderTests.swift in Sources */,
-				F7DBB8AA28DBEFA8002CA5CE /* ServerListLoadingViewControllerTests.swift in Sources */,
 				F7DBB85928DB9359002CA5CE /* KeychainWrapperProtocolMock.swift in Sources */,
 				F7DBB84D28DB8B2B002CA5CE /* LoginViewControllerTests.swift in Sources */,
 				F7DBB84728DB8930002CA5CE /* AppDelegateMock.swift in Sources */,
@@ -1017,7 +1037,6 @@
 				F7DBB8C128DC59D0002CA5CE /* ScreenLinkTests.swift in Sources */,
 				F7DBB8BD28DC58CC002CA5CE /* LoginCredentialsModelTests.swift in Sources */,
 				F7DBB8B928DC524A002CA5CE /* ServerModelTests.swift in Sources */,
-				F7DBB8AC28DBEFB4002CA5CE /* ServerListLoadingViewModelTests.swift in Sources */,
 				F7DBB8C828DC6892002CA5CE /* DipContainerBuilderTests.swift in Sources */,
 				F7DBB85F28DB99FE002CA5CE /* AppConfigurationProviderProtocolMock.swift in Sources */,
 				F7DBB8DC28DCA7B2002CA5CE /* ApiProviderTests.swift in Sources */,
@@ -1413,6 +1432,14 @@
 				version = 6.5.0;
 			};
 		};
+		F7DBB92B28DDD0FB002CA5CE /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 10.30.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1475,6 +1502,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F7DBB89828DBDD6C002CA5CE /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxTest;
+		};
+		F7DBB92C28DDD0FB002CA5CE /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7DBB92B28DDD0FB002CA5CE /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		F7DBB92E28DDD0FB002CA5CE /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7DBB92B28DDD0FB002CA5CE /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -19,15 +19,18 @@ class ApiService: ApiServiceProtocol {
     let apiProvider: ApiProviderProtocol
     let appConfiguration: AppConfigurationProviderProtocol
     let keychain: KeychainWrapperProtocol
+    let serverListRealmRepository: ServerListRealmRepositoryProtocol
     
     init(
         apiProvider: ApiProviderProtocol,
         appConfiguration: AppConfigurationProviderProtocol,
-        keychain: KeychainWrapperProtocol
+        keychain: KeychainWrapperProtocol,
+        serverListRealmRepository: ServerListRealmRepositoryProtocol
     ) {
         self.apiProvider = apiProvider
         self.appConfiguration = appConfiguration
         self.keychain = keychain
+        self.serverListRealmRepository = serverListRealmRepository
     }
     
     /// Calls token from the server
@@ -46,5 +49,8 @@ class ApiService: ApiServiceProtocol {
     func getServerList() -> Observable<[ServerModel]> {
         let request = ServerListRequest()
         return apiProvider.get(apiRequest: request)
+            .do { [weak self] in
+                self?.serverListRealmRepository.saveServerList($0)
+            }
     }
 }

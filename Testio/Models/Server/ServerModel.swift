@@ -29,3 +29,13 @@ struct ServerModel: Codable, Equatable {
         case distanceKey = "distance"
     }
 }
+
+extension ServerModel: MappableModelProtocol {
+    func mapToRealmModel() -> ServerRealmModel {
+        return ServerRealmModel(name: name, distance: distance)
+    }
+    
+    static func mapFromRealmModel(_ model: ServerRealmModel) -> ServerModel {
+        return ServerModel(name: model.name, distance: model.distance)
+    }
+}
