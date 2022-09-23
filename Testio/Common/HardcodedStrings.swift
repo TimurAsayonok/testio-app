@@ -6,6 +6,7 @@
 //
 
 internal enum HardcodedStrings {
+    static let appTitle = "Testio."
     static let username = "Username"
     static let password = "Password"
     static let done = "Done"

@@ -55,7 +55,7 @@ final class ServerListLoadingViewController: BaseViewController<ServerListLoadin
         UIImageView().setup {
             $0.contentMode = .scaleToFill
             $0.clipsToBounds = true
-            $0.image = UIImage(named: "unsplash")
+            $0.image = Asset.unsplash
             backgroundImageView = $0
         }
         .addTo(view)

@@ -67,7 +67,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         UIImageView().setup {
             $0.contentMode = .scaleToFill
             $0.clipsToBounds = true
-            $0.image = UIImage(named: "unsplash")
+            $0.image = Asset.unsplash
             backgroundImageView = $0
         }
         .addTo(view)
@@ -77,7 +77,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         UIImageView().setup {
             $0.clipsToBounds = true
             $0.contentMode = .scaleAspectFit
-            $0.image = UIImage(named: "logo")
+            $0.image = Asset.logo
             $0.heightAnchor.constraint(equalToConstant: 48).isActive = true
         }
         .addAndAnchorTo(
@@ -101,7 +101,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
             // user name text field
             TextField().setup {
                 $0.placeholder = HardcodedStrings.username
-                $0.leftView = buildIcon("person.crop.circle.fill")
+                $0.leftView = buildIcon(Asset.personCropCircleFill)
                 $0.leftViewMode = .always
                 $0.heightAnchor.constraint(equalToConstant: 40).isActive = true
                 userNameTextField = $0
@@ -110,7 +110,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
             // password text field
             TextField().setup {
                 $0.placeholder = HardcodedStrings.password
-                $0.leftView = buildIcon("lock.circle.fill")
+                $0.leftView = buildIcon(Asset.lockCircleFill)
                 $0.leftViewMode = .always
                 $0.textContentType = .password
                 $0.isSecureTextEntry = true
@@ -144,9 +144,9 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
     /// - parameters:
     ///     - icon: Icon have for the imageView
     /// - returns: UIImageView
-    private func buildIcon(_ icon: String) -> UIImageView {
+    private func buildIcon(_ icon: UIImage) -> UIImageView {
         return UIImageView().setup {
-            $0.image = UIImage(systemName: icon)
+            $0.image = icon
             $0.contentMode = .center
         }
     }

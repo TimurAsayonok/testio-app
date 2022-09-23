@@ -9,6 +9,7 @@ import UIKit
 
 enum AlertRoute: RouteType {
     case actionSheet(title: String? = nil, message: String? = nil, actions: [UIAlertAction])
+    case alert(title: String?, message: String?, buttonConfirm: String? = HardcodedStrings.ok)
 }
 
 // MARK: AlertCoordinator
@@ -27,6 +28,19 @@ class AlertCoordinator: Coordinator<AlertRoute> {
             actionSheet.addAction(UIAlertAction(title: HardcodedStrings.cancel, style: .cancel))
             
             return actionSheet
+        case let .alert(title, message, buttonConfirm):
+            let alert = UIAlertController(
+                title: title,
+                message: message,
+                preferredStyle: .alert
+            )
+
+            // add an action (button)
+            alert.addAction(
+                UIAlertAction(title: buttonConfirm, style: .default, handler: nil)
+            )
+            
+            return alert
         }
     }
 }

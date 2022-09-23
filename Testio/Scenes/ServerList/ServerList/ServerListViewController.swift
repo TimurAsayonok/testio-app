@@ -69,13 +69,13 @@ final class ServerListViewController: BaseViewController<ServerListViewModel> {
     
     override func setupUI() {
         super.setupUI()
-        navigationItem.title = "Testio."
+        navigationItem.title = HardcodedStrings.appTitle
         navigationItem.leftBarButtonItem = UIBarButtonItem(
-            customView: setupNavigationButton(title: HardcodedStrings.filter, iconName: "arrow.up.arrow.down")
+            customView: setupNavigationButton(title: HardcodedStrings.filter, image: Asset.arrowUpArrowDown)
         )
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             customView: setupNavigationButton(
-                title: HardcodedStrings.logout, iconName: "rectangle.portrait.and.arrow.right", reversed: true
+                title: HardcodedStrings.logout, image: Asset.rectanglePortraitAndArrowRight, reversed: true
             )
         )
         
@@ -96,15 +96,15 @@ final class ServerListViewController: BaseViewController<ServerListViewModel> {
     /// Creates Custom Button for Navigation bar
     /// - parameters:
     ///     - title: title of the button
-    ///     - iconName: icon next to button
+    ///     - image: UIImage
     ///     - reversed: position icon and title
     /// - returns: custom button inside UIStackView
-    private func setupNavigationButton(title: String, iconName: String, reversed: Bool = false) -> UIStackView {
+    private func setupNavigationButton(title: String, image: UIImage, reversed: Bool = false) -> UIStackView {
         let label = UILabel()
         label.text = title
         label.textColor = UIColor.systemBlue
         
-        let imageView = UIImageView(image: UIImage(systemName: iconName))
+        let imageView = UIImageView(image: image)
         imageView.tintColor = UIColor.systemBlue
 
         let stackView = UIStackView()

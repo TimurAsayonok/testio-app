@@ -113,6 +113,7 @@
 		F7DBB8D928DCA67F002CA5CE /* TestRequestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8D828DCA67E002CA5CE /* TestRequestMock.swift */; };
 		F7DBB8DC28DCA7B2002CA5CE /* ApiProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8DB28DCA7B2002CA5CE /* ApiProviderTests.swift */; };
 		F7DBB8DE28DCAF11002CA5CE /* HeadersRequestDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8DD28DCAF11002CA5CE /* HeadersRequestDecoratorTests.swift */; };
+		F7DBB8E028DD357B002CA5CE /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8DF28DD357B002CA5CE /* Asset.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -231,6 +232,7 @@
 		F7DBB8D828DCA67E002CA5CE /* TestRequestMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRequestMock.swift; sourceTree = "<group>"; };
 		F7DBB8DB28DCA7B2002CA5CE /* ApiProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProviderTests.swift; sourceTree = "<group>"; };
 		F7DBB8DD28DCAF11002CA5CE /* HeadersRequestDecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadersRequestDecoratorTests.swift; sourceTree = "<group>"; };
+		F7DBB8DF28DD357B002CA5CE /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,7 +308,6 @@
 				F7C727B228D3905400EF2F59 /* Assets.xcassets */,
 				F7C727B428D3905400EF2F59 /* LaunchScreen.storyboard */,
 				F7C727B728D3905400EF2F59 /* Info.plist */,
-				F7DBB7CB28D86A8F002CA5CE /* HardcodedStrings.swift */,
 				F7C7281C28D7C14D00EF2F59 /* main.swift */,
 			);
 			path = Testio;
@@ -507,6 +508,8 @@
 				F7DBB7FD28D91B77002CA5CE /* ViewModelProtocol.swift */,
 				F7DBB7FF28D91D4F002CA5CE /* BaseViewController.swift */,
 				F7DBB80128D91D8B002CA5CE /* ViewModelBindableProtocol.swift */,
+				F7DBB7CB28D86A8F002CA5CE /* HardcodedStrings.swift */,
+				F7DBB8DF28DD357B002CA5CE /* Asset.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -935,6 +938,7 @@
 				F7DBB7C428D86218002CA5CE /* KeychainWrapper.swift in Sources */,
 				F7DBB7D128D89055002CA5CE /* RequestProtocol.swift in Sources */,
 				F7DBB7F228D8D056002CA5CE /* ErrorResponse.swift in Sources */,
+				F7DBB8E028DD357B002CA5CE /* Asset.swift in Sources */,
 				F7C7281428D7AEC700EF2F59 /* Transition+UIViewController.swift in Sources */,
 				F7C7280728D7586400EF2F59 /* AlertCoordinator.swift in Sources */,
 				F7C7280228D6745000EF2F59 /* TransitionOptions.swift in Sources */,

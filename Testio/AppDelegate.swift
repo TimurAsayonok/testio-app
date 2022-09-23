@@ -28,12 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppearanceGlobal.setupNavigationBar()
         
         // Keyboard Setting for working with Forms
-        let keyBoardManagerShared = IQKeyboardManager.shared
-        keyBoardManagerShared.enable = true
-        keyBoardManagerShared.previousNextDisplayMode = .alwaysHide
-        keyBoardManagerShared.keyboardDistanceFromTextField = 30
-        keyBoardManagerShared.toolbarTintColor = UIColor.black
-        keyBoardManagerShared.toolbarDoneBarButtonItemText = HardcodedStrings.done
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.previousNextDisplayMode = .alwaysHide
+        IQKeyboardManager.shared.keyboardDistanceFromTextField = 100
+        IQKeyboardManager.shared.toolbarTintColor = UIColor.black
+        IQKeyboardManager.shared.toolbarDoneBarButtonItemText = HardcodedStrings.done
         
         // Netfox - for observing api calls
         #if DEBUG

@@ -48,11 +48,21 @@ class AppCoordinator: CoordinatorType {
     }
     
     private func observeState() {
+        
         // handle error subject
+        // NOTE: This is workaround for having the same Error Title And Message as on Design
+        // from Server we will get not a good Error information
         dependencies.appGlobalState.errorDriver
-            .drive(onNext: { [weak self] error in
-                self?.handleAppGlobalStateError(error)
-            })
+            .map { _ -> ScreenLink in
+                ScreenLink(
+                    AlertRoute.alert(
+                        title: HardcodedStrings.verificationFailedTitle,
+                        message: HardcodedStrings.verificationFailedMessage
+                    ),
+                    presentation: .present
+                )
+            }
+            .drive(dependencies.appGlobalState.screenTriggerObserver)
             .disposed(by: disposeBag)
         
         // handle screen trigger subject
@@ -66,22 +76,6 @@ class AppCoordinator: CoordinatorType {
                 self?.trigger(link: link)
             })
             .disposed(by: disposeBag)
-    }
-    
-    //TODO: better to move it to AlerRoute
-    private func handleAppGlobalStateError(_ error: Error) {
-        let alert = UIAlertController(
-            title: HardcodedStrings.verificationFailedTitle,
-            message: HardcodedStrings.verificationFailedMessage,
-            preferredStyle: .alert
-        )
-
-        // add an action (button)
-        alert.addAction(
-            UIAlertAction(title: HardcodedStrings.ok, style: .default, handler: nil)
-        )
-        
-        rootViewController.present(alert, animated: true)
     }
 }
 
