@@ -1,5 +1,5 @@
 //
-//  UIViewController+Extentions.swift
+//  UIViewController+Extensions.swift
 //  Testio
 //
 //  Created by Timur Asayonok on 18/09/2022.

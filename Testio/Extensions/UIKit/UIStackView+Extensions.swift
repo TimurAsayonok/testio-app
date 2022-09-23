@@ -1,5 +1,5 @@
 //
-//  UIStackView+Extentions.swift
+//  UIStackView+Extensions.swift
 //  Testio
 //
 //  Created by Timur Asayonok on 20/09/2022.

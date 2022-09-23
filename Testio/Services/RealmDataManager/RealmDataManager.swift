@@ -51,7 +51,7 @@ class RealmDataManage: RealmDataManagerProtocol {
         }
     }
     
-    func fetch<T>(_ model: T.Type, predicate: NSPredicate?, sorted: Sorted?) -> Observable<[T?]> where T : Storable {
+    func fetch<T>(_ model: T.Type, predicate: NSPredicate?, sorted: Sorted?) -> Observable<[T?]> where T: Storable {
         guard let realm = realm, let model = model as? Object.Type else {
             return .error(RealmError.realmOrObjectIsNil)
         }
@@ -69,7 +69,7 @@ class RealmDataManage: RealmDataManagerProtocol {
         return .just(objects.compactMap({ $0 as? T }))
     }
     
-    func fetchFirst<T>(_ model: T.Type, predicate: NSPredicate?, sorted: Sorted?) -> Observable<T?> where T : Storable {
+    func fetchFirst<T>(_ model: T.Type, predicate: NSPredicate?, sorted: Sorted?) -> Observable<T?> where T: Storable {
         return fetch(model, predicate: predicate, sorted: sorted)
             .map { $0.compactMap({ $0 }).first }
     }

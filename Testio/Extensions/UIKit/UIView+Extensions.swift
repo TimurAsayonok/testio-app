@@ -1,5 +1,5 @@
 //
-//  UIView+Extentions.swift
+//  UIView+Extensions.swift
 //  Testio
 //
 //  Created by Timur Asayonok on 18/09/2022.
@@ -78,4 +78,3 @@ extension UIView {
         return separator
     }
 }
-

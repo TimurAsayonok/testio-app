@@ -1,5 +1,5 @@
 //
-//  Codable+Extention.swift
+//  Codable+Extension.swift
 //  Testio
 //
 //  Created by Timur Asayonok on 20/09/2022.
