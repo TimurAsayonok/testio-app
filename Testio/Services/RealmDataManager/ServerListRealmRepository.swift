@@ -28,7 +28,7 @@ class ServerListRealmRepository: ServerListRealmRepositoryProtocol {
             do {
                 try self?.realmDataManager.save(object: ServerListRealmModel.makeListFrom(servers: list))
             }
-            catch { print("😱", RealmError.saveError.localizedDescription) }
+            catch { print("😱", error.localizedDescription) }
         }
     }
     
@@ -38,11 +38,5 @@ class ServerListRealmRepository: ServerListRealmRepositoryProtocol {
                 guard let realmList = realmList else { return [] }
                 return realmList.items.map({ ServerModel.mapFromRealmModel($0) })
             }
-    }
-}
-
-extension ServerListRealmRepository {
-    enum RealmError: String, Error {
-        case saveError = "Error during saving server lists to Realm"
     }
 }

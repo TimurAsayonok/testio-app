@@ -139,7 +139,9 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
             formStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32)
         ])
     }
-    
+}
+
+extension LoginViewController {
     /// Builds UIImageView
     /// - parameters:
     ///     - icon: Icon have for the imageView

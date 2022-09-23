@@ -8,7 +8,7 @@
 import UIKit
 
 enum ServerListRoute: RouteType {
-    case serverList(servers: [ServerModel])
+    case serverList
 }
 
 // MARK: ServerListCoordinator
@@ -24,9 +24,9 @@ class ServerListCoordinator: Coordinator<ServerListRoute> {
     /// Generates ViewController based on ServerListRoute
     override func generateViewController(for route: ServerListRoute) -> UIViewController {
         switch route {
-        case let .serverList(servers):
+        case .serverList:
             let viewController = ServerListViewController()
-            let viewModel = ServerListViewModel(servers: servers, dependencies: dependencies)
+            let viewModel = ServerListViewModel(dependencies: dependencies)
             viewController.bind(to: viewModel)
             
             return viewController

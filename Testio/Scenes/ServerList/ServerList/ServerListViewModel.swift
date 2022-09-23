@@ -26,7 +26,7 @@ final class ServerListViewModel: ViewModelProtocol {
     
     let dependencies: Dependencies
     
-    init(servers: [ServerModel], dependencies: Dependencies) {
+    init(dependencies: Dependencies) {
         self.dependencies = dependencies
         
         bindSubjects()

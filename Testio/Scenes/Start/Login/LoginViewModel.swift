@@ -26,6 +26,10 @@ final class LoginViewModel: ViewModelProtocol {
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
         
+        do {
+            try dependencies.realmDataManage.deleteAll()
+        } catch { print("😱", error.localizedDescription) }
+        
         bindSubjects()
     }
     
@@ -45,7 +49,7 @@ final class LoginViewModel: ViewModelProtocol {
             )
             .subscribe(onNext: { [weak self] in
                 self?.dependencies.appGlobalState.screenTriggerObserver
-                    .onNext(ScreenLink(ServerListRoute.listLoading, presentation: .asRootView))
+                    .onNext(ScreenLink(ServerListRoute.serverList, presentation: .asRootNavigation))
             })
             .disposed(by: disposeBag)
         

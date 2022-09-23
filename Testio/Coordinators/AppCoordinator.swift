@@ -50,7 +50,7 @@ class AppCoordinator: CoordinatorType {
     func boot() {
         
         let screenLink: ScreenLink = dependencies.keychainWrapper.getBearerToken() != nil
-            ? ScreenLink(ServerListRoute.serverList(servers: []), presentation: .asRootNavigation)
+            ? ScreenLink(ServerListRoute.serverList, presentation: .asRootNavigation)
             : ScreenLink(StartRoute.login, presentation: .asRootView)
         
         dependencies.appGlobalState.screenTriggerObserver.onNext(screenLink)

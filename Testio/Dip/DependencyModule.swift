@@ -39,7 +39,8 @@ extension DipContainerBuilder {
                     appConfigurationProvider: try container.resolve(),
                     appGlobalState: try container.resolve(),
                     headersRequestDecorator: try container.resolve(),
-                    serverListRealmRepository: try container.resolve()
+                    serverListRealmRepository: try container.resolve(),
+                    realmDataManage: try container.resolve()
                 ) as Dependencies
             }
         }
