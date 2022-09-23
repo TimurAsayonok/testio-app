@@ -1,4 +1,5 @@
-# 💣 testio-app
+# The testio-app
+
 Testio App is a simple app with 2 screen based on Swift language
 
 For the app realizatdion I have tried to use `MVVM + Coordinator pattern` Architecture with `Realm` as a persistent layer to store servers.
