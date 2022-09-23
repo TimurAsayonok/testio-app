@@ -97,7 +97,6 @@
 		F7DBB8A828DBEF8D002CA5CE /* ServerListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8A728DBEF8D002CA5CE /* ServerListViewModelTests.swift */; };
 		F7DBB8AA28DBEFA8002CA5CE /* ServerListLoadingViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8A928DBEFA8002CA5CE /* ServerListLoadingViewControllerTests.swift */; };
 		F7DBB8AC28DBEFB4002CA5CE /* ServerListLoadingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8AB28DBEFB4002CA5CE /* ServerListLoadingViewModelTests.swift */; };
-		F7DBB8AE28DBEFC8002CA5CE /* ServerListEmptyTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8AD28DBEFC8002CA5CE /* ServerListEmptyTableViewCellTests.swift */; };
 		F7DBB8B028DBEFFD002CA5CE /* ServerListItemTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8AF28DBEFFD002CA5CE /* ServerListItemTableViewCellTests.swift */; };
 		F7DBB8B928DC524A002CA5CE /* ServerModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8B828DC524A002CA5CE /* ServerModelTests.swift */; };
 		F7DBB8BB28DC5893002CA5CE /* AuthorizationResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8BA28DC5893002CA5CE /* AuthorizationResponseTests.swift */; };
@@ -216,7 +215,6 @@
 		F7DBB8A728DBEF8D002CA5CE /* ServerListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListViewModelTests.swift; sourceTree = "<group>"; };
 		F7DBB8A928DBEFA8002CA5CE /* ServerListLoadingViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListLoadingViewControllerTests.swift; sourceTree = "<group>"; };
 		F7DBB8AB28DBEFB4002CA5CE /* ServerListLoadingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListLoadingViewModelTests.swift; sourceTree = "<group>"; };
-		F7DBB8AD28DBEFC8002CA5CE /* ServerListEmptyTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListEmptyTableViewCellTests.swift; sourceTree = "<group>"; };
 		F7DBB8AF28DBEFFD002CA5CE /* ServerListItemTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListItemTableViewCellTests.swift; sourceTree = "<group>"; };
 		F7DBB8B828DC524A002CA5CE /* ServerModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerModelTests.swift; sourceTree = "<group>"; };
 		F7DBB8BA28DC5893002CA5CE /* AuthorizationResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationResponseTests.swift; sourceTree = "<group>"; };
@@ -642,7 +640,6 @@
 			children = (
 				F7DBB8A428DBEEDF002CA5CE /* ServerListViewControllerTests.swift */,
 				F7DBB8A728DBEF8D002CA5CE /* ServerListViewModelTests.swift */,
-				F7DBB8AD28DBEFC8002CA5CE /* ServerListEmptyTableViewCellTests.swift */,
 				F7DBB8AF28DBEFFD002CA5CE /* ServerListItemTableViewCellTests.swift */,
 			);
 			path = ServerList;
@@ -998,7 +995,6 @@
 				F7DBB8D328DC7D42002CA5CE /* KeychainWrapperTests.swift in Sources */,
 				F7DBB85228DB8D4D002CA5CE /* AppDependencyMock.swift in Sources */,
 				F7DBB85528DB901D002CA5CE /* UserDefaultMock.swift in Sources */,
-				F7DBB8AE28DBEFC8002CA5CE /* ServerListEmptyTableViewCellTests.swift in Sources */,
 				F7DBB8DE28DCAF11002CA5CE /* HeadersRequestDecoratorTests.swift in Sources */,
 				F7DBB8C328DC6569002CA5CE /* URLSessionMock.swift in Sources */,
 				F7DBB86628DBA53F002CA5CE /* UIView+TestSuport.swift in Sources */,
