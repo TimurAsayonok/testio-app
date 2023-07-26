@@ -34,7 +34,7 @@ After getting `Bearer token` this token will be saved in keychain and the app wi
 - Servers List screen
 
 ### 🎨 Design
-https://www.figma.com/file/NEqPdYxCcxnB5b1ByahrXU/Great-task-for-Great-iOS-Developer?type=design&node-id=0-1&t=enkkIHU8uBxE6AmQ-0
+Design in figma was deleted 😕
 
 ### 🧐 How to start? 
 I think that you know what to do 😎🤩
